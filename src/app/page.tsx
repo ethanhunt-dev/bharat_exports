@@ -92,169 +92,50 @@ export default function HomePage() {
     return () => clearInterval(timer);
   }, [isPaused]);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
-  };
-
   const handleInquirySubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setFormSubmitted(true);
   };
 
-  const activeSlideData = heroSlides[currentSlide];
-
   return (
     <div className="flex flex-col w-full">
-      {/* 1. HERO SECTION WITH VIBRANT MULTI-IMAGE CAROUSEL BANNER */}
+      {/* 1. HERO SECTION WITH PURE FULL-BLEED IMAGE SLIDER */}
       <section
-        className="relative w-full -mt-20 pt-20 bg-slate-950 text-surface-bright overflow-hidden min-h-[640px] lg:min-h-[720px] flex flex-col justify-between"
+        className="relative w-full -mt-20 pt-20 bg-slate-950 text-surface-bright overflow-hidden flex flex-col justify-between"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-        {/* Full-Color Vibrant Container Ships & Port Photography */}
-        {heroSlides.map((slide, idx) => (
-          <div
-            key={slide.id}
-            className={`absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-out ${
-              idx === currentSlide
-                ? "opacity-95 scale-105"
-                : "opacity-0 scale-100 pointer-events-none"
-            }`}
-            style={{ backgroundImage: `url('${slide.image}')` }}
-            aria-hidden={idx !== currentSlide}
-          />
-        ))}
+        {/* Full-Bleed Auto-Playing Port & Maritime Slides */}
+        <div className="relative w-full h-[450px] sm:h-[550px] lg:h-[650px] overflow-hidden">
+          {heroSlides.map((slide, idx) => (
+            <div
+              key={slide.id}
+              className={`absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-out ${
+                idx === currentSlide
+                  ? "opacity-100 scale-100"
+                  : "opacity-0 scale-105 pointer-events-none"
+              }`}
+              style={{ backgroundImage: `url('${slide.image}')` }}
+              aria-label={slide.alt}
+              role="img"
+            />
+          ))}
 
-        {/* Directional Scrim: Transparent on Right (to see ships & containers clearly) and Soft Dark Gradient on Left (for crystal clear text legibility) */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30 pointer-events-none" />
+          {/* Soft Top Scrim for Clean Header Visibility */}
+          <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/60 to-transparent pointer-events-none" />
 
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 pt-14 lg:pt-20 pb-20 lg:pb-24 z-10 w-full flex-1 flex flex-col justify-center">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-            {/* Main Editorial Hero Copy with High-Contrast Text */}
-            <div className="lg:col-span-8 flex flex-col">
-              {/* Eyebrow & Live Operation Tag */}
-              <div className="inline-flex items-center gap-3 mb-4">
-                <span className="w-8 h-0.5 bg-secondary-container" />
-                <span className="font-eyebrow-bold text-eyebrow-bold uppercase tracking-[0.25em] text-secondary-container drop-shadow-sm">
-                  {activeSlideData.tag}
-                </span>
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping inline-block" />
-              </div>
-
-              {/* Dynamic Headline with Drop Shadow for Maximum Legibility */}
-              <h1 className="font-display-lg text-display-lg text-white tracking-tight mb-5 leading-[1.12] drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] min-h-[130px] sm:min-h-[110px] transition-all duration-500">
-                {activeSlideData.titlePrimary}{" "}
-                <span className="italic text-secondary-fixed block sm:inline drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
-                  {activeSlideData.titleSecondary}
-                </span>
-              </h1>
-
-              {/* Dynamic Subtitle */}
-              <p className="font-body-lg text-body-lg text-white/90 max-w-2xl mb-8 leading-relaxed font-normal drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)] min-h-[55px] transition-all duration-500">
-                {activeSlideData.description}
-              </p>
-
-              {/* Action Buttons & Slide Controls */}
-              <div className="flex flex-wrap items-center gap-4 sm:gap-5 mb-6">
-                <button
-                  type="button"
-                  onClick={() => openQuoteModal()}
-                  className="inline-flex items-center gap-3 bg-secondary text-surface-container-lowest font-label-md text-label-md px-8 py-3.5 rounded hover:bg-on-secondary-fixed-variant transition-colors shadow-lg hover:shadow-xl font-bold"
-                >
-                  <span>Send Enquiry</span>
-                  <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-                </button>
-                <a
-                  className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded bg-black/40 backdrop-blur-md border border-white/40 text-white hover:bg-white/20 transition-all font-label-md text-label-md shadow-md"
-                  href="https://wa.me/919876543210"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <span className="material-symbols-outlined text-[19px] text-secondary-fixed">chat</span>
-                  <span>WhatsApp Us</span>
-                </a>
-
-                {/* Direct Previous / Next Slide Controls */}
-                <div className="inline-flex items-center gap-2 sm:ml-4 bg-black/60 backdrop-blur-md rounded border border-white/30 p-1 shadow-lg">
-                  <button
-                    type="button"
-                    onClick={prevSlide}
-                    className="w-9 h-9 rounded flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-                    aria-label="Previous banner slide"
-                  >
-                    <span className="material-symbols-outlined text-[20px]">chevron_left</span>
-                  </button>
-                  <span className="font-data-mono text-[13px] px-2 text-secondary-fixed font-bold tracking-wider">
-                    0{currentSlide + 1} / 0{heroSlides.length}
-                  </span>
-                  <button
-                    type="button"
-                    onClick={nextSlide}
-                    className="w-9 h-9 rounded flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-                    aria-label="Next banner slide"
-                  >
-                    <span className="material-symbols-outlined text-[20px]">chevron_right</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Slide Metadata & Live Spec Card (Desktop) */}
-            <div className="lg:col-span-4 hidden lg:flex flex-col gap-3 p-5 rounded-xl bg-black/65 backdrop-blur-lg border border-white/25 shadow-2xl">
-              <div className="flex items-center justify-between text-xs text-secondary-container font-eyebrow-bold uppercase tracking-wider">
-                <span className="flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[16px] text-secondary-container">sailing</span>
-                  Port Operations
-                </span>
-                <span className="flex items-center gap-1.5 text-emerald-400 font-bold">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  Live Corridor
-                </span>
-              </div>
-              <p className="font-title-md text-white text-base font-semibold leading-snug drop-shadow-sm">
-                {activeSlideData.badge}
-              </p>
-              <div className="w-full bg-white/20 h-1.5 rounded-full overflow-hidden mt-1">
-                <div
-                  key={currentSlide}
-                  className="bg-secondary-fixed h-full transition-all duration-[6000ms] ease-linear w-full origin-left"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Interactive Slide Category Pills / Indicators with Port Thumbnail Badges */}
-          <div className="mt-8 pt-5 border-t border-white/20 flex flex-wrap items-center gap-2 sm:gap-3">
-            <span className="font-eyebrow-bold text-[11px] uppercase tracking-widest text-white/80 mr-2 hidden sm:inline-block">
-              Harbour Corridors:
-            </span>
-            {heroSlides.map((slide, idx) => {
-              const isActive = idx === currentSlide;
-              return (
-                <button
-                  key={slide.id}
-                  type="button"
-                  onClick={() => setCurrentSlide(idx)}
-                  className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all flex items-center gap-2.5 backdrop-blur-md ${
-                    isActive
-                      ? "bg-secondary text-white shadow-lg ring-2 ring-secondary-container scale-105"
-                      : "bg-black/50 text-white/85 hover:bg-black/75 hover:text-white border border-white/20"
-                  }`}
-                >
-                  <span
-                    className={`w-2 h-2 rounded-full ${
-                      isActive ? "bg-white animate-ping" : "bg-white/40"
-                    }`}
-                  />
-                  <span>{slide.categoryLabel}</span>
-                </button>
-              );
-            })}
+          {/* Minimal Slide Progress Dots */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2">
+            {heroSlides.map((slide, idx) => (
+              <span
+                key={slide.id}
+                className={`transition-all duration-500 rounded-full ${
+                  idx === currentSlide
+                    ? "w-8 h-2 bg-secondary-fixed shadow-md"
+                    : "w-2 h-2 bg-white/50"
+                }`}
+              />
+            ))}
           </div>
         </div>
 
