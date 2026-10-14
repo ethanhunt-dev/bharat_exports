@@ -308,15 +308,15 @@ export default function ProductsPage() {
                 </div>
               </div>
 
-              {/* Category Filter Module */}
-              <div className="bg-surface-container-low rounded p-6 shadow-sm flex flex-col">
-                <div className="flex items-center justify-between pb-3 mb-4">
-                  <h2 className="font-title-md text-title-md text-on-surface uppercase tracking-wide">
+              {/* Category Filter Module (Inspired by Reference Demo) */}
+              <div className="bg-[#FAF5EC] border border-secondary/25 rounded-2xl p-6 shadow-sm flex flex-col">
+                <div className="flex items-center justify-between pb-3 mb-5 border-b border-secondary/20">
+                  <h2 className="font-headline-sm text-headline-sm text-on-surface tracking-tight">
                     Categories
                   </h2>
-                  <span className="w-8 h-0.5 bg-secondary" />
+                  <span className="w-10 h-1 bg-secondary rounded-full" />
                 </div>
-                <ul className="flex flex-col gap-1.5 font-body-md text-body-md">
+                <ul className="flex flex-col gap-2.5 font-body-md text-body-md">
                   {categories.map((cat) => {
                     const active = selectedCategory === cat.id;
                     return (
@@ -324,23 +324,34 @@ export default function ProductsPage() {
                         <button
                           type="button"
                           onClick={() => setSelectedCategory(cat.id)}
-                          className={`w-full flex items-center justify-between px-3 py-2.5 rounded transition-all text-left ${
+                          className={`w-full group flex items-center justify-between px-4 py-3.5 rounded-xl font-medium transition-all duration-300 shadow-xs border ${
                             active
-                              ? "bg-surface-container text-primary font-bold border-l-[3px] border-secondary shadow-xs"
-                              : "text-on-surface-variant hover:text-primary hover:bg-surface-container"
+                              ? "bg-primary text-white border-primary shadow-md scale-[1.01]"
+                              : "bg-white text-on-surface border-[#E8DFCE] hover:bg-primary hover:text-white hover:border-primary hover:shadow-md hover:scale-[1.01]"
                           }`}
                         >
-                          <span className={active ? "translate-x-1 transition-transform" : ""}>
-                            {cat.label}
-                          </span>
+                          <div className="flex items-center gap-2.5">
+                            <span className="font-semibold text-sm tracking-wide">
+                              {cat.label}
+                            </span>
+                            <span
+                              className={`font-data-mono text-xs px-2 py-0.5 rounded-full transition-colors ${
+                                active
+                                  ? "bg-secondary text-surface-container-lowest font-bold"
+                                  : "bg-[#F3EDE0] text-on-surface-variant group-hover:bg-secondary group-hover:text-surface-container-lowest"
+                              }`}
+                            >
+                              {cat.count}
+                            </span>
+                          </div>
                           <span
-                            className={`font-data-mono text-data-mono px-2 py-0.5 rounded text-xs ${
+                            className={`material-symbols-outlined text-[18px] transition-all duration-300 ${
                               active
-                                ? "text-on-secondary-fixed bg-secondary-fixed/50 font-bold"
-                                : "text-on-surface-variant/70 bg-surface-container"
+                                ? "text-secondary-container translate-x-1"
+                                : "text-on-surface-variant/60 group-hover:text-secondary-container group-hover:translate-x-1.5"
                             }`}
                           >
-                            {cat.count}
+                            arrow_forward
                           </span>
                         </button>
                       </li>

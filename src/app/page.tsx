@@ -142,24 +142,48 @@ export default function HomePage() {
       </section>
 
       {/* 2. COMPANY INTRODUCTION (Asymmetric 7/5 Split) */}
-      <section className="w-full py-24 bg-surface text-on-surface">
+      {/* 2. COMPANY INTRODUCTION (Warm Luxury Ivory & Floating Emerald Feature Card) */}
+      <section className="w-full py-24 bg-[#FAF7F0] text-on-surface border-b border-[#E8DFCE]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-center">
             {/* Visual Column (7 Cols on desktop) */}
             <div className="lg:col-span-7 relative">
-              <div className="absolute -top-3 -left-3 w-full h-full border border-secondary/40 rounded pointer-events-none hidden sm:block" />
-              <div className="relative bg-surface-container rounded overflow-hidden shadow-sm aspect-[4/3] group">
+              <div className="absolute -top-3 -left-3 w-full h-full border-2 border-secondary/40 rounded-xl pointer-events-none hidden sm:block" />
+              <div className="relative bg-surface-container rounded-xl overflow-hidden shadow-lg aspect-[4/3] group">
                 <img
-                  className="w-full h-full object-cover grayscale-[15%] group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover grayscale-[10%] group-hover:scale-105 transition-transform duration-700 ease-out"
                   alt="Quality control inspection of export grade Indian spices and agricultural grains"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzYrRoQxdKpgrd383CDGw6UiAnieZdvOiYFbGDFRqt8lwAERQ-56EYbdqaSCn6UnG7rHxPd1d-JKkRf-Dj1I44bF1HQcZXNPBMmndqW9qRy0ngR7GeqIDlny1rZ2G1Eomxq9l69AvyYmSXhEm3fsIEBYXP1nYPJmgeZ2NZxDyVh_NvsvR2zLstl8ldxVKPEkvMz8ilvmuzIufv1GPPYMwUsaNsvhMSoGyoEwyHiKDZOubtlsWmNZwN"
                 />
-                <div className="absolute bottom-4 right-4 bg-on-tertiary-fixed/90 backdrop-blur-sm text-surface-bright px-4 py-2 border-l-2 border-secondary font-data-mono text-data-mono flex items-center gap-2">
-                  <span className="material-symbols-outlined text-[15px] text-secondary-fixed">biotech</span>
-                  <span>INVTZ-LAB · BATCH PASS SGS 99.8%</span>
+                <div className="absolute bottom-4 right-4 bg-primary/95 backdrop-blur-md text-white px-5 py-2.5 rounded-lg border-l-4 border-secondary-container font-data-mono text-data-mono flex items-center gap-2.5 shadow-md">
+                  <span className="material-symbols-outlined text-[18px] text-secondary-container">biotech</span>
+                  <span className="tracking-wide">INVTZ-LAB · BATCH PASS SGS 99.8%</span>
+                </div>
+              </div>
+
+              {/* Floating Dark Emerald Value Card with Royal Gold Checkmarks */}
+              <div className="mt-6 p-6 rounded-2xl bg-[#081E14] text-white border border-secondary/35 shadow-xl">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="flex items-center gap-3">
+                    <span className="w-7 h-7 rounded-full bg-secondary/25 text-secondary-container flex items-center justify-center font-bold text-sm shrink-0 border border-secondary/40">✓</span>
+                    <span className="text-sm font-medium text-white/95">APEDA &amp; Spices Board Certified</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="w-7 h-7 rounded-full bg-secondary/25 text-secondary-container flex items-center justify-center font-bold text-sm shrink-0 border border-secondary/40">✓</span>
+                    <span className="text-sm font-medium text-white/95">Direct Deepwater Berth Quay 02</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="w-7 h-7 rounded-full bg-secondary/25 text-secondary-container flex items-center justify-center font-bold text-sm shrink-0 border border-secondary/40">✓</span>
+                    <span className="text-sm font-medium text-white/95">100% Sortex Optical Cleaned</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="w-7 h-7 rounded-full bg-secondary/25 text-secondary-container flex items-center justify-center font-bold text-sm shrink-0 border border-secondary/40">✓</span>
+                    <span className="text-sm font-medium text-white/95">Incoterms 2020: CIF / FOB / CFR</span>
+                  </div>
                 </div>
               </div>
             </div>
+
             {/* Narrative Column (5 Cols on desktop) */}
             <div className="lg:col-span-5 flex flex-col justify-center">
               <div className="inline-flex items-center gap-3 mb-4">
@@ -180,11 +204,11 @@ export default function HomePage() {
               </p>
               <div className="pt-2">
                 <Link
-                  className="inline-flex items-center gap-2 font-title-md text-title-md text-primary hover:text-secondary transition-colors group"
+                  className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-white text-primary border border-secondary/35 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 font-label-md text-label-md shadow-xs group"
                   href="/about-us"
                 >
-                  <span>Read our complete story</span>
-                  <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">
+                  <span className="font-semibold">Read our complete story</span>
+                  <span className="material-symbols-outlined text-[18px] text-secondary group-hover:text-secondary-container group-hover:translate-x-1.5 transition-all">
                     arrow_forward
                   </span>
                 </Link>
@@ -400,11 +424,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. FEATURED PRODUCTS (4 Cards on Warm Ivory) */}
-      <section className="w-full py-24 bg-surface text-on-surface">
+      {/* 5. FEATURED PRODUCTS (Warm Luxury Linen & Interactive Category Bar) */}
+      <section className="w-full py-24 bg-[#F4EFE6] text-on-surface border-y border-[#E2D9C8]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           {/* Section Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
             <div>
               <div className="inline-flex items-center gap-3 mb-3">
                 <span className="font-data-mono text-data-mono text-secondary font-semibold">04</span>
@@ -424,6 +448,41 @@ export default function HomePage() {
               <span>View all products manifest</span>
               <span className="material-symbols-outlined text-[17px]">arrow_forward</span>
             </Link>
+          </div>
+
+          {/* Interactive Category Bar (Matching Reference Demo Hover Behavior) */}
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3.5 mb-10 p-2.5 rounded-2xl bg-[#E8E0D0] border border-secondary/20 shadow-inner">
+            {[
+              { id: "all", label: "All Commodities", count: "12+" },
+              { id: "rice", label: "Rice & Grains", count: "04" },
+              { id: "spices", label: "Indian Spices", count: "06" },
+              { id: "textiles", label: "Raw Cotton & Textiles", count: "03" },
+              { id: "pulses", label: "Oilseeds & Pulses", count: "02" },
+            ].map((cat, idx) => (
+              <button
+                key={cat.id}
+                type="button"
+                className={`group flex items-center gap-2 px-4 sm:px-5 py-3 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-300 shadow-xs border ${
+                  idx === 0
+                    ? "bg-primary text-white border-primary shadow-md scale-[1.02]"
+                    : "bg-white text-on-surface border-[#D8CEBC] hover:bg-primary hover:text-white hover:border-primary hover:shadow-md hover:scale-[1.02]"
+                }`}
+              >
+                <span>{cat.label}</span>
+                <span
+                  className={`font-data-mono text-[11px] px-2 py-0.5 rounded-full transition-colors ${
+                    idx === 0
+                      ? "bg-secondary text-surface-container-lowest font-bold"
+                      : "bg-[#F3EDE0] text-on-surface-variant group-hover:bg-secondary group-hover:text-surface-container-lowest"
+                  }`}
+                >
+                  {cat.count}
+                </span>
+                <span className="material-symbols-outlined text-[16px] text-secondary-container transition-transform duration-300 group-hover:translate-x-1">
+                  arrow_forward
+                </span>
+              </button>
+            ))}
           </div>
 
           {/* 4 Product Cards Grid */}
@@ -476,9 +535,12 @@ export default function HomePage() {
                 <button
                   type="button"
                   onClick={() => openQuoteModal("1121-basmati")}
-                  className="w-full py-2.5 px-3 rounded border border-secondary/40 text-secondary hover:bg-secondary hover:text-surface-bright transition-colors font-label-md text-label-md text-center block"
+                  className="w-full py-3 px-4 rounded-xl bg-[#FAF6EE] text-primary border border-secondary/35 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 font-label-md text-label-md flex items-center justify-center gap-2 font-semibold shadow-xs"
                 >
-                  Enquire for Price &amp; Specs →
+                  <span>Enquire for Price &amp; Specs</span>
+                  <span className="material-symbols-outlined text-[16px] text-secondary group-hover:text-secondary-container group-hover:translate-x-1 transition-all">
+                    arrow_forward
+                  </span>
                 </button>
               </div>
             </div>
@@ -531,9 +593,12 @@ export default function HomePage() {
                 <button
                   type="button"
                   onClick={() => openQuoteModal("organic-turmeric")}
-                  className="w-full py-2.5 px-3 rounded border border-secondary/40 text-secondary hover:bg-secondary hover:text-surface-bright transition-colors font-label-md text-label-md text-center block"
+                  className="w-full py-3 px-4 rounded-xl bg-[#FAF6EE] text-primary border border-secondary/35 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 font-label-md text-label-md flex items-center justify-center gap-2 font-semibold shadow-xs"
                 >
-                  Enquire for Price &amp; Specs →
+                  <span>Enquire for Price &amp; Specs</span>
+                  <span className="material-symbols-outlined text-[16px] text-secondary group-hover:text-secondary-container group-hover:translate-x-1 transition-all">
+                    arrow_forward
+                  </span>
                 </button>
               </div>
             </div>
@@ -586,9 +651,12 @@ export default function HomePage() {
                 <button
                   type="button"
                   onClick={() => openQuoteModal("tellicherry-pepper")}
-                  className="w-full py-2.5 px-3 rounded border border-secondary/40 text-secondary hover:bg-secondary hover:text-surface-bright transition-colors font-label-md text-label-md text-center block"
+                  className="w-full py-3 px-4 rounded-xl bg-[#FAF6EE] text-primary border border-secondary/35 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 font-label-md text-label-md flex items-center justify-center gap-2 font-semibold shadow-xs"
                 >
-                  Enquire for Price &amp; Specs →
+                  <span>Enquire for Price &amp; Specs</span>
+                  <span className="material-symbols-outlined text-[16px] text-secondary group-hover:text-secondary-container group-hover:translate-x-1 transition-all">
+                    arrow_forward
+                  </span>
                 </button>
               </div>
             </div>
@@ -641,9 +709,12 @@ export default function HomePage() {
                 <button
                   type="button"
                   onClick={() => openQuoteModal("cotton-fabrics")}
-                  className="w-full py-2.5 px-3 rounded border border-secondary/40 text-secondary hover:bg-secondary hover:text-surface-bright transition-colors font-label-md text-label-md text-center block"
+                  className="w-full py-3 px-4 rounded-xl bg-[#FAF6EE] text-primary border border-secondary/35 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 font-label-md text-label-md flex items-center justify-center gap-2 font-semibold shadow-xs"
                 >
-                  Enquire for Price &amp; Specs →
+                  <span>Enquire for Price &amp; Specs</span>
+                  <span className="material-symbols-outlined text-[16px] text-secondary group-hover:text-secondary-container group-hover:translate-x-1 transition-all">
+                    arrow_forward
+                  </span>
                 </button>
               </div>
             </div>
