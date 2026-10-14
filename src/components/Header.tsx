@@ -76,7 +76,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => openQuoteModal()}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FDE047] via-[#E5B80B] to-[#C5A15B] text-[#0B281D] font-sans text-xs sm:text-sm px-5 sm:px-6 py-2.5 rounded-xl font-bold uppercase tracking-wider shadow-[0_4px_16px_rgba(229,184,11,0.35)] hover:shadow-[0_6px_22px_rgba(229,184,11,0.55)] hover:scale-105 transition-all duration-300 border border-[#FFF089]"
+              className="gold-sheen-button inline-flex items-center gap-2 bg-gradient-to-r from-[#FDE047] via-[#E5B80B] to-[#C5A15B] text-[#0B281D] font-sans text-xs sm:text-sm px-5 sm:px-6 py-2.5 rounded-xl font-bold uppercase tracking-wider shadow-[0_4px_16px_rgba(229,184,11,0.35)] hover:shadow-[0_6px_22px_rgba(229,184,11,0.55)] hover:scale-105 transition-all duration-300 border border-[#FFF089]"
             >
               <span>Request a Quote</span>
               <span className="material-symbols-outlined text-[17px] font-bold">arrow_forward</span>

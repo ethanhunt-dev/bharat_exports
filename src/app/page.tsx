@@ -3,6 +3,9 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useQuoteModal } from "@/context/QuoteModalContext";
+import MarqueeTicker from "@/components/MarqueeTicker";
+import AnimatedCounter from "@/components/AnimatedCounter";
+import WorldTradeRoutes from "@/components/WorldTradeRoutes";
 
 const heroSlides = [
   {
@@ -151,7 +154,7 @@ export default function HomePage() {
               <div className="flex flex-wrap items-center gap-4">
                 <Link
                   href="/products"
-                  className="inline-flex items-center gap-2.5 bg-gradient-to-r from-[#FDE047] via-[#E5B80B] to-[#C5A15B] text-[#0B281D] font-sans text-sm font-bold uppercase tracking-wider px-7 py-3.5 rounded-xl shadow-[0_4px_20px_rgba(229,184,11,0.4)] hover:shadow-[0_6px_28px_rgba(229,184,11,0.6)] hover:scale-105 transition-all duration-300 border border-[#FFF089]"
+                  className="gold-sheen-button inline-flex items-center gap-2.5 bg-gradient-to-r from-[#FDE047] via-[#E5B80B] to-[#C5A15B] text-[#0B281D] font-sans text-sm font-bold uppercase tracking-wider px-7 py-3.5 rounded-xl shadow-[0_4px_20px_rgba(229,184,11,0.4)] hover:shadow-[0_6px_28px_rgba(229,184,11,0.6)] hover:scale-105 transition-all duration-300 border border-[#FFF089]"
                 >
                   <span>Explore Our Products</span>
                   <span className="material-symbols-outlined text-[18px] font-bold">arrow_forward</span>
@@ -196,21 +199,27 @@ export default function HomePage() {
         <div className="w-full bg-[#0B281D] border-t border-[#C5A15B]/30 py-5">
           <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
             <div className="flex flex-col sm:flex-row items-center gap-3">
-              <span className="font-display text-2xl lg:text-3xl font-bold text-[#FDE047]">16+</span>
+              <span className="font-display text-2xl lg:text-3xl font-bold text-[#FDE047]">
+                <AnimatedCounter target={16} suffix="+" />
+              </span>
               <div className="flex flex-col">
                 <span className="font-sans text-xs font-bold text-white uppercase tracking-wider">Years Experience</span>
                 <span className="font-sans text-[11px] text-[#E7EDE6]/70">Estd. 2008 in Andhra Pradesh</span>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-3 border-l-0 md:border-l border-[#C5A15B]/20 md:pl-6">
-              <span className="font-display text-2xl lg:text-3xl font-bold text-[#FDE047]">40+</span>
+              <span className="font-display text-2xl lg:text-3xl font-bold text-[#FDE047]">
+                <AnimatedCounter target={40} suffix="+" />
+              </span>
               <div className="flex flex-col">
                 <span className="font-sans text-xs font-bold text-white uppercase tracking-wider">Destination Ports</span>
                 <span className="font-sans text-[11px] text-[#E7EDE6]/70">GCC, Europe, SE Asia, Americas</span>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-3 border-l-0 md:border-l border-[#C5A15B]/20 md:pl-6">
-              <span className="font-display text-2xl lg:text-3xl font-bold text-[#FDE047]">06</span>
+              <span className="font-display text-2xl lg:text-3xl font-bold text-[#FDE047]">
+                <AnimatedCounter target={6} prefix="0" />
+              </span>
               <div className="flex flex-col">
                 <span className="font-sans text-xs font-bold text-white uppercase tracking-wider">Core Sectors</span>
                 <span className="font-sans text-[11px] text-[#E7EDE6]/70">Rice, Spices, Cotton, Grains</span>
@@ -226,6 +235,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* CONTINUOUS HORIZONTAL MARQUEE OF VERIFIED COMMODITIES & CREDENTIALS */}
+      <MarqueeTicker />
 
       {/* D. COMPANY INTRODUCTION (Warm Luxury Ivory & Floating Emerald Feature Card) */}
       <section className="w-full py-24 bg-[#F7F4EB] text-[#1A241F] border-b border-[#ECE6D8]">
@@ -812,6 +824,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* F. GLOBAL MARITIME TRADE ROUTES ANIMATION */}
+      <WorldTradeRoutes />
 
       {/* G. TRADE INSIGHTS & REGULATORY ADVISORIES */}
       <section className="w-full py-24 bg-[#ECE6D8] text-[#1A241F] border-b border-[#DDD4BF]">

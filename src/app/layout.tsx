@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
+import ScrollProgress from "@/components/ScrollProgress";
+import CustomCursor from "@/components/CustomCursor";
 import { QuoteModalProvider } from "@/context/QuoteModalContext";
 
 const playfair = Playfair_Display({
@@ -60,6 +62,8 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-surface text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed min-h-screen flex flex-col">
+        <ScrollProgress />
+        <CustomCursor />
         <QuoteModalProvider>
           <Header />
           <main className="w-full pt-20 bg-surface min-h-[calc(100vh-80px)] flex-1">

@@ -268,11 +268,112 @@
   border-color: #E5B80B;
 }
 
-.border-kdm-gold-glow {
-  border-color: #E5B80B;
-  box-shadow: 0 0 15px rgba(229, 184, 11, 0.35);
-}
-
 .shadow-kdm-gold {
   box-shadow: 0 4px 20px -2px rgba(229, 184, 11, 0.45);
 }
+
+/* Luxury Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Trade Route Nautical Dashed Animation */
+@keyframes dash-flow {
+  to {
+    stroke-dashoffset: -120;
+  }
+}
+
+.animate-trade-route {
+  stroke-dasharray: 6 6;
+  animation: dash-flow 10s linear infinite;
+}
+
+/* Gold Pulse for Global Nodes */
+@keyframes gold-pulse-node {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(229, 184, 11, 0.7);
+  }
+  50% {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 10px rgba(229, 184, 11, 0);
+  }
+}
+
+.animate-node-pulse {
+  animation: gold-pulse-node 2.4s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* Gold Sheen Button Effect */
+.gold-sheen-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-sheen-button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -70%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(25deg);
+  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+}
+
+.gold-sheen-button:hover::after {
+  left: 140%;
+}
+
+/* Hover Gold Underline */
+.hover-gold-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-gold-underline::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #C5A15B;
+  transition: width 0.3s ease-in-out;
+}
+
+.hover-gold-underline:hover::after {
+  width: 100%;
+}
+
+/* Scroll Reveal Smooth System */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+

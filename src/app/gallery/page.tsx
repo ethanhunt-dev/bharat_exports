@@ -4,6 +4,7 @@ import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import { useQuoteModal } from "@/context/QuoteModalContext";
 import PageBanner from "@/components/PageBanner";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 interface GalleryItem {
   id: string;
@@ -386,7 +387,9 @@ export default function GalleryPage() {
                   <span className="font-eyebrow-bold text-[10px] text-secondary uppercase tracking-widest">
                     Average Turnaround
                   </span>
-                  <span className="font-headline-sm text-headline-sm text-primary font-bold">36.2 Hours</span>
+                  <span className="font-headline-sm text-headline-sm text-primary font-bold">
+                    <AnimatedCounter target={36.2} decimals={1} suffix=" Hours" />
+                  </span>
                 </div>
                 <span className="material-symbols-outlined text-secondary text-[32px]">schedule</span>
               </div>
@@ -395,7 +398,9 @@ export default function GalleryPage() {
                   <span className="font-eyebrow-bold text-[10px] text-secondary uppercase tracking-widest">
                     Container Berth Draft
                   </span>
-                  <span className="font-headline-sm text-headline-sm text-primary font-bold">16.5m Deep-Draft</span>
+                  <span className="font-headline-sm text-headline-sm text-primary font-bold">
+                    <AnimatedCounter target={16.5} decimals={1} suffix="m Deep-Draft" />
+                  </span>
                 </div>
                 <span className="material-symbols-outlined text-secondary text-[32px]">water</span>
               </div>
@@ -405,7 +410,9 @@ export default function GalleryPage() {
           <div className="mt-10 pt-8 border-t border-secondary/20 grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
             <div>
               <span className="font-data-mono text-data-mono text-secondary uppercase block mb-1">PORT CAPACITY</span>
-              <p className="font-title-md text-title-md text-on-surface font-bold">1.2M TEUs Annual</p>
+              <p className="font-title-md text-title-md text-on-surface font-bold">
+                <AnimatedCounter target={1.2} decimals={1} suffix="M TEUs Annual" />
+              </p>
             </div>
             <div>
               <span className="font-data-mono text-data-mono text-secondary uppercase block mb-1">RAIL SIDING ACCESS</span>
@@ -417,7 +424,9 @@ export default function GalleryPage() {
             </div>
             <div>
               <span className="font-data-mono text-data-mono text-secondary uppercase block mb-1">REEFER PLUG POINTS</span>
-              <p className="font-title-md text-title-md text-on-surface font-bold">750+ 440V Points</p>
+              <p className="font-title-md text-title-md text-on-surface font-bold">
+                <AnimatedCounter target={750} suffix="+ Points" />
+              </p>
             </div>
           </div>
         </div>
