@@ -46,27 +46,19 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[#0B281D]/95 backdrop-blur-md border-b border-[#C5A15B]/35 shadow-2xl py-3"
-          : "bg-black/35 backdrop-blur-sm border-b border-white/10 py-4"
+          ? "bg-[#0B281D]/98 backdrop-blur-md border-b border-[#C5A15B]/40 shadow-2xl py-2"
+          : "bg-black/40 backdrop-blur-md border-b border-white/10 py-2.5 sm:py-3"
       }`}
     >
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-between">
-        {/* Logo / Brand Wordmark: Large Logo with Brand Name Underneath */}
-        <Link href="/" className="flex flex-col items-center group shrink-0">
-          <div className="relative flex items-center justify-center bg-white rounded-lg px-2.5 py-1 shadow-md border border-[#C5A15B]/50 transition-transform duration-300 group-hover:scale-105">
+        {/* Logo / Brand Wordmark: Prominent, Enlarged Luxury Emblem Card */}
+        <Link href="/" className="flex items-center group shrink-0">
+          <div className="relative flex items-center justify-center bg-white rounded-xl px-3 py-1.5 shadow-lg border-2 border-[#C5A15B]/50 transition-all duration-300 group-hover:scale-105 group-hover:border-[#E5B80B] group-hover:shadow-[0_0_20px_rgba(229,184,11,0.35)]">
             <img
               src="/svmr_logo.png"
               alt="Bharat Global Exports Emblem"
-              className="h-13 sm:h-15 lg:h-17 w-auto object-contain"
+              className="h-16 sm:h-20 lg:h-24 w-auto object-contain drop-shadow"
             />
-          </div>
-          <div className="flex flex-col items-center mt-1 text-center">
-            <span className="font-display font-extrabold text-xs sm:text-sm tracking-wider text-white uppercase group-hover:text-[#FDE047] transition-colors leading-tight drop-shadow-sm">
-              BHARAT EXPORTS &amp; IMPORTS
-            </span>
-            <span className="font-sans text-[8.5px] sm:text-[9.5px] font-bold text-[#E5B80B] uppercase tracking-[0.22em] leading-tight drop-shadow-sm">
-              ESTD. 2008 · PREMIER TRADING HOUSE
-            </span>
           </div>
         </Link>
 
