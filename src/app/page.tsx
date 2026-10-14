@@ -148,37 +148,37 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-center">
             {/* Visual Column (7 Cols on desktop) */}
             <div className="lg:col-span-7 relative">
-              <div className="absolute -top-3 -left-3 w-full h-full border-2 border-secondary/40 rounded-xl pointer-events-none hidden sm:block" />
-              <div className="relative bg-surface-container rounded-xl overflow-hidden shadow-lg aspect-[4/3] group">
+              <div className="absolute -top-3 -left-3 w-full h-full border-2 border-[#E5B80B] rounded-2xl pointer-events-none hidden sm:block shadow-[0_0_20px_rgba(229,184,11,0.25)]" />
+              <div className="relative bg-surface-container rounded-2xl overflow-hidden shadow-xl aspect-[4/3] group border border-[#E5B80B]/30">
                 <img
-                  className="w-full h-full object-cover grayscale-[10%] group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover grayscale-[5%] group-hover:scale-105 transition-transform duration-700 ease-out"
                   alt="Quality control inspection of export grade Indian spices and agricultural grains"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzYrRoQxdKpgrd383CDGw6UiAnieZdvOiYFbGDFRqt8lwAERQ-56EYbdqaSCn6UnG7rHxPd1d-JKkRf-Dj1I44bF1HQcZXNPBMmndqW9qRy0ngR7GeqIDlny1rZ2G1Eomxq9l69AvyYmSXhEm3fsIEBYXP1nYPJmgeZ2NZxDyVh_NvsvR2zLstl8ldxVKPEkvMz8ilvmuzIufv1GPPYMwUsaNsvhMSoGyoEwyHiKDZOubtlsWmNZwN"
                 />
-                <div className="absolute bottom-4 right-4 bg-primary/95 backdrop-blur-md text-white px-5 py-2.5 rounded-lg border-l-4 border-secondary-container font-data-mono text-data-mono flex items-center gap-2.5 shadow-md">
-                  <span className="material-symbols-outlined text-[18px] text-secondary-container">biotech</span>
-                  <span className="tracking-wide">INVTZ-LAB · BATCH PASS SGS 99.8%</span>
+                <div className="absolute bottom-4 right-4 bg-[#081E14]/95 backdrop-blur-md text-white px-5 py-2.5 rounded-xl border-2 border-[#E5B80B] font-data-mono text-data-mono flex items-center gap-2.5 shadow-[0_4px_15px_rgba(229,184,11,0.3)]">
+                  <span className="material-symbols-outlined text-[20px] text-[#E5B80B]">biotech</span>
+                  <span className="tracking-wide font-bold">INVTZ-LAB · BATCH PASS SGS 99.8%</span>
                 </div>
               </div>
 
-              {/* Floating Dark Emerald Value Card with Royal Gold Checkmarks */}
-              <div className="mt-6 p-6 rounded-2xl bg-[#081E14] text-white border border-secondary/35 shadow-xl">
+              {/* Floating Dark Emerald Value Card with 916 KDM Gold Radiance */}
+              <div className="mt-6 p-6 rounded-2xl bg-[#081E14] text-white border-2 border-[#E5B80B] shadow-[0_12px_35px_-5px_rgba(229,184,11,0.35)]">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex items-center gap-3">
-                    <span className="w-7 h-7 rounded-full bg-secondary/25 text-secondary-container flex items-center justify-center font-bold text-sm shrink-0 border border-secondary/40">✓</span>
-                    <span className="text-sm font-medium text-white/95">APEDA &amp; Spices Board Certified</span>
+                    <span className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#C59318] via-[#E5B80B] to-[#FFE873] text-[#0A1E13] flex items-center justify-center font-black text-sm shrink-0 shadow-[0_0_12px_rgba(229,184,11,0.6)]">✓</span>
+                    <span className="text-sm font-semibold text-white/95">APEDA &amp; Spices Board Certified</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="w-7 h-7 rounded-full bg-secondary/25 text-secondary-container flex items-center justify-center font-bold text-sm shrink-0 border border-secondary/40">✓</span>
-                    <span className="text-sm font-medium text-white/95">Direct Deepwater Berth Quay 02</span>
+                    <span className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#C59318] via-[#E5B80B] to-[#FFE873] text-[#0A1E13] flex items-center justify-center font-black text-sm shrink-0 shadow-[0_0_12px_rgba(229,184,11,0.6)]">✓</span>
+                    <span className="text-sm font-semibold text-white/95">Direct Deepwater Berth Quay 02</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="w-7 h-7 rounded-full bg-secondary/25 text-secondary-container flex items-center justify-center font-bold text-sm shrink-0 border border-secondary/40">✓</span>
-                    <span className="text-sm font-medium text-white/95">100% Sortex Optical Cleaned</span>
+                    <span className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#C59318] via-[#E5B80B] to-[#FFE873] text-[#0A1E13] flex items-center justify-center font-black text-sm shrink-0 shadow-[0_0_12px_rgba(229,184,11,0.6)]">✓</span>
+                    <span className="text-sm font-semibold text-white/95">100% Sortex Optical Cleaned</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="w-7 h-7 rounded-full bg-secondary/25 text-secondary-container flex items-center justify-center font-bold text-sm shrink-0 border border-secondary/40">✓</span>
-                    <span className="text-sm font-medium text-white/95">Incoterms 2020: CIF / FOB / CFR</span>
+                    <span className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#C59318] via-[#E5B80B] to-[#FFE873] text-[#0A1E13] flex items-center justify-center font-black text-sm shrink-0 shadow-[0_0_12px_rgba(229,184,11,0.6)]">✓</span>
+                    <span className="text-sm font-semibold text-white/95">Incoterms 2020: CIF / FOB / CFR</span>
                   </div>
                 </div>
               </div>
@@ -187,14 +187,14 @@ export default function HomePage() {
             {/* Narrative Column (5 Cols on desktop) */}
             <div className="lg:col-span-5 flex flex-col justify-center">
               <div className="inline-flex items-center gap-3 mb-4">
-                <span className="font-data-mono text-data-mono text-secondary font-semibold">01</span>
-                <span className="w-4 h-px bg-secondary/50" />
-                <span className="font-eyebrow-bold text-eyebrow-bold uppercase tracking-[0.2em] text-secondary">
+                <span className="font-data-mono text-data-mono text-[#E5B80B] font-bold text-base">01</span>
+                <span className="w-8 h-0.5 bg-[#E5B80B]" />
+                <span className="font-eyebrow-bold text-eyebrow-bold uppercase tracking-[0.22em] text-[#E5B80B] font-extrabold drop-shadow-xs">
                   ABOUT THE HOUSE
                 </span>
               </div>
               <h2 className="font-headline-lg text-headline-lg text-on-surface mb-6 leading-tight">
-                Connecting Indian soil to global tables &amp; mills
+                Connecting Indian soil to <span className="text-[#C69214] italic">global tables &amp; mills</span>
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
                 SVMR Exports bridges India’s rich agrarian hinterlands and state-of-the-art weaving clusters directly with procurement directors worldwide. Operating out of the Visakhapatnam maritime zone, we eliminate redundant intermediaries.
@@ -204,11 +204,11 @@ export default function HomePage() {
               </p>
               <div className="pt-2">
                 <Link
-                  className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-white text-primary border border-secondary/35 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 font-label-md text-label-md shadow-xs group"
+                  className="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-white text-primary border-2 border-[#E5B80B] hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 font-label-md text-label-md shadow-md group hover:scale-[1.02]"
                   href="/about-us"
                 >
-                  <span className="font-semibold">Read our complete story</span>
-                  <span className="material-symbols-outlined text-[18px] text-secondary group-hover:text-secondary-container group-hover:translate-x-1.5 transition-all">
+                  <span className="font-bold">Read our complete story</span>
+                  <span className="material-symbols-outlined text-[19px] text-[#E5B80B] group-hover:text-secondary-fixed group-hover:translate-x-1.5 transition-all">
                     arrow_forward
                   </span>
                 </Link>
@@ -348,75 +348,75 @@ export default function HomePage() {
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12 z-10">
           <div className="max-w-2xl mb-16">
             <div className="inline-flex items-center gap-3 mb-3">
-              <span className="font-data-mono text-data-mono text-secondary-container font-semibold">03</span>
-              <span className="w-4 h-px bg-secondary-container/50" />
-              <span className="font-eyebrow-bold text-eyebrow-bold uppercase tracking-[0.2em] text-secondary-container">
+              <span className="font-data-mono text-data-mono text-[#E5B80B] font-bold text-base">03</span>
+              <span className="w-8 h-0.5 bg-[#E5B80B]" />
+              <span className="font-eyebrow-bold text-eyebrow-bold uppercase tracking-[0.22em] text-[#E5B80B] font-extrabold drop-shadow-xs">
                 INSTITUTIONAL RELIABILITY
               </span>
             </div>
             <h2 className="font-headline-lg text-headline-lg text-surface-bright leading-tight">
-              Engineered for international risk mitigation &amp; velocity
+              Engineered for international risk mitigation &amp; <span className="text-[#FDE047] italic">velocity</span>
             </h2>
           </div>
-          {/* 4 Columns separated by Gold Hairlines */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 lg:divide-x divide-secondary/30">
+          {/* 4 Columns separated by KDM Gold Hairlines */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 lg:divide-x divide-[#E5B80B]/30">
             {/* Feature 1 */}
-            <div className="pt-8 pb-8 md:pt-0 lg:pr-8 flex flex-col justify-between">
+            <div className="pt-8 pb-8 md:pt-0 lg:pr-8 flex flex-col justify-between group">
               <div>
-                <div className="w-12 h-12 rounded border border-secondary-container/30 flex items-center justify-center text-secondary-container mb-6 bg-primary/20">
-                  <span className="material-symbols-outlined text-[26px]">verified</span>
+                <div className="w-14 h-14 rounded-2xl border-2 border-[#E5B80B] flex items-center justify-center text-[#E5B80B] mb-6 bg-[#081E14] shadow-[0_0_20px_rgba(229,184,11,0.35)] transition-transform duration-300 group-hover:scale-110">
+                  <span className="material-symbols-outlined text-[28px]">verified</span>
                 </div>
-                <h3 className="font-title-md text-title-md text-surface-bright mb-3">Quality Assured</h3>
+                <h3 className="font-title-md text-title-md text-surface-bright mb-3 group-hover:text-[#FDE047] transition-colors">Quality Assured</h3>
                 <p className="font-body-sm text-body-sm text-surface-bright/75 leading-relaxed mb-4">
                   Lab-tested lots with comprehensive batch certificates. Third-party testing via SGS or Bureau Veritas readily facilitated upon request.
                 </p>
               </div>
-              <span className="font-data-mono text-data-mono text-secondary-fixed/80 block mt-2">
+              <span className="font-data-mono text-data-mono text-[#FDE047] font-bold block mt-2 tracking-wide">
                 Purity: 99.5% min
               </span>
             </div>
             {/* Feature 2 */}
-            <div className="pt-8 pb-8 md:pt-0 lg:px-8 flex flex-col justify-between">
+            <div className="pt-8 pb-8 md:pt-0 lg:px-8 flex flex-col justify-between group">
               <div>
-                <div className="w-12 h-12 rounded border border-secondary-container/30 flex items-center justify-center text-secondary-container mb-6 bg-primary/20">
-                  <span className="material-symbols-outlined text-[26px]">directions_boat</span>
+                <div className="w-14 h-14 rounded-2xl border-2 border-[#E5B80B] flex items-center justify-center text-[#E5B80B] mb-6 bg-[#081E14] shadow-[0_0_20px_rgba(229,184,11,0.35)] transition-transform duration-300 group-hover:scale-110">
+                  <span className="material-symbols-outlined text-[28px]">directions_boat</span>
                 </div>
-                <h3 className="font-title-md text-title-md text-surface-bright mb-3">On-time Shipping</h3>
+                <h3 className="font-title-md text-title-md text-surface-bright mb-3 group-hover:text-[#FDE047] transition-colors">On-time Shipping</h3>
                 <p className="font-body-sm text-body-sm text-surface-bright/75 leading-relaxed mb-4">
                   Planned direct dispatch from Visakhapatnam &amp; Chennai deep-water berths, maintaining strict sailing schedules with global carrier alliances.
                 </p>
               </div>
-              <span className="font-data-mono text-data-mono text-secondary-fixed/80 block mt-2">
+              <span className="font-data-mono text-data-mono text-[#FDE047] font-bold block mt-2 tracking-wide">
                 Avg Transit: 14-28 Days
               </span>
             </div>
             {/* Feature 3 */}
-            <div className="pt-8 pb-8 md:pt-8 lg:pt-0 lg:px-8 flex flex-col justify-between">
+            <div className="pt-8 pb-8 md:pt-8 lg:pt-0 lg:px-8 flex flex-col justify-between group">
               <div>
-                <div className="w-12 h-12 rounded border border-secondary-container/30 flex items-center justify-center text-secondary-container mb-6 bg-primary/20">
-                  <span className="material-symbols-outlined text-[26px]">inventory_2</span>
+                <div className="w-14 h-14 rounded-2xl border-2 border-[#E5B80B] flex items-center justify-center text-[#E5B80B] mb-6 bg-[#081E14] shadow-[0_0_20px_rgba(229,184,11,0.35)] transition-transform duration-300 group-hover:scale-110">
+                  <span className="material-symbols-outlined text-[28px]">inventory_2</span>
                 </div>
-                <h3 className="font-title-md text-title-md text-surface-bright mb-3">Custom Packing</h3>
+                <h3 className="font-title-md text-title-md text-surface-bright mb-3 group-hover:text-[#FDE047] transition-colors">Custom Packing</h3>
                 <p className="font-body-sm text-body-sm text-surface-bright/75 leading-relaxed mb-4">
                   Private label configurations, moisture-barrier vacuum pouches, food-grade polypropylene, and heavy-duty 25/50kg export sacks.
                 </p>
               </div>
-              <span className="font-data-mono text-data-mono text-secondary-fixed/80 block mt-2">
+              <span className="font-data-mono text-data-mono text-[#FDE047] font-bold block mt-2 tracking-wide">
                 Palletized / Break-bulk
               </span>
             </div>
             {/* Feature 4 */}
-            <div className="pt-8 pb-8 md:pt-8 lg:pt-0 lg:pl-8 flex flex-col justify-between">
+            <div className="pt-8 pb-8 md:pt-8 lg:pt-0 lg:pl-8 flex flex-col justify-between group">
               <div>
-                <div className="w-12 h-12 rounded border border-secondary-container/30 flex items-center justify-center text-secondary-container mb-6 bg-primary/20">
-                  <span className="material-symbols-outlined text-[26px]">contract</span>
+                <div className="w-14 h-14 rounded-2xl border-2 border-[#E5B80B] flex items-center justify-center text-[#E5B80B] mb-6 bg-[#081E14] shadow-[0_0_20px_rgba(229,184,11,0.35)] transition-transform duration-300 group-hover:scale-110">
+                  <span className="material-symbols-outlined text-[28px]">contract</span>
                 </div>
-                <h3 className="font-title-md text-title-md text-surface-bright mb-3">Export Documentation</h3>
+                <h3 className="font-title-md text-title-md text-surface-bright mb-3 group-hover:text-[#FDE047] transition-colors">Export Documentation</h3>
                 <p className="font-body-sm text-body-sm text-surface-bright/75 leading-relaxed mb-4">
                   Flawless commercial documentation: Ocean Bill of Lading, Phytosanitary, Certificate of Origin, Form A, and Letter of Credit compliant files.
                 </p>
               </div>
-              <span className="font-data-mono text-data-mono text-secondary-fixed/80 block mt-2">
+              <span className="font-data-mono text-data-mono text-[#FDE047] font-bold block mt-2 tracking-wide">
                 DGFT &amp; Customs Cleared
               </span>
             </div>
@@ -450,8 +450,8 @@ export default function HomePage() {
             </Link>
           </div>
 
-          {/* Interactive Category Bar (Matching Reference Demo Hover Behavior) */}
-          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3.5 mb-10 p-2.5 rounded-2xl bg-[#E8E0D0] border border-secondary/20 shadow-inner">
+          {/* Interactive Category Bar (Gleaming 916 KDM Gold Accents) */}
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3.5 mb-10 p-2.5 rounded-2xl bg-[#E6DEC8] border-2 border-[#E5B80B]/40 shadow-inner">
             {[
               { id: "all", label: "All Commodities", count: "12+" },
               { id: "rice", label: "Rice & Grains", count: "04" },
@@ -462,23 +462,23 @@ export default function HomePage() {
               <button
                 key={cat.id}
                 type="button"
-                className={`group flex items-center gap-2 px-4 sm:px-5 py-3 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-300 shadow-xs border ${
+                className={`group flex items-center gap-2 px-4 sm:px-5 py-3 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 shadow-sm border-2 ${
                   idx === 0
-                    ? "bg-primary text-white border-primary shadow-md scale-[1.02]"
-                    : "bg-white text-on-surface border-[#D8CEBC] hover:bg-primary hover:text-white hover:border-primary hover:shadow-md hover:scale-[1.02]"
+                    ? "bg-[#004f22] text-white border-[#E5B80B] shadow-[0_4px_20px_rgba(229,184,11,0.4)] scale-[1.03]"
+                    : "bg-white text-on-surface border-[#D8CEBC] hover:bg-[#004f22] hover:text-white hover:border-[#E5B80B] hover:shadow-[0_4px_18px_rgba(229,184,11,0.35)] hover:scale-[1.03]"
                 }`}
               >
                 <span>{cat.label}</span>
                 <span
-                  className={`font-data-mono text-[11px] px-2 py-0.5 rounded-full transition-colors ${
+                  className={`font-data-mono text-[11px] px-2 py-0.5 rounded-full transition-all font-black shadow-xs ${
                     idx === 0
-                      ? "bg-secondary text-surface-container-lowest font-bold"
-                      : "bg-[#F3EDE0] text-on-surface-variant group-hover:bg-secondary group-hover:text-surface-container-lowest"
+                      ? "bg-gradient-to-r from-[#FFE873] via-[#E5B80B] to-[#C59318] text-[#0A1E13]"
+                      : "bg-[#F3EDE0] text-on-surface-variant group-hover:bg-gradient-to-r group-hover:from-[#FFE873] group-hover:via-[#E5B80B] group-hover:to-[#C59318] group-hover:text-[#0A1E13]"
                   }`}
                 >
                   {cat.count}
                 </span>
-                <span className="material-symbols-outlined text-[16px] text-secondary-container transition-transform duration-300 group-hover:translate-x-1">
+                <span className="material-symbols-outlined text-[17px] text-[#E5B80B] transition-transform duration-300 group-hover:translate-x-1.5 font-bold">
                   arrow_forward
                 </span>
               </button>

@@ -308,13 +308,13 @@ export default function ProductsPage() {
                 </div>
               </div>
 
-              {/* Category Filter Module (Inspired by Reference Demo) */}
-              <div className="bg-[#FAF5EC] border border-secondary/25 rounded-2xl p-6 shadow-sm flex flex-col">
-                <div className="flex items-center justify-between pb-3 mb-5 border-b border-secondary/20">
-                  <h2 className="font-headline-sm text-headline-sm text-on-surface tracking-tight">
+              {/* Category Filter Module (Gleaming 916 KDM Gold Accents) */}
+              <div className="bg-[#FAF5EC] border-2 border-[#E5B80B]/40 rounded-2xl p-6 shadow-sm flex flex-col">
+                <div className="flex items-center justify-between pb-3 mb-5 border-b border-[#E5B80B]/30">
+                  <h2 className="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">
                     Categories
                   </h2>
-                  <span className="w-10 h-1 bg-secondary rounded-full" />
+                  <span className="w-12 h-1.5 bg-gradient-to-r from-[#FFE873] via-[#E5B80B] to-[#C59318] rounded-full shadow-xs" />
                 </div>
                 <ul className="flex flex-col gap-2.5 font-body-md text-body-md">
                   {categories.map((cat) => {
@@ -324,31 +324,31 @@ export default function ProductsPage() {
                         <button
                           type="button"
                           onClick={() => setSelectedCategory(cat.id)}
-                          className={`w-full group flex items-center justify-between px-4 py-3.5 rounded-xl font-medium transition-all duration-300 shadow-xs border ${
+                          className={`w-full group flex items-center justify-between px-4 py-3.5 rounded-xl font-bold transition-all duration-300 shadow-xs border-2 ${
                             active
-                              ? "bg-primary text-white border-primary shadow-md scale-[1.01]"
-                              : "bg-white text-on-surface border-[#E8DFCE] hover:bg-primary hover:text-white hover:border-primary hover:shadow-md hover:scale-[1.01]"
+                              ? "bg-[#004f22] text-white border-[#E5B80B] shadow-[0_4px_20px_rgba(229,184,11,0.35)] scale-[1.02]"
+                              : "bg-white text-on-surface border-[#D8CEBC] hover:bg-[#004f22] hover:text-white hover:border-[#E5B80B] hover:shadow-[0_4px_18px_rgba(229,184,11,0.3)] hover:scale-[1.02]"
                           }`}
                         >
                           <div className="flex items-center gap-2.5">
-                            <span className="font-semibold text-sm tracking-wide">
+                            <span className="text-sm tracking-wide">
                               {cat.label}
                             </span>
                             <span
-                              className={`font-data-mono text-xs px-2 py-0.5 rounded-full transition-colors ${
+                              className={`font-data-mono text-xs px-2.5 py-0.5 rounded-full transition-all font-black shadow-xs ${
                                 active
-                                  ? "bg-secondary text-surface-container-lowest font-bold"
-                                  : "bg-[#F3EDE0] text-on-surface-variant group-hover:bg-secondary group-hover:text-surface-container-lowest"
+                                  ? "bg-gradient-to-r from-[#FFE873] via-[#E5B80B] to-[#C59318] text-[#0A1E13]"
+                                  : "bg-[#F3EDE0] text-on-surface-variant group-hover:bg-gradient-to-r group-hover:from-[#FFE873] group-hover:via-[#E5B80B] group-hover:to-[#C59318] group-hover:text-[#0A1E13]"
                               }`}
                             >
                               {cat.count}
                             </span>
                           </div>
                           <span
-                            className={`material-symbols-outlined text-[18px] transition-all duration-300 ${
+                            className={`material-symbols-outlined text-[19px] transition-all duration-300 font-bold ${
                               active
-                                ? "text-secondary-container translate-x-1"
-                                : "text-on-surface-variant/60 group-hover:text-secondary-container group-hover:translate-x-1.5"
+                                ? "text-[#E5B80B] translate-x-1"
+                                : "text-on-surface-variant/60 group-hover:text-[#E5B80B] group-hover:translate-x-1.5"
                             }`}
                           >
                             arrow_forward

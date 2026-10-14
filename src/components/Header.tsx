@@ -28,7 +28,7 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md border-b border-outline-variant/30 shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-all">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#FAF7F0]/95 backdrop-blur-md border-b-2 border-[#E5B80B]/40 shadow-[0_4px_20px_rgba(229,184,11,0.15)] transition-all">
       {/* Main Navbar */}
       <div>
         <div className="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
@@ -42,27 +42,27 @@ export default function Header() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-headline-sm text-headline-sm tracking-tight text-on-surface uppercase group-hover:text-primary transition-colors">
+              <span className="font-headline-sm text-headline-sm tracking-tight text-on-surface uppercase group-hover:text-primary transition-colors font-bold">
                 SVMR EXPORTS
               </span>
-              <span className="font-eyebrow-bold text-eyebrow-bold text-secondary uppercase tracking-[0.2em]">
+              <span className="font-eyebrow-bold text-eyebrow-bold text-[#E5B80B] font-extrabold uppercase tracking-[0.22em] drop-shadow-xs">
                 ESTD. 2008 · INDIA
               </span>
             </div>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden xl:flex items-center gap-1 p-1 rounded-lg bg-surface-container-low/60 border border-outline-variant/20">
+          <nav className="hidden xl:flex items-center gap-1 p-1 rounded-xl bg-[#EFE9DC]/70 border border-[#E5B80B]/30">
             {navLinks.map((link) => {
               const active = isActive(link.href);
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-3.5 py-2 rounded transition-all font-label-md text-label-md ${
+                  className={`px-4 py-2 rounded-lg transition-all font-label-md text-label-md ${
                     active
-                      ? "bg-surface-container-high text-primary font-bold shadow-sm"
-                      : "text-on-surface-variant hover:text-on-surface hover:bg-surface-container"
+                      ? "bg-primary text-white font-bold shadow-md border-b-2 border-[#E5B80B]"
+                      : "text-on-surface hover:text-primary hover:bg-white/80"
                   }`}
                 >
                   {link.label}
@@ -76,10 +76,10 @@ export default function Header() {
             <button
               type="button"
               onClick={() => openQuoteModal()}
-              className="inline-flex items-center gap-2 bg-secondary text-surface-container-lowest font-label-md text-label-md px-4 sm:px-6 py-2.5 rounded hover:bg-on-secondary-fixed-variant transition-colors shadow-sm"
+              className="inline-flex items-center gap-2.5 bg-gradient-to-r from-[#FFE873] via-[#E5B80B] to-[#C59318] text-[#0A1E13] font-label-md text-label-md px-5 sm:px-6 py-2.5 rounded-xl font-bold shadow-[0_4px_15px_rgba(229,184,11,0.4)] hover:shadow-[0_6px_25px_rgba(229,184,11,0.6)] hover:scale-105 transition-all duration-300 border border-[#FFF089]"
             >
               <span>Get a Quote</span>
-              <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+              <span className="material-symbols-outlined text-[17px] font-bold">arrow_forward</span>
             </button>
 
             {/* Mobile Menu Toggle Button */}

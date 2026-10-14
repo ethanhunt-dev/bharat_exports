@@ -28,14 +28,17 @@
   --color-on-primary-fixed: #00210a;
   --color-on-primary-fixed-variant: #005224;
 
-  --color-secondary: #865300;
-  --color-on-secondary: #ffffff;
-  --color-secondary-container: #feb963;
-  --color-on-secondary-container: #754900;
-  --color-secondary-fixed: #ffddb8;
-  --color-secondary-fixed-dim: #feb963;
-  --color-on-secondary-fixed: #2a1700;
-  --color-on-secondary-fixed-variant: #653e00;
+  --color-secondary: #C69214;
+  --color-on-secondary: #0A1E13;
+  --color-secondary-container: #E5B80B;
+  --color-on-secondary-container: #1C1500;
+  --color-secondary-fixed: #FDE047;
+  --color-secondary-fixed-dim: #E5B80B;
+  --color-on-secondary-fixed: #2A1C00;
+  --color-on-secondary-fixed-variant: #9A6B0A;
+  --color-kdm-gold: #E5B80B;
+  --color-kdm-gold-light: #FDE047;
+  --color-kdm-gold-dark: #A16207;
 
   --color-tertiary: #234b33;
   --color-on-tertiary: #ffffff;
@@ -235,4 +238,36 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #6f7a6e;
+}
+
+/* 916 KDM Pure Gold Utilities */
+.bg-kdm-gold {
+  background: linear-gradient(135deg, #FFE873 0%, #E5B80B 45%, #C59318 80%, #9A6A10 100%);
+}
+
+.bg-kdm-gold-subtle {
+  background: linear-gradient(135deg, rgba(229, 184, 11, 0.15) 0%, rgba(229, 184, 11, 0.05) 100%);
+}
+
+.text-kdm-gold {
+  color: #E5B80B;
+}
+
+.text-kdm-gold-gradient {
+  background: linear-gradient(135deg, #FFF089 0%, #E5B80B 50%, #C59318 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-kdm-gold {
+  border-color: #E5B80B;
+}
+
+.border-kdm-gold-glow {
+  border-color: #E5B80B;
+  box-shadow: 0 0 15px rgba(229, 184, 11, 0.35);
+}
+
+.shadow-kdm-gold {
+  box-shadow: 0 4px 20px -2px rgba(229, 184, 11, 0.45);
 }
