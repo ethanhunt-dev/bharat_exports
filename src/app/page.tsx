@@ -139,34 +139,6 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Anchored Baseline Metric Bar */}
-        <div className="relative z-20 w-full border-t border-white/20 bg-black/75 backdrop-blur-xl">
-          <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/20 py-5">
-            <div className="flex items-center gap-4 py-2 md:py-0 md:pr-6">
-              <span className="font-display-md text-headline-lg text-secondary-fixed drop-shadow-sm">40+</span>
-              <div className="flex flex-col">
-                <span className="font-title-md text-title-md text-white font-semibold">Countries Served</span>
-                <span className="font-data-mono text-data-mono text-white/70">GCC, EU, Americas &amp; Far East</span>
-              </div>
-            </div>
-            <div className="flex items-center gap-4 py-2 md:py-0 md:px-8">
-              <span className="font-display-md text-headline-lg text-secondary-fixed drop-shadow-sm">120+</span>
-              <div className="flex flex-col">
-                <span className="font-title-md text-title-md text-white font-semibold">Verified Importers</span>
-                <span className="font-data-mono text-data-mono text-white/70">Tier-1 Institutional Buyers</span>
-              </div>
-            </div>
-            <div className="flex items-center gap-4 py-2 md:py-0 md:pl-8">
-              <div className="w-10 h-10 rounded border border-secondary-container/60 flex items-center justify-center text-secondary-container bg-black/40 shrink-0">
-                <span className="material-symbols-outlined text-[20px]">verified</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-title-md text-title-md text-white font-semibold">ISO 9001:2015 &amp; APEDA</span>
-                <span className="font-data-mono text-data-mono text-white/70">Spices Board Recognized</span>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* 2. COMPANY INTRODUCTION (Asymmetric 7/5 Split) */}
