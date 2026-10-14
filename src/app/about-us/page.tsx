@@ -3,50 +3,25 @@
 import React from "react";
 import Link from "next/link";
 import { useQuoteModal } from "@/context/QuoteModalContext";
+import PageBanner from "@/components/PageBanner";
 
 export default function AboutUsPage() {
   const { openQuoteModal } = useQuoteModal();
 
   return (
     <div className="flex flex-col w-full">
-      {/* 1. Inner Page Banner (Dark Band Well) */}
-      <section className="relative w-full bg-on-primary-fixed text-surface-bright overflow-hidden">
-        {/* Ambient Chart Line Overlay */}
-        <div className="absolute inset-0 pointer-events-none opacity-10">
-          <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
-            <path className="text-secondary-fixed" d="M0,350 Q300,120 600,280 T1200,80" fill="none" stroke="currentColor" strokeWidth="1.5" />
-            <path className="text-secondary-fixed" d="M0,150 Q450,380 900,160 T1200,320" fill="none" stroke="currentColor" strokeDasharray="6,6" strokeWidth="1" />
-          </svg>
-        </div>
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-20 flex flex-col justify-between">
-          <div className="flex items-center gap-2 mb-6 font-data-mono text-data-mono text-surface-bright/70">
-            <Link className="hover:text-surface-bright transition-colors" href="/">
-              Home
-            </Link>
-            <span className="text-secondary-container">/</span>
-            <span className="text-secondary-fixed uppercase font-eyebrow-bold text-eyebrow-bold tracking-widest">
-              About Us
-            </span>
-          </div>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6">
-            <div>
-              <span className="font-eyebrow-bold text-eyebrow-bold uppercase tracking-[0.25em] text-secondary-fixed block mb-3">
-                SVMR Institutional Charter
-              </span>
-              <h1 className="font-display-lg text-display-lg uppercase tracking-tight text-surface-bright">
-                ABOUT US
-              </h1>
-            </div>
-            <div className="max-w-md">
-              <p className="font-body-md text-body-md text-surface-bright/80 leading-relaxed">
-                Institutional scale, multi-generational agrarian knowledge, and coastal port readiness under a single trade authority.
-              </p>
-            </div>
-          </div>
-          {/* Gold Hairline Decorative Rule */}
-          <div className="w-full h-px bg-secondary-container/30 mt-6" />
-        </div>
-      </section>
+      {/* 1. Cinematic Luxury Page Banner */}
+      <PageBanner
+        title="About Us"
+        eyebrow="BHARAT GLOBAL EXPORTS · COMPANY PROFILE"
+        breadcrumbCurrent="About Us"
+        bgImage="/images/about_banner_pulses.jpg"
+        description="Institutional scale, multi-generational agrarian knowledge, and coastal port readiness under a single trade authority."
+        metaBadge={{
+          label: "PORT GATEWAY",
+          value: "INVTZ1 · VISAKHAPATNAM",
+        }}
+      />
 
       {/* 2. Company Profile (Asymmetric Editorial Layout) */}
       <section className="w-full bg-surface py-20 lg:py-28 relative">

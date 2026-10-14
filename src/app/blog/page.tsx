@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import PageBanner from "@/components/PageBanner";
+import { useData } from "@/context/DataContext";
 
 interface Article {
   id: string;
@@ -100,14 +101,38 @@ const ARTICLES: Article[] = [
 ];
 
 export default function BlogPage() {
+  const { blogs } = useData();
   const [selectedTopic, setSelectedTopic] = useState<string>("all");
   const [newsletterEmail, setNewsletterEmail] = useState<string>("");
   const [subscribed, setSubscribed] = useState<boolean>(false);
 
+  const allArticles = useMemo(() => {
+    if (blogs && blogs.length > 0) {
+      return blogs.map((b) => ({
+        id: b.id,
+        slug: b.slug || "export-documentation-guide",
+        title: b.title,
+        category: (b.category.toLowerCase().includes("reg")
+          ? "regulations"
+          : b.category.toLowerCase().includes("qual")
+          ? "quality"
+          : "logistics") as "regulations" | "logistics" | "quality",
+        categoryLabel: b.category,
+        tag: b.category,
+        date: b.date,
+        readTime: b.readTime,
+        description: b.summary,
+        imgUrl: b.imgUrl,
+        alt: b.title,
+      }));
+    }
+    return ARTICLES;
+  }, [blogs]);
+
   const filteredArticles = useMemo(() => {
-    if (selectedTopic === "all") return ARTICLES;
-    return ARTICLES.filter((art) => art.category === selectedTopic);
-  }, [selectedTopic]);
+    if (selectedTopic === "all") return allArticles;
+    return allArticles.filter((art) => art.category === selectedTopic);
+  }, [allArticles, selectedTopic]);
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();

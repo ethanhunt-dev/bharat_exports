@@ -4,6 +4,7 @@ import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import { useQuoteModal } from "@/context/QuoteModalContext";
 import PageBanner from "@/components/PageBanner";
+import { useData } from "@/context/DataContext";
 
 interface Product {
   id: string;
@@ -172,6 +173,7 @@ const PRODUCTS: Product[] = [
 
 export default function ProductsPage() {
   const { openQuoteModal } = useQuoteModal();
+  const { products } = useData();
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [selectedGrade, setSelectedGrade] = useState<string>("all");
   const [organicOnly, setOrganicOnly] = useState<boolean>(false);
@@ -180,16 +182,16 @@ export default function ProductsPage() {
   const [specDownloaded, setSpecDownloaded] = useState<boolean>(false);
 
   const categories = [
-    { id: "all", label: "All Commodities", count: PRODUCTS.length },
-    { id: "spices", label: "Spices", count: PRODUCTS.filter((p) => p.category === "spices").length },
-    { id: "grains", label: "Rice & Grains", count: PRODUCTS.filter((p) => p.category === "grains").length },
-    { id: "textiles", label: "Textiles & Cotton", count: PRODUCTS.filter((p) => p.category === "textiles").length },
-    { id: "dry-fruits", label: "Dry Fruits & Nuts", count: PRODUCTS.filter((p) => p.category === "dry-fruits").length },
-    { id: "pulses", label: "Pulses & Oilseeds", count: PRODUCTS.filter((p) => p.category === "pulses").length },
+    { id: "all", label: "All Commodities", count: products.length },
+    { id: "spices", label: "Spices", count: products.filter((p) => p.category === "spices").length },
+    { id: "grains", label: "Rice & Grains", count: products.filter((p) => p.category === "grains").length },
+    { id: "textiles", label: "Textiles & Cotton", count: products.filter((p) => p.category === "textiles").length },
+    { id: "dry-fruits", label: "Dry Fruits & Nuts", count: products.filter((p) => p.category === "dry-fruits").length },
+    { id: "pulses", label: "Pulses & Oilseeds", count: products.filter((p) => p.category === "pulses").length },
   ];
 
   const filteredProducts = useMemo(() => {
-    return PRODUCTS.filter((p) => {
+    return products.filter((p) => {
       if (selectedCategory !== "all" && p.category !== selectedCategory) {
         return false;
       }
@@ -210,7 +212,7 @@ export default function ProductsPage() {
       }
       return true;
     });
-  }, [selectedCategory, selectedGrade, organicOnly, searchQuery]);
+  }, [products, selectedCategory, selectedGrade, organicOnly, searchQuery]);
 
   const handleDownloadSpec = () => {
     setSpecDownloaded(true);

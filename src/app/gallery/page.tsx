@@ -5,22 +5,7 @@ import Link from "next/link";
 import { useQuoteModal } from "@/context/QuoteModalContext";
 import PageBanner from "@/components/PageBanner";
 import AnimatedCounter from "@/components/AnimatedCounter";
-
-interface GalleryItem {
-  id: string;
-  title: string;
-  subtitle: string;
-  category: "products" | "warehouse" | "shipping" | "quality";
-  badge: string;
-  meta: string;
-  description: string;
-  imgUrl: string;
-  alt: string;
-  spanClass: string;
-  minHeight: string;
-  lot?: string;
-  extraMeta?: string[];
-}
+import { useData, GalleryItem } from "@/context/DataContext";
 
 const GALLERY_ITEMS: GalleryItem[] = [
   {
@@ -158,21 +143,26 @@ const GALLERY_ITEMS: GalleryItem[] = [
 
 export default function GalleryPage() {
   const { openQuoteModal } = useQuoteModal();
+  const { gallery } = useData();
   const [activeFilter, setActiveFilter] = useState<string>("all");
   const [lightboxItem, setLightboxItem] = useState<GalleryItem | null>(null);
 
+  const allItems = useMemo(() => {
+    return gallery.length > 0 ? gallery : GALLERY_ITEMS;
+  }, [gallery]);
+
   const filterTabs = [
-    { id: "all", label: "All Manifests", count: 10 },
-    { id: "products", label: "Products & Spices", count: 3 },
-    { id: "warehouse", label: "Warehouse & Packing", count: 3 },
-    { id: "shipping", label: "Shipping & Port Operations", count: 3 },
-    { id: "quality", label: "Quality Lab & Team", count: 2 },
+    { id: "all", label: "All Manifests", count: allItems.length },
+    { id: "products", label: "Products & Spices", count: allItems.filter((i) => i.category === "products").length },
+    { id: "warehouse", label: "Warehouse & Packing", count: allItems.filter((i) => i.category === "warehouse").length },
+    { id: "shipping", label: "Shipping & Port Operations", count: allItems.filter((i) => i.category === "shipping").length },
+    { id: "quality", label: "Quality Lab & Team", count: allItems.filter((i) => i.category === "quality").length },
   ];
 
   const filteredItems = useMemo(() => {
-    if (activeFilter === "all") return GALLERY_ITEMS;
-    return GALLERY_ITEMS.filter((item) => item.category === activeFilter);
-  }, [activeFilter]);
+    if (activeFilter === "all") return allItems;
+    return allItems.filter((item) => item.category === activeFilter);
+  }, [allItems, activeFilter]);
 
   return (
     <div className="flex flex-col w-full">
@@ -228,7 +218,7 @@ export default function GalleryPage() {
             <article
               key={item.id}
               onClick={() => setLightboxItem(item)}
-              className={`gallery-tile ${item.spanClass} group relative overflow-hidden bg-surface-container border border-secondary/30 rounded flex flex-col justify-between shadow-sm ${item.minHeight} cursor-pointer transition-all hover:border-secondary`}
+              className={`gallery-tile ${(item as any).spanClass || "lg:col-span-4"} group relative overflow-hidden bg-surface-container border border-secondary/30 rounded flex flex-col justify-between shadow-sm ${(item as any).minHeight || "min-h-[300px]"} cursor-pointer transition-all hover:border-secondary`}
             >
               <div className="absolute inset-0 overflow-hidden">
                 <img
@@ -269,7 +259,7 @@ export default function GalleryPage() {
                 </p>
                 {item.extraMeta && (
                   <div className="flex flex-wrap items-center gap-3 pt-3 mt-2 border-t border-secondary/30 text-surface-bright/70 font-data-mono text-[11px]">
-                    {item.extraMeta.map((em, idx) => (
+                    {item.extraMeta.map((em: string, idx: number) => (
                       <span key={idx}>{em}</span>
                     ))}
                   </div>

@@ -25,9 +25,9 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Strictly 6 approved public navigation destinations (No About Us, No Admin)
   const navLinks = [
     { label: "Home", href: "/" },
+    { label: "About Us", href: "/about-us" },
     { label: "Products", href: "/products" },
     { label: "Services", href: "/services" },
     { label: "Blog", href: "/blog" },

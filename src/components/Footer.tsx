@@ -84,6 +84,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link className="hover:text-[#FDE047] transition-colors" href="/about-us">
+                  About Us (Company Profile)
+                </Link>
+              </li>
+              <li>
                 <Link className="hover:text-[#FDE047] transition-colors" href="/products">
                   Product Catalogue
                 </Link>
@@ -227,9 +232,19 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 font-sans text-xs text-[#E7EDE6]/60">
           <p>© 2026 Bharat Global Exports Pvt. Ltd. All rights reserved.</p>
-          <p className="font-mono tracking-wider text-[#C5A15B]">
-            IEC No. 0308012948 · APEDA &amp; Spices Board of India Registered · US-FDA Compliant
-          </p>
+          <div className="flex items-center gap-4">
+            <span className="font-mono tracking-wider text-[#C5A15B]">
+              IEC No. 0308012948 · APEDA &amp; Spices Board of India Registered
+            </span>
+            <span className="text-[#C5A15B]/40">•</span>
+            <Link
+              href="/admin"
+              className="text-[#E7EDE6]/60 hover:text-[#E5B80B] transition-colors flex items-center gap-1 font-mono text-[11px]"
+            >
+              <span className="material-symbols-outlined text-[14px]">admin_panel_settings</span>
+              <span>Admin Panel</span>
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

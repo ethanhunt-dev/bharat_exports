@@ -2,9 +2,11 @@
 
 import React, { useState, useEffect } from "react";
 import { useQuoteModal } from "@/context/QuoteModalContext";
+import { useData } from "@/context/DataContext";
 
 export default function QuoteModal() {
   const { isOpen, prefilledCommodity, closeQuoteModal } = useQuoteModal();
+  const { addEnquiry } = useData();
   const [commodity, setCommodity] = useState(prefilledCommodity || "1121-basmati");
   const [incoterm, setIncoterm] = useState("FOB");
   const [submitted, setSubmitted] = useState(false);
@@ -28,6 +30,16 @@ export default function QuoteModal() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    addEnquiry({
+      fullName: formData.fullName || "International Buyer",
+      email: formData.email,
+      phone: formData.phone,
+      company: formData.company,
+      commodity: `${commodity} (${incoterm})`,
+      destinationPort: formData.destinationPort,
+      quantity: formData.quantity,
+      notes: formData.notes,
+    });
     setSubmitted(true);
   };
 

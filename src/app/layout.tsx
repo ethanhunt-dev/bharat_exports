@@ -6,7 +6,9 @@ import Footer from "@/components/Footer";
 import QuoteModal from "@/components/QuoteModal";
 import ScrollProgress from "@/components/ScrollProgress";
 import CustomCursor from "@/components/CustomCursor";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { QuoteModalProvider } from "@/context/QuoteModalContext";
+import { DataProvider } from "@/context/DataContext";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -64,14 +66,17 @@ export default function RootLayout({
       <body className="bg-surface text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed min-h-screen flex flex-col">
         <ScrollProgress />
         <CustomCursor />
-        <QuoteModalProvider>
-          <Header />
-          <main className="w-full bg-surface min-h-screen flex-1">
-            {children}
-          </main>
-          <Footer />
-          <QuoteModal />
-        </QuoteModalProvider>
+        <DataProvider>
+          <QuoteModalProvider>
+            <Header />
+            <main className="w-full bg-surface min-h-screen flex-1">
+              {children}
+            </main>
+            <Footer />
+            <QuoteModal />
+            <FloatingWhatsApp />
+          </QuoteModalProvider>
+        </DataProvider>
       </body>
     </html>
   );

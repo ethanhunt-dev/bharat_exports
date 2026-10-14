@@ -3,8 +3,10 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import PageBanner from "@/components/PageBanner";
+import { useData } from "@/context/DataContext";
 
 export default function ContactPage() {
+  const { addEnquiry } = useData();
   const [incoterm, setIncoterm] = useState<string>("FOB");
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [formData, setFormData] = useState({
@@ -21,6 +23,16 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    addEnquiry({
+      fullName: formData.fullName || "Prospective Buyer",
+      email: formData.corporateEmail,
+      phone: formData.phoneWhatsApp,
+      company: formData.organization,
+      commodity: `${formData.commodityRequired} (${incoterm})`,
+      destinationPort: formData.destinationPort,
+      quantity: formData.orderVolume,
+      notes: formData.messageNotes,
+    });
     setSubmitted(true);
   };
 
