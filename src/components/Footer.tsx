@@ -22,15 +22,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-12 border-b border-secondary/20">
           {/* Col 1: Brand & Identity */}
           <div className="flex flex-col">
-            <div className="bg-surface-bright rounded p-3 w-fit mb-5 shadow-sm">
-              <div className="flex items-center gap-2 text-primary">
-                <span className="material-symbols-outlined text-[24px] text-secondary">
-                  workspace_premium
-                </span>
-                <span className="font-headline-sm text-headline-sm text-on-surface uppercase">
-                  SVMR
-                </span>
-              </div>
+            <div className="bg-surface-bright rounded-lg p-2.5 w-fit mb-5 shadow-sm border border-secondary/30">
+              <img
+                src="/svmr_logo.png"
+                alt="SVMR Exports Official Emblem"
+                className="h-12 w-auto object-contain"
+              />
             </div>
             <p className="font-body-md text-body-md text-surface-bright/80 leading-relaxed mb-6">
               Premier Indian Government Recognized Three-Star Export House connecting Andhra agricultural wealth and Indian textiles to 40+ global destinations.

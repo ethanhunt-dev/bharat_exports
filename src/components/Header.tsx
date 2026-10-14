@@ -33,9 +33,13 @@ export default function Header() {
       <div>
         <div className="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3.5 group">
-            <div className="w-10 h-10 rounded bg-primary text-secondary-fixed flex items-center justify-center border border-secondary/40 shadow-sm transition-transform group-hover:scale-105">
-              <span className="material-symbols-outlined text-[24px]">shield</span>
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+              <img
+                src="/svmr_logo.png"
+                alt="SVMR Exports Official Emblem"
+                className="h-12 w-auto object-contain drop-shadow-sm"
+              />
             </div>
             <div className="flex flex-col">
               <span className="font-headline-sm text-headline-sm tracking-tight text-on-surface uppercase group-hover:text-primary transition-colors">
