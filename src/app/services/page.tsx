@@ -12,9 +12,9 @@ export default function ServicesPage() {
     <div className="flex flex-col w-full">
       {/* 1. Cinematic Luxury Page Banner */}
       <PageBanner
-        title="EXPORT SERVICES"
+        title="Services"
         eyebrow="BHARAT GLOBAL EXPORTS · INSTITUTIONAL CAPABILITIES"
-        breadcrumbCurrent="Export Services"
+        breadcrumbCurrent="Services"
         bgImage="/images/banner_port_cranes.jpg"
         description="Integrated farm-to-berth export solutions compliant with US-FDA, EU phytosanitary norms, and Codex Alimentarius."
         metaBadge={{

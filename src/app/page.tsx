@@ -104,12 +104,12 @@ export default function HomePage() {
     <div className="flex flex-col w-full">
       {/* 1. CINEMATIC HERO SECTION WITH LUXURY EDITORIAL OVERLAY */}
       <section
-        className="relative w-full -mt-20 pt-20 bg-[#0B281D] text-white overflow-hidden flex flex-col justify-between"
+        className="relative w-full bg-[#0B281D] text-white overflow-hidden flex flex-col justify-between"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
         {/* Full-Bleed Auto-Playing Port & Maritime Slides with Slow Cinematic Movement */}
-        <div className="relative w-full h-[520px] sm:h-[620px] lg:h-[720px] overflow-hidden">
+        <div className="relative w-full h-[560px] sm:h-[650px] lg:h-[740px] overflow-hidden">
           {heroSlides.map((slide, idx) => (
             <div
               key={slide.id}
@@ -129,7 +129,7 @@ export default function HomePage() {
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0B281D] to-transparent" />
 
           {/* Hero Content Overlay */}
-          <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 h-full flex flex-col justify-center">
+          <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 h-full flex flex-col justify-center pt-20 sm:pt-24 lg:pt-28">
             <div className="max-w-3xl">
               {/* Understated Global Trade Label */}
               <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#123D2B]/80 backdrop-blur-md border border-[#C5A15B]/40 shadow-sm mb-6">

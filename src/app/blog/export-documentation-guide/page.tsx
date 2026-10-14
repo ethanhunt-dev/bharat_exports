@@ -27,9 +27,9 @@ export default function BlogDetailPage() {
     <div className="flex flex-col w-full">
       {/* 1. Cinematic Luxury Page Banner */}
       <PageBanner
-        title="EXPORT DOCUMENTATION DOSSIER"
+        title="Export Documentation Guide"
         eyebrow="BHARAT GLOBAL EXPORTS · TRADE ADVISORY #48"
-        breadcrumbCurrent="Documentation & Customs"
+        breadcrumbCurrent="Documentation Guide"
         parentBreadcrumb={{ label: "Blog", href: "/blog" }}
         bgImage="/images/banner_port_cranes.jpg"
         description="Comprehensive compliance guide for Indian port customs clearing, Bill of Lading execution, and phytosanitary verification."

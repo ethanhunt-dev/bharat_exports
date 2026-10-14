@@ -228,9 +228,9 @@ export default function ProductsPage() {
     <div className="flex flex-col w-full">
       {/* 1. Cinematic Luxury Agricultural Page Banner */}
       <PageBanner
-        title="OUR PRODUCTS"
+        title="Products"
         eyebrow="BHARAT GLOBAL EXPORTS · INSTITUTIONAL CATALOGUE"
-        breadcrumbCurrent="Our Products"
+        breadcrumbCurrent="Products"
         bgImage="/images/products_banner_spices.jpg"
         description="Government Recognized Three-Star Export House providing institutional grades, guaranteed phytosanitary compliance, and direct Visakhapatnam port transshipment."
         metaBadge={{

@@ -28,7 +28,7 @@ export default function ContactPage() {
     <div className="flex flex-col w-full">
       {/* 1. Cinematic Luxury Page Banner */}
       <PageBanner
-        title="CONTACT US"
+        title="Contact Us"
         eyebrow="BHARAT GLOBAL EXPORTS · GLOBAL TRADE DESK"
         breadcrumbCurrent="Contact Us"
         bgImage="/images/banner_port_cranes.jpg"

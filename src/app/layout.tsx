@@ -66,7 +66,7 @@ export default function RootLayout({
         <CustomCursor />
         <QuoteModalProvider>
           <Header />
-          <main className="w-full pt-20 bg-surface min-h-[calc(100vh-80px)] flex-1">
+          <main className="w-full bg-surface min-h-screen flex-1">
             {children}
           </main>
           <Footer />

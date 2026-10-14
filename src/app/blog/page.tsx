@@ -121,9 +121,9 @@ export default function BlogPage() {
     <div className="flex flex-col w-full">
       {/* 1. Cinematic Luxury Page Banner */}
       <PageBanner
-        title="TRADE INSIGHTS"
+        title="Blog & Insights"
         eyebrow="BHARAT GLOBAL EXPORTS · KNOWLEDGE ARCHIVE"
-        breadcrumbCurrent="Blog & Insights"
+        breadcrumbCurrent="Blog"
         bgImage="/images/products_banner_spices.jpg"
         description="Authoritative regulatory analysis, ocean freight forecasts, and phytosanitary quality benchmarks for global food importers and procurement directors."
         metaBadge={{

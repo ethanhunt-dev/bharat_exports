@@ -178,7 +178,7 @@ export default function GalleryPage() {
     <div className="flex flex-col w-full">
       {/* 1. Cinematic Luxury Page Banner */}
       <PageBanner
-        title="FACILITY & PORT GALLERY"
+        title="Operations Gallery"
         eyebrow="BHARAT GLOBAL EXPORTS · OPERATIONAL ARCHIVE"
         breadcrumbCurrent="Gallery"
         bgImage="/images/banner_port_cranes.jpg"
