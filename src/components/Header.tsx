@@ -50,35 +50,35 @@ export default function Header() {
           : "bg-black/35 backdrop-blur-sm border-b border-white/10 py-4"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between">
-        {/* Logo / Brand Wordmark */}
-        <Link href="/" className="flex items-center gap-3.5 group">
-          <div className="relative flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-between">
+        {/* Logo / Brand Wordmark: Large Logo with Brand Name Underneath */}
+        <Link href="/" className="flex flex-col items-center group shrink-0">
+          <div className="relative flex items-center justify-center bg-white rounded-lg px-2.5 py-1 shadow-md border border-[#C5A15B]/50 transition-transform duration-300 group-hover:scale-105">
             <img
               src="/svmr_logo.png"
               alt="Bharat Global Exports Emblem"
-              className="h-11 sm:h-12 w-auto object-contain drop-shadow-md"
+              className="h-13 sm:h-15 lg:h-17 w-auto object-contain"
             />
           </div>
-          <div className="flex flex-col">
-            <span className="font-display font-bold text-lg sm:text-xl tracking-tight text-white uppercase group-hover:text-[#FDE047] transition-colors leading-tight drop-shadow-sm">
-              BHARAT GLOBAL EXPORTS
+          <div className="flex flex-col items-center mt-1 text-center">
+            <span className="font-display font-extrabold text-xs sm:text-sm tracking-wider text-white uppercase group-hover:text-[#FDE047] transition-colors leading-tight drop-shadow-sm">
+              BHARAT EXPORTS &amp; IMPORTS
             </span>
-            <span className="font-sans text-[10px] font-bold text-[#E5B80B] uppercase tracking-[0.22em] drop-shadow-sm">
-              ESTD. 2008 · PREMIER INDIAN EXPORT HOUSE
+            <span className="font-sans text-[8.5px] sm:text-[9.5px] font-bold text-[#E5B80B] uppercase tracking-[0.22em] leading-tight drop-shadow-sm">
+              ESTD. 2008 · PREMIER TRADING HOUSE
             </span>
           </div>
         </Link>
 
         {/* Desktop Nav: Clean text links without background boxes (Matching Skanda Demo) */}
-        <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8 2xl:gap-10">
           {navLinks.map((link) => {
             const active = isActive(link.href);
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative py-1 font-sans text-sm tracking-wide font-semibold transition-all duration-200 ${
+                className={`relative py-1 font-sans text-xs sm:text-sm tracking-wide font-semibold transition-all duration-200 ${
                   active
                     ? "text-[#E5B80B] font-bold drop-shadow-sm"
                     : "text-white/90 hover:text-[#E5B80B]"
@@ -93,8 +93,8 @@ export default function Header() {
           })}
         </nav>
 
-        {/* Action Area & Signature Angled Enquiry Button */}
-        <div className="flex items-center gap-3 sm:gap-4">
+        {/* Action Area & Signature Angled Enquiry Button firmly anchored to far right */}
+        <div className="flex items-center gap-3 sm:gap-4 shrink-0">
           {/* Skanda-Inspired Angled Geometric Enquiry Button with Yellow Accent */}
           <div className="relative flex items-center">
             {/* Background angled yellow accent triangle/bar */}
