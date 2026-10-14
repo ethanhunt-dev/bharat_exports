@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
+import PageBanner from "@/components/PageBanner";
 
 interface Article {
   id: string;
@@ -118,39 +119,18 @@ export default function BlogPage() {
 
   return (
     <div className="flex flex-col w-full">
-      {/* 1. Inner Page Banner (Contrast Well: Deep Forest Green #05301A) */}
-      <section className="relative w-full bg-on-primary-fixed text-surface-bright py-16 px-6 lg:px-12 overflow-hidden shadow-sm">
-        <div className="absolute inset-0 pointer-events-none opacity-15 overflow-hidden flex items-center justify-end">
-          <svg className="w-[720px] h-[720px] -mr-32 -mt-16 text-secondary-container" fill="none" stroke="currentColor" viewBox="0 0 600 600">
-            <circle cx="300" cy="300" r="120" strokeDasharray="3 3" strokeWidth="1" />
-            <circle cx="300" cy="300" r="190" strokeWidth="1" />
-            <circle cx="300" cy="300" r="260" strokeDasharray="6 4" strokeWidth="1" />
-            <circle cx="300" cy="300" r="330" strokeWidth="0.75" />
-            <line strokeDasharray="2 4" strokeWidth="0.75" x1="300" x2="300" y1="0" y2="600" />
-            <line strokeDasharray="2 4" strokeWidth="0.75" x1="0" x2="600" y1="300" y2="300" />
-          </svg>
-        </div>
-        <div className="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div className="space-y-3">
-            <div className="flex items-center gap-2 font-label-md text-label-md text-secondary-fixed tracking-wider">
-              <Link className="hover:text-surface-bright transition-colors" href="/">
-                Home
-              </Link>
-              <span className="text-secondary-fixed/50">/</span>
-              <span className="text-surface-bright">Blog &amp; Trade Insights</span>
-            </div>
-            <h1 className="font-display-lg text-display-lg tracking-tight text-surface-bright uppercase">
-              Blog &amp; Trade Insights
-            </h1>
-          </div>
-          <div className="flex items-center gap-3 bg-tertiary/40 px-4 py-2.5 rounded shadow-inner">
-            <span className="material-symbols-outlined text-secondary-container text-[20px]">verified</span>
-            <span className="font-eyebrow-bold text-eyebrow-bold tracking-widest text-secondary-fixed uppercase text-xs">
-              Directorate General of Foreign Trade (DGFT) Desk Updates
-            </span>
-          </div>
-        </div>
-      </section>
+      {/* 1. Cinematic Luxury Page Banner */}
+      <PageBanner
+        title="TRADE INSIGHTS"
+        eyebrow="BHARAT GLOBAL EXPORTS · KNOWLEDGE ARCHIVE"
+        breadcrumbCurrent="Blog & Insights"
+        bgImage="/images/products_banner_spices.jpg"
+        description="Authoritative regulatory analysis, ocean freight forecasts, and phytosanitary quality benchmarks for global food importers and procurement directors."
+        metaBadge={{
+          label: "DGFT DESK",
+          value: "WEEKLY TRADE BULLETINS",
+        }}
+      />
 
       {/* 2. Featured Lead Article */}
       <section className="w-full bg-surface py-16 px-6 lg:px-12">

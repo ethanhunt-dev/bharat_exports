@@ -19,11 +19,11 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "SVMR Exports | Premier Indian B2B Export House",
+  title: "Bharat Global Exports | Premier Indian B2B Export House",
   description:
     "Government Recognized Three-Star Export House providing institutional grades, guaranteed phytosanitary compliance, and direct Visakhapatnam port transshipment.",
   keywords: [
-    "SVMR Exports",
+    "Bharat Global Exports",
     "Indian B2B Export House",
     "Basmati Rice Exporters",
     "Indian Spices Export",
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
     "Organic Turmeric Exporter",
     "Indian Raw Cotton Textiles",
   ],
-  authors: [{ name: "SVMR Exports Corporate Portal" }],
+  authors: [{ name: "Bharat Global Exports Corporate Portal" }],
   openGraph: {
-    title: "SVMR Exports | Premier Indian B2B Export House",
+    title: "Bharat Global Exports | Premier Indian B2B Export House",
     description: "Generational Indian agro and textile export house operating through Visakhapatnam Port to 40+ countries.",
     type: "website",
   },

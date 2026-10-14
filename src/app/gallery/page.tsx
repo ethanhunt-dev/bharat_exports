@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import { useQuoteModal } from "@/context/QuoteModalContext";
+import PageBanner from "@/components/PageBanner";
 
 interface GalleryItem {
   id: string;
@@ -174,64 +175,18 @@ export default function GalleryPage() {
 
   return (
     <div className="flex flex-col w-full">
-      {/* 1. Inner Page Banner */}
-      <section className="relative w-full bg-on-primary-fixed overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-10 pointer-events-none"
-          style={{
-            backgroundImage: "radial-gradient(#feb963 1px, transparent 1px)",
-            backgroundSize: "28px 28px",
-          }}
-        />
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-20 relative z-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-secondary/30">
-            <div>
-              <nav className="flex items-center gap-2 font-label-md text-label-md text-secondary-fixed mb-4">
-                <Link className="hover:text-surface-bright transition-colors" href="/">
-                  Home
-                </Link>
-                <span className="text-secondary-fixed/50">/</span>
-                <span className="text-surface-bright">Gallery</span>
-              </nav>
-              <div className="flex items-center gap-3 mb-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-secondary-fixed" />
-                <span className="font-eyebrow-bold text-eyebrow-bold uppercase tracking-[0.25em] text-secondary-fixed">
-                  Operational Archive &amp; Maritime Registry
-                </span>
-              </div>
-              <h1 className="font-display-lg text-display-lg text-surface-bright tracking-tight">
-                FACILITY &amp; PORT GALLERY
-              </h1>
-            </div>
-            <div className="flex items-center gap-6 text-surface-bright/80 font-data-mono text-data-mono">
-              <div className="flex flex-col items-start md:items-end">
-                <span className="text-secondary-fixed uppercase text-[10px] tracking-widest font-eyebrow-bold">
-                  Corridor Origin
-                </span>
-                <span>INVTZ1 · Terminal 02 East Quay</span>
-              </div>
-              <div className="hidden sm:block w-px h-8 bg-secondary/30" />
-              <div className="hidden sm:flex flex-col items-start md:items-end">
-                <span className="text-secondary-fixed uppercase text-[10px] tracking-widest font-eyebrow-bold">
-                  Live Status
-                </span>
-                <span className="text-primary-fixed flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary-fixed animate-ping" />
-                  24/7 Loading Active
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="pt-4 flex flex-wrap items-center justify-between gap-4 font-body-sm text-body-sm text-surface-bright/70">
-            <p className="max-w-2xl leading-relaxed">
-              Documenting our farm-gate provenance, automated moisture-controlled warehousing, analytical ISO/IEC 17025 accredited labs, and deep-water container vessel loadings at Visakhapatnam Port.
-            </p>
-            <span className="font-data-mono text-data-mono text-secondary-container">
-              CATALOG REF: SVMR-EXP-2026/V4
-            </span>
-          </div>
-        </div>
-      </section>
+      {/* 1. Cinematic Luxury Page Banner */}
+      <PageBanner
+        title="FACILITY & PORT GALLERY"
+        eyebrow="BHARAT GLOBAL EXPORTS · OPERATIONAL ARCHIVE"
+        breadcrumbCurrent="Gallery"
+        bgImage="/images/banner_port_cranes.jpg"
+        description="Documenting our farm-gate provenance, automated Sortex cleaning units, ISO/IEC analytical testing labs, and deep-water container vessel loadings at Visakhapatnam Port."
+        metaBadge={{
+          label: "PORT CORRIDOR",
+          value: "INVTZ1 · TERMINAL 02 QUAY",
+        }}
+      />
 
       {/* 2. Filter Bar */}
       <section className="sticky top-20 z-30 bg-surface border-b border-secondary/20 shadow-sm backdrop-blur-md">

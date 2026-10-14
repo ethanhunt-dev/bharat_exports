@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import { useQuoteModal } from "@/context/QuoteModalContext";
+import PageBanner from "@/components/PageBanner";
 
 interface Product {
   id: string;
@@ -225,52 +226,18 @@ export default function ProductsPage() {
 
   return (
     <div className="flex flex-col w-full">
-      {/* 1. Inner Page Banner (Maritime Depth Contrast Well) */}
-      <section className="relative w-full bg-on-primary-fixed text-surface-bright overflow-hidden py-14 lg:py-20 shadow-md">
-        <div className="absolute inset-0 pointer-events-none opacity-10">
-          <svg className="w-full h-full" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern height="60" id="nautical-grid" patternUnits="userSpaceOnUse" width="60">
-                <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#feb963" strokeWidth="0.75" />
-                <circle cx="30" cy="30" fill="#feb963" r="1.5" />
-              </pattern>
-            </defs>
-            <rect fill="url(#nautical-grid)" height="100%" width="100%" />
-          </svg>
-        </div>
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div className="flex flex-col">
-            {/* Breadcrumb */}
-            <nav className="flex items-center gap-2 font-label-md text-label-md text-secondary-fixed mb-4 tracking-wider uppercase">
-              <Link className="hover:text-surface-bright transition-colors" href="/">
-                Home
-              </Link>
-              <span className="text-secondary/60">/</span>
-              <span className="text-surface-bright font-medium">Our Products</span>
-            </nav>
-            <div className="w-12 h-0.5 bg-secondary-container mb-3" />
-            <h1 className="font-display-lg text-display-lg text-surface-bright tracking-tight uppercase">
-              OUR PRODUCTS
-            </h1>
-            <p className="font-body-md text-body-md text-surface-bright/80 max-w-xl mt-2 font-light">
-              Government Recognized Three-Star Export House providing institutional grades, guaranteed phytosanitary compliance, and direct Visakhapatnam port transshipment.
-            </p>
-          </div>
-          {/* Live Logistics Pill */}
-          <div className="bg-primary/40 backdrop-blur-sm p-4 rounded border-l-2 border-secondary-container flex flex-col gap-1.5 min-w-[260px] shadow-sm">
-            <div className="flex items-center justify-between text-secondary-fixed font-eyebrow-bold text-eyebrow-bold uppercase tracking-widest">
-              <span>PORT CLEARANCE ACTIVE</span>
-              <span className="w-2 h-2 rounded-full bg-primary-fixed animate-ping" />
-            </div>
-            <div className="font-data-mono text-data-mono text-surface-bright">
-              <span>HS Chapters: 09 (Spices), 10 (Cereals), 52 (Cotton)</span>
-            </div>
-            <div className="font-body-sm text-body-sm text-surface-bright/70">
-              Inspection: SGS / Bureau Veritas Certified
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 1. Cinematic Luxury Agricultural Page Banner */}
+      <PageBanner
+        title="OUR PRODUCTS"
+        eyebrow="BHARAT GLOBAL EXPORTS · INSTITUTIONAL CATALOGUE"
+        breadcrumbCurrent="Our Products"
+        bgImage="/images/products_banner_spices.jpg"
+        description="Government Recognized Three-Star Export House providing institutional grades, guaranteed phytosanitary compliance, and direct Visakhapatnam port transshipment."
+        metaBadge={{
+          label: "PORT CLEARANCE",
+          value: "INVTZ1 · SGS & APEDA VERIFIED",
+        }}
+      />
 
       {/* 2. Main Catalog Layout */}
       <section className="w-full bg-surface py-12 lg:py-16">

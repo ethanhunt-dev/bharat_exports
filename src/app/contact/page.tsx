@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import PageBanner from "@/components/PageBanner";
 
 export default function ContactPage() {
   const [incoterm, setIncoterm] = useState<string>("FOB");
@@ -25,58 +26,38 @@ export default function ContactPage() {
 
   return (
     <div className="flex flex-col w-full">
-      {/* 1. Inner Page Banner (Deep Forest Ground) */}
-      <section className="relative w-full bg-on-primary-fixed text-surface-bright py-16 lg:py-20 overflow-hidden">
-        {/* Fine nautical contour lines decor */}
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <svg className="w-full h-full" fill="none" preserveAspectRatio="none" viewBox="0 0 1440 280">
-            <path d="M-100,280 C200,120 450,220 800,90 C1100,-20 1350,140 1600,40" stroke="#feb963" strokeWidth="1" />
-            <path d="M-50,300 C300,160 550,250 900,120 C1200,10 1400,170 1650,70" stroke="#feb963" strokeWidth="0.7" />
-            <circle cx="800" cy="90" fill="#feb963" r="4" />
-            <circle cx="800" cy="90" r="18" stroke="#feb963" strokeDasharray="2 4" strokeWidth="0.5" />
-          </svg>
-        </div>
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-secondary/30">
-            <div>
-              <div className="flex items-center gap-2 mb-3">
-                <span className="inline-block w-2 h-2 rounded-full bg-secondary-fixed" />
-                <span className="font-eyebrow-bold text-eyebrow-bold text-secondary-fixed tracking-[0.25em] uppercase text-xs">
-                  Global B2B Communication Channel
-                </span>
-              </div>
-              <h1 className="font-display-lg text-display-lg text-surface-bright tracking-tight">
-                CONTACT US
-              </h1>
-            </div>
-            <nav aria-label="Breadcrumb" className="flex items-center gap-2 font-label-md text-label-md text-surface-bright/70">
-              <Link className="hover:text-secondary-fixed transition-colors" href="/">
-                Home
-              </Link>
-              <span className="text-secondary/50">/</span>
-              <span className="text-secondary-fixed">Contact Us</span>
-            </nav>
+      {/* 1. Cinematic Luxury Page Banner */}
+      <PageBanner
+        title="CONTACT US"
+        eyebrow="BHARAT GLOBAL EXPORTS · GLOBAL TRADE DESK"
+        breadcrumbCurrent="Contact Us"
+        bgImage="/images/banner_port_cranes.jpg"
+        description="Direct international procurement queries, charter reservations, and sample dispatch requests to our Visakhapatnam maritime desk."
+        metaBadge={{
+          label: "TRADE DESK",
+          value: "INVTZ1 · 24H SLA ACTIVE",
+        }}
+      />
+      {/* Quick Registry Sub-bar */}
+      <div className="w-full bg-[#0B281D] border-b border-[#C5A15B]/20 py-4 px-6 lg:px-12 text-[#E7EDE6]/70">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
+          <div className="flex items-center gap-6">
+            <span className="flex items-center gap-1.5">
+              <span className="material-symbols-outlined text-[15px] text-[#C5A15B]">anchor</span>{" "}
+              <span>Visakhapatnam Port Quay (INVTZ1)</span>
+            </span>
+            <span className="hidden sm:inline-block w-px h-3 bg-[#C5A15B]/30" />
+            <span className="flex items-center gap-1.5">
+              <span className="material-symbols-outlined text-[15px] text-[#C5A15B]">schedule</span>{" "}
+              <span>Desk Clearance: &lt; 24h Proforma Guarantee</span>
+            </span>
           </div>
-          {/* Quick Registry Sub-bar */}
-          <div className="pt-4 flex flex-wrap items-center justify-between gap-4 font-data-mono text-data-mono text-surface-bright/60 text-xs">
-            <div className="flex items-center gap-6">
-              <span className="flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-[15px] text-secondary-container">anchor</span>{" "}
-                <span>Visakhapatnam Port Quay (INVTZ1)</span>
-              </span>
-              <span className="hidden sm:inline-block w-px h-3 bg-secondary/30" />
-              <span className="flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-[15px] text-secondary-container">schedule</span>{" "}
-                <span>Desk Clearance: &lt; 24h Proforma Guarantee</span>
-              </span>
-            </div>
-            <div className="flex items-center gap-2 text-secondary-container font-label-md text-label-md">
-              <span className="w-2 h-2 rounded-full bg-primary-fixed animate-ping" />
-              <span>Commercial Enquiries Live</span>
-            </div>
+          <div className="flex items-center gap-2 text-[#FDE047] font-sans text-xs font-bold">
+            <span className="w-2 h-2 rounded-full bg-[#86D7A9] animate-ping" />
+            <span>Commercial Enquiries Live</span>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* 2. Two-Column Layout (Form + Contacts) */}
       <section className="w-full bg-surface py-16 lg:py-24" id="inquiry">
@@ -392,8 +373,8 @@ export default function ContactPage() {
                       <span className="block font-eyebrow-bold text-eyebrow-bold uppercase tracking-wider text-on-surface-variant mb-1 text-xs">
                         Commercial Correspondence
                       </span>
-                      <a className="font-data-mono text-body-lg text-primary hover:underline" href="mailto:export@svmrexports.example">
-                        export@svmrexports.example
+                      <a className="font-mono text-base text-primary hover:underline font-semibold" href="mailto:export@bharatglobalexports.com">
+                        export@bharatglobalexports.com
                       </a>
                       <p className="font-body-sm text-body-sm text-on-surface-variant/80 mt-1">
                         RFQ attachments, certificates &amp; purchase orders.
@@ -424,7 +405,7 @@ export default function ContactPage() {
                 {/* Direct Action Buttons */}
                 <div className="mt-8 pt-6 border-t border-secondary/20 flex flex-col sm:flex-row gap-3.5">
                   <a
-                    className="flex-1 inline-flex items-center justify-center gap-2 bg-secondary text-surface-container-lowest font-label-md text-label-md px-5 py-3 rounded hover:bg-on-secondary-fixed-variant transition-colors shadow-sm text-center"
+                    className="flex-1 inline-flex items-center justify-center gap-2 bg-[#C5A15B] text-[#0B281D] font-sans text-xs font-bold uppercase tracking-wider px-5 py-3 rounded-xl hover:bg-[#E5B80B] transition-all shadow-sm text-center"
                     href="https://wa.me/919876543210"
                     rel="noopener noreferrer"
                     target="_blank"
@@ -433,8 +414,8 @@ export default function ContactPage() {
                     <span>Chat on WhatsApp</span>
                   </a>
                   <a
-                    className="flex-1 inline-flex items-center justify-center gap-2 border-2 border-primary text-primary font-label-md text-label-md px-5 py-3 rounded hover:bg-primary hover:text-on-primary transition-all text-center"
-                    href="mailto:export@svmrexports.example?subject=Trade%20Inquiry%20-%20SVMR%20Exports"
+                    className="flex-1 inline-flex items-center justify-center gap-2 border-2 border-[#123D2B] text-[#123D2B] font-sans text-xs font-bold uppercase tracking-wider px-5 py-3 rounded-xl hover:bg-[#123D2B] hover:text-white transition-all text-center"
+                    href="mailto:export@bharatglobalexports.com?subject=Trade%20Inquiry%20-%20Bharat%20Global%20Exports"
                   >
                     <span className="material-symbols-outlined text-[18px]">mail</span>
                     <span>Email Trade Desk</span>

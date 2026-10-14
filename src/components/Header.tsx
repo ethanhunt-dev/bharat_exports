@@ -10,14 +10,14 @@ export default function Header() {
   const { openQuoteModal } = useQuoteModal();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  // Strictly 6 approved public navigation destinations (No About Us, No Admin)
   const navLinks = [
     { label: "Home", href: "/" },
-    { label: "About Us", href: "/about-us" },
     { label: "Products", href: "/products" },
     { label: "Services", href: "/services" },
     { label: "Blog", href: "/blog" },
     { label: "Gallery", href: "/gallery" },
-    { label: "Contact", href: "/contact" },
+    { label: "Contact Us", href: "/contact" },
   ];
 
   const isActive = (href: string) => {
@@ -28,41 +28,41 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#FAF7F0]/95 backdrop-blur-md border-b-2 border-[#E5B80B]/40 shadow-[0_4px_20px_rgba(229,184,11,0.15)] transition-all">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#F7F4EB]/95 backdrop-blur-md border-b-2 border-[#C5A15B]/40 shadow-[0_4px_20px_rgba(197,161,91,0.12)] transition-all">
       {/* Main Navbar */}
       <div>
         <div className="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
+          {/* Logo / Brand Wordmark */}
+          <Link href="/" className="flex items-center gap-3.5 group">
             <div className="relative flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
               <img
                 src="/svmr_logo.png"
-                alt="SVMR Exports Official Emblem"
+                alt="Bharat Global Exports Emblem"
                 className="h-12 w-auto object-contain drop-shadow-sm"
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-headline-sm text-headline-sm tracking-tight text-on-surface uppercase group-hover:text-primary transition-colors font-bold">
-                SVMR EXPORTS
+              <span className="font-display font-bold text-lg sm:text-xl tracking-tight text-[#123D2B] uppercase group-hover:text-[#0B281D] transition-colors">
+                BHARAT GLOBAL EXPORTS
               </span>
-              <span className="font-eyebrow-bold text-eyebrow-bold text-[#E5B80B] font-extrabold uppercase tracking-[0.22em] drop-shadow-xs">
-                ESTD. 2008 · INDIA
+              <span className="font-sans text-[10px] font-bold text-[#C5A15B] uppercase tracking-[0.24em]">
+                ESTD. 2008 · PREMIER INDIAN EXPORT HOUSE
               </span>
             </div>
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden xl:flex items-center gap-1 p-1 rounded-xl bg-[#EFE9DC]/70 border border-[#E5B80B]/30">
+          {/* Desktop Nav (Strict Scope: 6 items) */}
+          <nav className="hidden lg:flex items-center gap-1.5 p-1 rounded-xl bg-[#ECE6D8]/80 border border-[#C5A15B]/25">
             {navLinks.map((link) => {
               const active = isActive(link.href);
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-4 py-2 rounded-lg transition-all font-label-md text-label-md ${
+                  className={`px-4 py-2 rounded-lg transition-all font-sans text-xs tracking-wider uppercase font-semibold ${
                     active
-                      ? "bg-primary text-white font-bold shadow-md border-b-2 border-[#E5B80B]"
-                      : "text-on-surface hover:text-primary hover:bg-white/80"
+                      ? "bg-[#123D2B] text-white font-bold shadow-md border-b-2 border-[#C5A15B]"
+                      : "text-[#1A241F] hover:text-[#123D2B] hover:bg-white/80"
                   }`}
                 >
                   {link.label}
@@ -76,9 +76,9 @@ export default function Header() {
             <button
               type="button"
               onClick={() => openQuoteModal()}
-              className="inline-flex items-center gap-2.5 bg-gradient-to-r from-[#FFE873] via-[#E5B80B] to-[#C59318] text-[#0A1E13] font-label-md text-label-md px-5 sm:px-6 py-2.5 rounded-xl font-bold shadow-[0_4px_15px_rgba(229,184,11,0.4)] hover:shadow-[0_6px_25px_rgba(229,184,11,0.6)] hover:scale-105 transition-all duration-300 border border-[#FFF089]"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#FDE047] via-[#E5B80B] to-[#C5A15B] text-[#0B281D] font-sans text-xs sm:text-sm px-5 sm:px-6 py-2.5 rounded-xl font-bold uppercase tracking-wider shadow-[0_4px_16px_rgba(229,184,11,0.35)] hover:shadow-[0_6px_22px_rgba(229,184,11,0.55)] hover:scale-105 transition-all duration-300 border border-[#FFF089]"
             >
-              <span>Get a Quote</span>
+              <span>Request a Quote</span>
               <span className="material-symbols-outlined text-[17px] font-bold">arrow_forward</span>
             </button>
 
@@ -86,7 +86,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="xl:hidden w-10 h-10 rounded bg-surface-container flex items-center justify-center text-on-surface border border-outline-variant/40 hover:bg-surface-container-high transition-colors"
+              className="lg:hidden w-10 h-10 rounded-lg bg-[#ECE6D8] flex items-center justify-center text-[#123D2B] border border-[#C5A15B]/30 hover:bg-[#E4DDCB] transition-colors"
               aria-label="Toggle mobile menu"
             >
               <span className="material-symbols-outlined text-[24px]">
@@ -96,9 +96,9 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Dropdown Menu */}
+        {/* Mobile Dropdown Menu (Strict Scope: 6 items) */}
         {mobileMenuOpen && (
-          <div className="xl:hidden bg-surface border-t border-outline-variant/30 px-6 py-4 shadow-lg animate-fadeIn">
+          <div className="lg:hidden bg-[#F7F4EB] border-t border-[#C5A15B]/30 px-6 py-4 shadow-xl animate-fadeIn">
             <nav className="flex flex-col gap-1.5 pb-3">
               {navLinks.map((link) => {
                 const active = isActive(link.href);
@@ -107,10 +107,10 @@ export default function Header() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`px-4 py-3 rounded text-base font-medium flex items-center justify-between ${
+                    className={`px-4 py-3 rounded-lg text-sm font-semibold flex items-center justify-between ${
                       active
-                        ? "bg-surface-container text-primary font-bold border-l-4 border-secondary"
-                        : "text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low"
+                        ? "bg-[#123D2B] text-white border-l-4 border-[#C5A15B]"
+                        : "text-[#1A241F] hover:text-[#123D2B] hover:bg-[#ECE6D8]"
                     }`}
                   >
                     <span>{link.label}</span>
@@ -119,14 +119,14 @@ export default function Header() {
                 );
               })}
             </nav>
-            <div className="pt-3 border-t border-outline-variant/20 flex flex-col gap-2 font-data-mono text-data-mono text-on-surface-variant text-sm">
-              <a href="tel:+919876543210" className="flex items-center gap-2 py-1 hover:text-primary">
-                <span className="material-symbols-outlined text-[16px] text-secondary">call</span>
+            <div className="pt-3 border-t border-[#C5A15B]/20 flex flex-col gap-2 font-sans text-xs text-[#3B4A40]">
+              <a href="tel:+919876543210" className="flex items-center gap-2 py-1 hover:text-[#123D2B]">
+                <span className="material-symbols-outlined text-[16px] text-[#C5A15B]">call</span>
                 <span>+91 98765 43210</span>
               </a>
-              <a href="mailto:export@svmrexports.example" className="flex items-center gap-2 py-1 hover:text-primary">
-                <span className="material-symbols-outlined text-[16px] text-secondary">mail</span>
-                <span>export@svmrexports.example</span>
+              <a href="mailto:export@bharatglobalexports.com" className="flex items-center gap-2 py-1 hover:text-[#123D2B]">
+                <span className="material-symbols-outlined text-[16px] text-[#C5A15B]">mail</span>
+                <span>export@bharatglobalexports.com</span>
               </a>
             </div>
           </div>

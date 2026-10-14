@@ -3,58 +3,25 @@
 import React from "react";
 import Link from "next/link";
 import { useQuoteModal } from "@/context/QuoteModalContext";
+import PageBanner from "@/components/PageBanner";
 
 export default function ServicesPage() {
   const { openQuoteModal } = useQuoteModal();
 
   return (
     <div className="flex flex-col w-full">
-      {/* 1. Inner Page Banner (Deep Forest Contrast Well) */}
-      <section className="relative bg-on-primary-fixed text-surface-bright py-20 lg:py-24 overflow-hidden">
-        {/* Subtle Background Navigational Arcs (Maritime SVG) */}
-        <div className="absolute inset-0 pointer-events-none opacity-10 flex items-center justify-end pr-12">
-          <svg className="text-secondary-fixed" fill="none" height="640" viewBox="0 0 640 640" width="640">
-            <circle cx="320" cy="320" r="300" stroke="currentColor" strokeDasharray="6 6" strokeWidth="1" />
-            <circle cx="320" cy="320" r="220" stroke="currentColor" strokeWidth="1" />
-            <circle cx="320" cy="320" r="140" stroke="currentColor" strokeDasharray="3 3" strokeWidth="1" />
-            <line stroke="currentColor" strokeWidth="1" x1="20" x2="620" y1="320" y2="320" />
-            <line stroke="currentColor" strokeWidth="1" x1="320" x2="320" y1="20" y2="620" />
-          </svg>
-        </div>
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <div>
-            {/* Breadcrumb */}
-            <nav className="flex items-center gap-2 mb-4 font-data-mono text-data-mono uppercase tracking-widest text-secondary-container">
-              <Link className="hover:text-surface-bright transition-colors" href="/">
-                Home
-              </Link>
-              <span className="text-secondary/60">/</span>
-              <span className="text-surface-bright">Export Services</span>
-            </nav>
-            <div className="flex items-center gap-3 mb-3">
-              <span className="w-8 h-px bg-secondary-container" />
-              <span className="font-eyebrow-bold text-eyebrow-bold uppercase tracking-[0.25em] text-secondary-fixed">
-                Institutional Capabilities
-              </span>
-            </div>
-            <h1 className="font-display-lg text-display-lg tracking-tight text-surface-bright uppercase">
-              Export Services
-            </h1>
-          </div>
-          {/* Manifest & Port Meta Box */}
-          <div className="bg-surface-container-highest/10 backdrop-blur-sm p-5 rounded-lg max-w-sm">
-            <div className="flex items-center justify-between mb-2">
-              <span className="font-eyebrow-bold text-eyebrow-bold text-secondary-container uppercase">
-                Operational Hub
-              </span>
-              <span className="font-data-mono text-data-mono text-primary-fixed">VPA Corridor • Active</span>
-            </div>
-            <p className="font-body-sm text-body-sm text-surface-bright/80">
-              Integrated farm-to-berth export solutions compliant with US-FDA, EU phytosanitary norms, and Codex Alimentarius.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* 1. Cinematic Luxury Page Banner */}
+      <PageBanner
+        title="EXPORT SERVICES"
+        eyebrow="BHARAT GLOBAL EXPORTS · INSTITUTIONAL CAPABILITIES"
+        breadcrumbCurrent="Export Services"
+        bgImage="/images/banner_port_cranes.jpg"
+        description="Integrated farm-to-berth export solutions compliant with US-FDA, EU phytosanitary norms, and Codex Alimentarius."
+        metaBadge={{
+          label: "OPERATIONAL HUB",
+          value: "VPA CORRIDOR · ACTIVE",
+        }}
+      />
 
       {/* 2. Alternating Zig-Zag Editorial Service Rows */}
       <section className="py-20 lg:py-28 space-y-24 lg:space-y-32 bg-surface">

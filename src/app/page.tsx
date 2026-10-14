@@ -99,14 +99,14 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-col w-full">
-      {/* 1. HERO SECTION WITH PURE FULL-BLEED IMAGE SLIDER */}
+      {/* 1. CINEMATIC HERO SECTION WITH LUXURY EDITORIAL OVERLAY */}
       <section
-        className="relative w-full -mt-20 pt-20 bg-slate-950 text-surface-bright overflow-hidden flex flex-col justify-between"
+        className="relative w-full -mt-20 pt-20 bg-[#0B281D] text-white overflow-hidden flex flex-col justify-between"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-        {/* Full-Bleed Auto-Playing Port & Maritime Slides */}
-        <div className="relative w-full h-[450px] sm:h-[550px] lg:h-[650px] overflow-hidden">
+        {/* Full-Bleed Auto-Playing Port & Maritime Slides with Slow Cinematic Movement */}
+        <div className="relative w-full h-[520px] sm:h-[620px] lg:h-[720px] overflow-hidden">
           {heroSlides.map((slide, idx) => (
             <div
               key={slide.id}
@@ -121,63 +121,148 @@ export default function HomePage() {
             />
           ))}
 
-          {/* Soft Top Scrim for Clean Header Visibility */}
-          <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/60 to-transparent pointer-events-none" />
+          {/* Luxury Deep Emerald Gradient Overlay for High Editorial Contrast */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B281D]/95 via-[#0B281D]/80 to-[#123D2B]/50" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0B281D] to-transparent" />
 
-          {/* Minimal Slide Progress Dots */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex items-center gap-2">
-            {heroSlides.map((slide, idx) => (
-              <span
-                key={slide.id}
-                className={`transition-all duration-500 rounded-full ${
-                  idx === currentSlide
-                    ? "w-8 h-2 bg-secondary-fixed shadow-md"
-                    : "w-2 h-2 bg-white/50"
-                }`}
-              />
-            ))}
+          {/* Hero Content Overlay */}
+          <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 h-full flex flex-col justify-center">
+            <div className="max-w-3xl">
+              {/* Understated Global Trade Label */}
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#123D2B]/80 backdrop-blur-md border border-[#C5A15B]/40 shadow-sm mb-6">
+                <span className="w-2 h-2 rounded-full bg-[#86D7A9] animate-pulse" />
+                <span className="font-mono text-xs text-[#FDE047] uppercase tracking-widest font-bold">
+                  VISAKHAPATNAM PORT TERMINAL · DEEPWATER BERTH 04
+                </span>
+              </div>
+
+              {/* Editorial Headline with deliberate line break */}
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-white leading-[1.08] drop-shadow-lg mb-6">
+                Rooted in India.<br />
+                <span className="text-[#FDE047] italic font-normal">Trusted Across</span> the World.
+              </h1>
+
+              {/* Supporting Copy */}
+              <p className="font-sans text-base sm:text-lg text-[#F7F4EB]/90 leading-relaxed max-w-2xl mb-10">
+                Connecting quality Indian produce and materials with global markets through dependable sourcing, careful quality control and export expertise.
+              </p>
+
+              {/* Action Buttons */}
+              <div className="flex flex-wrap items-center gap-4">
+                <Link
+                  href="/products"
+                  className="inline-flex items-center gap-2.5 bg-gradient-to-r from-[#FDE047] via-[#E5B80B] to-[#C5A15B] text-[#0B281D] font-sans text-sm font-bold uppercase tracking-wider px-7 py-3.5 rounded-xl shadow-[0_4px_20px_rgba(229,184,11,0.4)] hover:shadow-[0_6px_28px_rgba(229,184,11,0.6)] hover:scale-105 transition-all duration-300 border border-[#FFF089]"
+                >
+                  <span>Explore Our Products</span>
+                  <span className="material-symbols-outlined text-[18px] font-bold">arrow_forward</span>
+                </Link>
+
+                <button
+                  type="button"
+                  onClick={() => openQuoteModal()}
+                  className="inline-flex items-center gap-2.5 bg-white/10 hover:bg-white/20 text-white font-sans text-sm font-semibold uppercase tracking-wider px-6 py-3.5 rounded-xl backdrop-blur-md border border-[#C5A15B]/50 hover:border-[#C5A15B] transition-all duration-300"
+                >
+                  <span className="material-symbols-outlined text-[18px] text-[#FDE047]">request_quote</span>
+                  <span>Request a Quote</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Minimal Slide Progress Dots & Scroll Indicator */}
+          <div className="absolute bottom-6 left-6 lg:left-12 z-20 flex items-center gap-4">
+            <div className="flex items-center gap-2">
+              {heroSlides.map((slide, idx) => (
+                <button
+                  key={slide.id}
+                  onClick={() => setCurrentSlide(idx)}
+                  aria-label={`Go to slide ${idx + 1}`}
+                  className={`transition-all duration-500 rounded-full ${
+                    idx === currentSlide
+                      ? "w-8 h-2 bg-[#E5B80B] shadow-md"
+                      : "w-2 h-2 bg-white/50 hover:bg-white/80"
+                  }`}
+                />
+              ))}
+            </div>
+            <div className="hidden sm:flex items-center gap-2 font-mono text-xs text-[#E7EDE6]/70">
+              <span className="material-symbols-outlined text-[16px] text-[#C5A15B] animate-bounce">south</span>
+              <span>SCROLL TO DISCOVER</span>
+            </div>
           </div>
         </div>
 
+        {/* C. VERIFIED TRUST STRIP */}
+        <div className="w-full bg-[#0B281D] border-t border-[#C5A15B]/30 py-5">
+          <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
+            <div className="flex flex-col sm:flex-row items-center gap-3">
+              <span className="font-display text-2xl lg:text-3xl font-bold text-[#FDE047]">16+</span>
+              <div className="flex flex-col">
+                <span className="font-sans text-xs font-bold text-white uppercase tracking-wider">Years Experience</span>
+                <span className="font-sans text-[11px] text-[#E7EDE6]/70">Estd. 2008 in Andhra Pradesh</span>
+              </div>
+            </div>
+            <div className="flex flex-col sm:flex-row items-center gap-3 border-l-0 md:border-l border-[#C5A15B]/20 md:pl-6">
+              <span className="font-display text-2xl lg:text-3xl font-bold text-[#FDE047]">40+</span>
+              <div className="flex flex-col">
+                <span className="font-sans text-xs font-bold text-white uppercase tracking-wider">Destination Ports</span>
+                <span className="font-sans text-[11px] text-[#E7EDE6]/70">GCC, Europe, SE Asia, Americas</span>
+              </div>
+            </div>
+            <div className="flex flex-col sm:flex-row items-center gap-3 border-l-0 md:border-l border-[#C5A15B]/20 md:pl-6">
+              <span className="font-display text-2xl lg:text-3xl font-bold text-[#FDE047]">06</span>
+              <div className="flex flex-col">
+                <span className="font-sans text-xs font-bold text-white uppercase tracking-wider">Core Sectors</span>
+                <span className="font-sans text-[11px] text-[#E7EDE6]/70">Rice, Spices, Cotton, Grains</span>
+              </div>
+            </div>
+            <div className="flex flex-col sm:flex-row items-center gap-3 border-l-0 md:border-l border-[#C5A15B]/20 md:pl-6">
+              <span className="material-symbols-outlined text-[32px] text-[#FDE047]">verified_user</span>
+              <div className="flex flex-col">
+                <span className="font-sans text-xs font-bold text-white uppercase tracking-wider">Verified Compliance</span>
+                <span className="font-sans text-[11px] text-[#E7EDE6]/70">APEDA, Spices Board, US-FDA</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* 2. COMPANY INTRODUCTION (Asymmetric 7/5 Split) */}
-      {/* 2. COMPANY INTRODUCTION (Warm Luxury Ivory & Floating Emerald Feature Card) */}
-      <section className="w-full py-24 bg-[#FAF7F0] text-on-surface border-b border-[#E8DFCE]">
+      {/* D. COMPANY INTRODUCTION (Warm Luxury Ivory & Floating Emerald Feature Card) */}
+      <section className="w-full py-24 bg-[#F7F4EB] text-[#1A241F] border-b border-[#ECE6D8]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-center">
             {/* Visual Column (7 Cols on desktop) */}
             <div className="lg:col-span-7 relative">
-              <div className="absolute -top-3 -left-3 w-full h-full border-2 border-[#E5B80B] rounded-2xl pointer-events-none hidden sm:block shadow-[0_0_20px_rgba(229,184,11,0.25)]" />
-              <div className="relative bg-surface-container rounded-2xl overflow-hidden shadow-xl aspect-[4/3] group border border-[#E5B80B]/30">
+              <div className="absolute -top-3 -left-3 w-full h-full border-2 border-[#C5A15B] rounded-2xl pointer-events-none hidden sm:block shadow-[0_0_20px_rgba(197,161,91,0.25)]" />
+              <div className="relative bg-[#ECE6D8] rounded-2xl overflow-hidden shadow-xl aspect-[4/3] group border border-[#C5A15B]/30">
                 <img
                   className="w-full h-full object-cover grayscale-[5%] group-hover:scale-105 transition-transform duration-700 ease-out"
                   alt="Quality control inspection of export grade Indian spices and agricultural grains"
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzYrRoQxdKpgrd383CDGw6UiAnieZdvOiYFbGDFRqt8lwAERQ-56EYbdqaSCn6UnG7rHxPd1d-JKkRf-Dj1I44bF1HQcZXNPBMmndqW9qRy0ngR7GeqIDlny1rZ2G1Eomxq9l69AvyYmSXhEm3fsIEBYXP1nYPJmgeZ2NZxDyVh_NvsvR2zLstl8ldxVKPEkvMz8ilvmuzIufv1GPPYMwUsaNsvhMSoGyoEwyHiKDZOubtlsWmNZwN"
                 />
-                <div className="absolute bottom-4 right-4 bg-[#081E14]/95 backdrop-blur-md text-white px-5 py-2.5 rounded-xl border-2 border-[#E5B80B] font-data-mono text-data-mono flex items-center gap-2.5 shadow-[0_4px_15px_rgba(229,184,11,0.3)]">
-                  <span className="material-symbols-outlined text-[20px] text-[#E5B80B]">biotech</span>
+                <div className="absolute bottom-4 right-4 bg-[#0B281D]/95 backdrop-blur-md text-white px-5 py-2.5 rounded-xl border-2 border-[#C5A15B] font-mono text-xs flex items-center gap-2.5 shadow-[0_4px_15px_rgba(197,161,91,0.3)]">
+                  <span className="material-symbols-outlined text-[20px] text-[#FDE047]">biotech</span>
                   <span className="tracking-wide font-bold">INVTZ-LAB · BATCH PASS SGS 99.8%</span>
                 </div>
               </div>
 
-              {/* Floating Dark Emerald Value Card with 916 KDM Gold Radiance */}
-              <div className="mt-6 p-6 rounded-2xl bg-[#081E14] text-white border-2 border-[#E5B80B] shadow-[0_12px_35px_-5px_rgba(229,184,11,0.35)]">
+              {/* Floating Dark Emerald Value Card with Gold Radiance */}
+              <div className="mt-6 p-6 rounded-2xl bg-[#0B281D] text-white border-2 border-[#C5A15B] shadow-[0_12px_35px_-5px_rgba(197,161,91,0.3)]">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#C59318] via-[#E5B80B] to-[#FFE873] text-[#0A1E13] flex items-center justify-center font-black text-sm shrink-0 shadow-[0_0_12px_rgba(229,184,11,0.6)]">✓</span>
+                    <span className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#C5A15B] via-[#E5B80B] to-[#FDE047] text-[#0B281D] flex items-center justify-center font-black text-sm shrink-0 shadow-[0_0_12px_rgba(229,184,11,0.6)]">✓</span>
                     <span className="text-sm font-semibold text-white/95">APEDA &amp; Spices Board Certified</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#C59318] via-[#E5B80B] to-[#FFE873] text-[#0A1E13] flex items-center justify-center font-black text-sm shrink-0 shadow-[0_0_12px_rgba(229,184,11,0.6)]">✓</span>
+                    <span className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#C5A15B] via-[#E5B80B] to-[#FDE047] text-[#0B281D] flex items-center justify-center font-black text-sm shrink-0 shadow-[0_0_12px_rgba(229,184,11,0.6)]">✓</span>
                     <span className="text-sm font-semibold text-white/95">Direct Deepwater Berth Quay 02</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#C59318] via-[#E5B80B] to-[#FFE873] text-[#0A1E13] flex items-center justify-center font-black text-sm shrink-0 shadow-[0_0_12px_rgba(229,184,11,0.6)]">✓</span>
+                    <span className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#C5A15B] via-[#E5B80B] to-[#FDE047] text-[#0B281D] flex items-center justify-center font-black text-sm shrink-0 shadow-[0_0_12px_rgba(229,184,11,0.6)]">✓</span>
                     <span className="text-sm font-semibold text-white/95">100% Sortex Optical Cleaned</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#C59318] via-[#E5B80B] to-[#FFE873] text-[#0A1E13] flex items-center justify-center font-black text-sm shrink-0 shadow-[0_0_12px_rgba(229,184,11,0.6)]">✓</span>
+                    <span className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#C5A15B] via-[#E5B80B] to-[#FDE047] text-[#0B281D] flex items-center justify-center font-black text-sm shrink-0 shadow-[0_0_12px_rgba(229,184,11,0.6)]">✓</span>
                     <span className="text-sm font-semibold text-white/95">Incoterms 2020: CIF / FOB / CFR</span>
                   </div>
                 </div>
@@ -187,28 +272,28 @@ export default function HomePage() {
             {/* Narrative Column (5 Cols on desktop) */}
             <div className="lg:col-span-5 flex flex-col justify-center">
               <div className="inline-flex items-center gap-3 mb-4">
-                <span className="font-data-mono text-data-mono text-[#E5B80B] font-bold text-base">01</span>
-                <span className="w-8 h-0.5 bg-[#E5B80B]" />
-                <span className="font-eyebrow-bold text-eyebrow-bold uppercase tracking-[0.22em] text-[#E5B80B] font-extrabold drop-shadow-xs">
-                  ABOUT THE HOUSE
+                <span className="font-mono text-[#C5A15B] font-bold text-base">01</span>
+                <span className="w-8 h-0.5 bg-[#C5A15B]" />
+                <span className="font-sans text-xs uppercase tracking-[0.24em] text-[#C5A15B] font-extrabold">
+                  HERITAGE &amp; EXCELLENCE
                 </span>
               </div>
-              <h2 className="font-headline-lg text-headline-lg text-on-surface mb-6 leading-tight">
-                Connecting Indian soil to <span className="text-[#C69214] italic">global tables &amp; mills</span>
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#1A241F] mb-6 leading-tight">
+                Connecting Indian soil to <span className="text-[#C5A15B] italic font-normal">global tables &amp; mills</span>
               </h2>
-              <p className="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
-                SVMR Exports bridges India’s rich agrarian hinterlands and state-of-the-art weaving clusters directly with procurement directors worldwide. Operating out of the Visakhapatnam maritime zone, we eliminate redundant intermediaries.
+              <p className="font-sans text-sm sm:text-base text-[#3B4A40] mb-6 leading-relaxed">
+                Bharat Global Exports bridges India’s rich agrarian hinterlands and state-of-the-art weaving clusters directly with procurement directors worldwide. Operating out of the strategic Visakhapatnam maritime zone, we eliminate redundant intermediaries.
               </p>
-              <p className="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+              <p className="font-sans text-sm sm:text-base text-[#3B4A40] mb-8 leading-relaxed">
                 We handle upstream farmgate aggregation, stringent multi-tier quality checks, Sortex optical grading, phytosanitary fumigation, and custom export packaging—delivering impeccable consistency and zero documentation discrepancies on every single consignment.
               </p>
               <div className="pt-2">
                 <Link
-                  className="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-white text-primary border-2 border-[#E5B80B] hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 font-label-md text-label-md shadow-md group hover:scale-[1.02]"
-                  href="/about-us"
+                  className="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-white text-[#123D2B] border-2 border-[#C5A15B] hover:bg-[#123D2B] hover:text-white hover:border-[#123D2B] transition-all duration-300 font-sans text-sm font-bold shadow-md group hover:scale-[1.02]"
+                  href="/products"
                 >
-                  <span className="font-bold">Read our complete story</span>
-                  <span className="material-symbols-outlined text-[19px] text-[#E5B80B] group-hover:text-secondary-fixed group-hover:translate-x-1.5 transition-all">
+                  <span>Explore Our Export Catalogue</span>
+                  <span className="material-symbols-outlined text-[19px] text-[#C5A15B] group-hover:text-[#FDE047] group-hover:translate-x-1.5 transition-all">
                     arrow_forward
                   </span>
                 </Link>
@@ -218,57 +303,59 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. PRODUCTS & SERVICES OVERVIEW */}
-      <section className="w-full py-24 bg-surface-container text-on-surface border-y border-outline-variant/30">
+      {/* E. EXPORT CAPABILITIES & INFRASTRUCTURE BENTO GRID */}
+      <section className="w-full py-24 bg-[#ECE6D8] text-[#1A241F] border-b border-[#DDD4BF]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           {/* Section Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
             <div>
               <div className="inline-flex items-center gap-3 mb-3">
-                <span className="font-data-mono text-data-mono text-secondary font-semibold">02</span>
-                <span className="w-4 h-px bg-secondary/50" />
-                <span className="font-eyebrow-bold text-eyebrow-bold uppercase tracking-[0.2em] text-secondary">
-                  OFFERING &amp; CAPABILITIES
+                <span className="font-mono text-[#C5A15B] font-bold text-base">02</span>
+                <span className="w-8 h-0.5 bg-[#C5A15B]" />
+                <span className="font-sans text-xs uppercase tracking-[0.24em] text-[#C5A15B] font-extrabold">
+                  EXPORT INFRASTRUCTURE
                 </span>
               </div>
-              <h2 className="font-headline-lg text-headline-lg text-on-surface">
-                Export Categories &amp; Infrastructure
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#1A241F]">
+                Capabilities &amp; Processing Standards
               </h2>
             </div>
-            <p className="font-body-sm text-body-sm text-on-surface-variant max-w-md">
-              End-to-end commercial operations equipped to handle break-bulk, FCL (Full Container Loads), and private-label retail configurations.
+            <p className="font-sans text-sm text-[#3B4A40] max-w-md leading-relaxed">
+              End-to-end commercial operations equipped to handle bulk ocean charters, FCL containerized shipping, and private-label retail configurations.
             </p>
           </div>
+
           {/* Asymmetric Bento-style Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             {/* Tall Featured Card (Left 6 Cols) */}
-            <div className="lg:col-span-6 bg-surface rounded p-8 border border-secondary/20 flex flex-col justify-between group shadow-sm hover:border-secondary/40 transition-colors">
+            <div className="lg:col-span-6 bg-[#F7F4EB] rounded-2xl p-8 border-2 border-[#C5A15B]/30 hover:border-[#C5A15B] flex flex-col justify-between group shadow-sm transition-all duration-300">
               <div>
-                <div className="relative w-full aspect-[16/10] rounded overflow-hidden mb-6 bg-surface-container-high">
+                <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden mb-6 bg-[#E8E4D7]">
                   <img
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                     alt="Aerial flat lay of raw Indian agricultural commodities"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFTT4b8SjJu_8477qcjkbGCBo4VlfDFzTmgkzPqu5mwLYeSLxla7dRmKLD1-Qs7TvTvMUqFYEiRlsWtGzdIDKo17s-w4GtZFStBDMTPl77S4w9lwm2Zc7uO7tRSbcc0iALC-ZjtUWz0mNLcLFDSPpftDUoQ_kWcHqVWXz49P1w_c4iS5iofQPXkx2alJf39X5vZNuPY_Tq3KDCtDQxrW8uqsN0olwpIZazyso8SfI52S_FXCpdzGyt"
+                    src="/images/about_banner_pulses.jpg"
                   />
-                  <span className="absolute top-3 left-3 bg-primary text-surface-bright font-eyebrow-bold text-eyebrow-bold px-2.5 py-1 uppercase tracking-wider rounded">
+                  <span className="absolute top-3 left-3 bg-[#123D2B] text-white font-sans text-xs font-bold px-3 py-1 uppercase tracking-wider rounded-lg border border-[#C5A15B]/40">
                     CORE COMMODITIES
                   </span>
                 </div>
-                <h3 className="font-headline-sm text-headline-sm text-on-surface mb-3">
+                <h3 className="font-display text-2xl font-bold text-[#1A241F] mb-3">
                   Agricultural Commodities &amp; Whole Spices
                 </h3>
-                <p className="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">
+                <p className="font-sans text-sm text-[#3B4A40] mb-6 leading-relaxed">
                   Pristine basmati rice, Malabar pepper, Salem turmeric, and Guntur chillies graded to custom ASTA and ETO parameters. Tested, packaged, and preserved to international sanitary standards.
                 </p>
               </div>
-              <div className="pt-6 border-t border-outline-variant/30 flex items-center justify-between">
-                <div className="flex items-center gap-2 text-primary font-label-md text-label-md">
-                  <span className="material-symbols-outlined text-[18px]">verified_user</span>
+              <div className="pt-6 border-t border-[#C5A15B]/20 flex items-center justify-between">
+                <div className="flex items-center gap-2 text-[#123D2B] font-sans text-xs font-bold uppercase tracking-wider">
+                  <span className="material-symbols-outlined text-[18px] text-[#C5A15B]">verified_user</span>
                   <span>Phytosanitary &amp; Halal Certified</span>
                 </div>
                 <Link
-                  className="w-9 h-9 rounded bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-surface-bright transition-colors"
+                  className="w-10 h-10 rounded-xl bg-white border border-[#C5A15B]/40 flex items-center justify-center text-[#123D2B] group-hover:bg-[#123D2B] group-hover:text-white group-hover:border-[#123D2B] transition-all shadow-sm"
                   href="/products"
+                  aria-label="Explore Products"
                 >
                   <span className="material-symbols-outlined text-[18px]">north_east</span>
                 </Link>
@@ -278,28 +365,28 @@ export default function HomePage() {
             {/* Two Stacked Horizontal Cards (Right 6 Cols) */}
             <div className="lg:col-span-6 flex flex-col gap-8 justify-between">
               {/* Stacked Card 1 */}
-              <div className="bg-surface rounded p-7 border border-secondary/20 flex flex-col sm:flex-row gap-6 items-center shadow-sm hover:border-secondary/40 transition-colors group">
-                <div className="w-full sm:w-44 h-40 shrink-0 rounded overflow-hidden bg-surface-container-high">
+              <div className="bg-[#F7F4EB] rounded-2xl p-7 border-2 border-[#C5A15B]/30 hover:border-[#C5A15B] flex flex-col sm:flex-row gap-6 items-center shadow-sm transition-all duration-300 group">
+                <div className="w-full sm:w-44 h-40 shrink-0 rounded-xl overflow-hidden bg-[#E8E4D7]">
                   <img
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                     alt="Packaging line and private label retail pouch facility"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH5ycYEMwPCLygsuKRpp1_X4MzVu8wWwrTtM2gTrlRcsjEhSc4jdm_SeULs696WnDCG5cVBcpSf-YMH7ypUzErfYAiKDUUqkMHGtuQdVtpyuBJJodqxw1zz8kgAOBrOxKVGMcLkU2VlFVuMrvcZwrvuAn2cL5RCpJ18eYBhycM9-WP1JM5sstSv28N84OhlGQU8vfvyVdTJnzX-SRZMb3IgMMMwQgx1GwPrYCMLGWCOKCcFhOjh13i"
+                    src="/images/products_banner_spices.jpg"
                   />
                 </div>
                 <div className="flex flex-col justify-between flex-1">
                   <div>
-                    <span className="font-eyebrow-bold text-eyebrow-bold text-secondary uppercase tracking-wider block mb-1">
+                    <span className="font-sans text-xs font-bold text-[#C5A15B] uppercase tracking-wider block mb-1">
                       CONTRACT PACKAGING
                     </span>
-                    <h4 className="font-title-md text-title-md text-on-surface mb-2">
+                    <h4 className="font-display text-lg font-bold text-[#1A241F] mb-2">
                       Export Processing &amp; Private Label Services
                     </h4>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-4">
+                    <p className="font-sans text-xs text-[#3B4A40] leading-relaxed mb-4">
                       Custom vacuum pouches, multi-wall paper bags, institutional nitrogen-flushed containers, and OEM retail branding under strict GMP supervision.
                     </p>
                   </div>
                   <Link
-                    className="inline-flex items-center gap-1.5 font-label-md text-label-md text-primary hover:text-secondary transition-colors"
+                    className="inline-flex items-center gap-1.5 font-sans text-xs font-bold text-[#123D2B] hover:text-[#C5A15B] transition-colors"
                     href="/services"
                   >
                     <span>Explore processing protocols</span>
@@ -309,28 +396,28 @@ export default function HomePage() {
               </div>
 
               {/* Stacked Card 2 */}
-              <div className="bg-surface rounded p-7 border border-secondary/20 flex flex-col sm:flex-row gap-6 items-center shadow-sm hover:border-secondary/40 transition-colors group">
-                <div className="w-full sm:w-44 h-40 shrink-0 rounded overflow-hidden bg-surface-container-high">
+              <div className="bg-[#F7F4EB] rounded-2xl p-7 border-2 border-[#C5A15B]/30 hover:border-[#C5A15B] flex flex-col sm:flex-row gap-6 items-center shadow-sm transition-all duration-300 group">
+                <div className="w-full sm:w-44 h-40 shrink-0 rounded-xl overflow-hidden bg-[#E8E4D7]">
                   <img
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                     alt="Container vessel moored at Visakhapatnam Sea Port"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD74y-JtANthbaEcATtOcsTPUPUG5QR3YO0DSwtlWYy5e408woYi9sIRM5bMQ-xGqAgxTf7poegYOwZIsISIIa7U7qCVnpXdYZVmfx7z0ROzu7oyCXIxSuisWkNz6ApbRJXrO5EDkNQMnaBusMrIXtcP9aKd7iCSfQrseieGcafQ-V_E-vYZl65Z3dvCGFYX8JQTVeTAp68YyHy4-iXPWDTTj4GwaRc49ItdHQBwuAMwIxZtPWenJud"
+                    src="/images/banner_port_cranes.jpg"
                   />
                 </div>
                 <div className="flex flex-col justify-between flex-1">
                   <div>
-                    <span className="font-eyebrow-bold text-eyebrow-bold text-secondary uppercase tracking-wider block mb-1">
+                    <span className="font-sans text-xs font-bold text-[#C5A15B] uppercase tracking-wider block mb-1">
                       LOGISTICS CORRIDOR
                     </span>
-                    <h4 className="font-title-md text-title-md text-on-surface mb-2">
+                    <h4 className="font-display text-lg font-bold text-[#1A241F] mb-2">
                       Visakhapatnam Port Terminal &amp; Trade Gallery
                     </h4>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-4">
+                    <p className="font-sans text-xs text-[#3B4A40] leading-relaxed mb-4">
                       Direct CFS access, pre-berthing customs clearance, and refrigerated reefers ensuring minimum dwell times and zero container demurrage.
                     </p>
                   </div>
                   <Link
-                    className="inline-flex items-center gap-1.5 font-label-md text-label-md text-primary hover:text-secondary transition-colors"
+                    className="inline-flex items-center gap-1.5 font-sans text-xs font-bold text-[#123D2B] hover:text-[#C5A15B] transition-colors"
                     href="/gallery"
                   >
                     <span>View port infrastructure</span>
@@ -343,80 +430,84 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. WHY CHOOSE US (Deep Forest Green Band) */}
-      <section className="w-full py-24 bg-on-tertiary-fixed text-surface-bright relative overflow-hidden">
+      {/* F. INSTITUTIONAL RELIABILITY / WHY CHOOSE US (Deep Forest Green) */}
+      <section className="w-full py-24 bg-[#0B281D] text-white relative overflow-hidden border-b-2 border-[#C5A15B]/30">
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12 z-10">
           <div className="max-w-2xl mb-16">
             <div className="inline-flex items-center gap-3 mb-3">
-              <span className="font-data-mono text-data-mono text-[#E5B80B] font-bold text-base">03</span>
-              <span className="w-8 h-0.5 bg-[#E5B80B]" />
-              <span className="font-eyebrow-bold text-eyebrow-bold uppercase tracking-[0.22em] text-[#E5B80B] font-extrabold drop-shadow-xs">
+              <span className="font-mono text-[#C5A15B] font-bold text-base">03</span>
+              <span className="w-8 h-0.5 bg-[#C5A15B]" />
+              <span className="font-sans text-xs uppercase tracking-[0.24em] text-[#FDE047] font-extrabold">
                 INSTITUTIONAL RELIABILITY
               </span>
             </div>
-            <h2 className="font-headline-lg text-headline-lg text-surface-bright leading-tight">
-              Engineered for international risk mitigation &amp; <span className="text-[#FDE047] italic">velocity</span>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-white leading-tight">
+              Engineered for international risk mitigation &amp; <span className="text-[#FDE047] italic font-normal">velocity</span>
             </h2>
           </div>
-          {/* 4 Columns separated by KDM Gold Hairlines */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 lg:divide-x divide-[#E5B80B]/30">
+
+          {/* 4 Columns separated by Antique Gold Dividers */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 lg:divide-x divide-[#C5A15B]/30">
             {/* Feature 1 */}
             <div className="pt-8 pb-8 md:pt-0 lg:pr-8 flex flex-col justify-between group">
               <div>
-                <div className="w-14 h-14 rounded-2xl border-2 border-[#E5B80B] flex items-center justify-center text-[#E5B80B] mb-6 bg-[#081E14] shadow-[0_0_20px_rgba(229,184,11,0.35)] transition-transform duration-300 group-hover:scale-110">
+                <div className="w-14 h-14 rounded-2xl border-2 border-[#C5A15B] flex items-center justify-center text-[#FDE047] mb-6 bg-[#123D2B] shadow-[0_0_20px_rgba(197,161,91,0.25)] transition-transform duration-300 group-hover:scale-110">
                   <span className="material-symbols-outlined text-[28px]">verified</span>
                 </div>
-                <h3 className="font-title-md text-title-md text-surface-bright mb-3 group-hover:text-[#FDE047] transition-colors">Quality Assured</h3>
-                <p className="font-body-sm text-body-sm text-surface-bright/75 leading-relaxed mb-4">
+                <h3 className="font-display text-xl font-bold text-white mb-3 group-hover:text-[#FDE047] transition-colors">Quality Assured</h3>
+                <p className="font-sans text-xs sm:text-sm text-[#E7EDE6]/75 leading-relaxed mb-4">
                   Lab-tested lots with comprehensive batch certificates. Third-party testing via SGS or Bureau Veritas readily facilitated upon request.
                 </p>
               </div>
-              <span className="font-data-mono text-data-mono text-[#FDE047] font-bold block mt-2 tracking-wide">
+              <span className="font-mono text-xs text-[#FDE047] font-bold block mt-2 tracking-wide">
                 Purity: 99.5% min
               </span>
             </div>
+
             {/* Feature 2 */}
             <div className="pt-8 pb-8 md:pt-0 lg:px-8 flex flex-col justify-between group">
               <div>
-                <div className="w-14 h-14 rounded-2xl border-2 border-[#E5B80B] flex items-center justify-center text-[#E5B80B] mb-6 bg-[#081E14] shadow-[0_0_20px_rgba(229,184,11,0.35)] transition-transform duration-300 group-hover:scale-110">
+                <div className="w-14 h-14 rounded-2xl border-2 border-[#C5A15B] flex items-center justify-center text-[#FDE047] mb-6 bg-[#123D2B] shadow-[0_0_20px_rgba(197,161,91,0.25)] transition-transform duration-300 group-hover:scale-110">
                   <span className="material-symbols-outlined text-[28px]">directions_boat</span>
                 </div>
-                <h3 className="font-title-md text-title-md text-surface-bright mb-3 group-hover:text-[#FDE047] transition-colors">On-time Shipping</h3>
-                <p className="font-body-sm text-body-sm text-surface-bright/75 leading-relaxed mb-4">
+                <h3 className="font-display text-xl font-bold text-white mb-3 group-hover:text-[#FDE047] transition-colors">On-time Shipping</h3>
+                <p className="font-sans text-xs sm:text-sm text-[#E7EDE6]/75 leading-relaxed mb-4">
                   Planned direct dispatch from Visakhapatnam &amp; Chennai deep-water berths, maintaining strict sailing schedules with global carrier alliances.
                 </p>
               </div>
-              <span className="font-data-mono text-data-mono text-[#FDE047] font-bold block mt-2 tracking-wide">
+              <span className="font-mono text-xs text-[#FDE047] font-bold block mt-2 tracking-wide">
                 Avg Transit: 14-28 Days
               </span>
             </div>
+
             {/* Feature 3 */}
             <div className="pt-8 pb-8 md:pt-8 lg:pt-0 lg:px-8 flex flex-col justify-between group">
               <div>
-                <div className="w-14 h-14 rounded-2xl border-2 border-[#E5B80B] flex items-center justify-center text-[#E5B80B] mb-6 bg-[#081E14] shadow-[0_0_20px_rgba(229,184,11,0.35)] transition-transform duration-300 group-hover:scale-110">
+                <div className="w-14 h-14 rounded-2xl border-2 border-[#C5A15B] flex items-center justify-center text-[#FDE047] mb-6 bg-[#123D2B] shadow-[0_0_20px_rgba(197,161,91,0.25)] transition-transform duration-300 group-hover:scale-110">
                   <span className="material-symbols-outlined text-[28px]">inventory_2</span>
                 </div>
-                <h3 className="font-title-md text-title-md text-surface-bright mb-3 group-hover:text-[#FDE047] transition-colors">Custom Packing</h3>
-                <p className="font-body-sm text-body-sm text-surface-bright/75 leading-relaxed mb-4">
+                <h3 className="font-display text-xl font-bold text-white mb-3 group-hover:text-[#FDE047] transition-colors">Custom Packing</h3>
+                <p className="font-sans text-xs sm:text-sm text-[#E7EDE6]/75 leading-relaxed mb-4">
                   Private label configurations, moisture-barrier vacuum pouches, food-grade polypropylene, and heavy-duty 25/50kg export sacks.
                 </p>
               </div>
-              <span className="font-data-mono text-data-mono text-[#FDE047] font-bold block mt-2 tracking-wide">
+              <span className="font-mono text-xs text-[#FDE047] font-bold block mt-2 tracking-wide">
                 Palletized / Break-bulk
               </span>
             </div>
+
             {/* Feature 4 */}
             <div className="pt-8 pb-8 md:pt-8 lg:pt-0 lg:pl-8 flex flex-col justify-between group">
               <div>
-                <div className="w-14 h-14 rounded-2xl border-2 border-[#E5B80B] flex items-center justify-center text-[#E5B80B] mb-6 bg-[#081E14] shadow-[0_0_20px_rgba(229,184,11,0.35)] transition-transform duration-300 group-hover:scale-110">
+                <div className="w-14 h-14 rounded-2xl border-2 border-[#C5A15B] flex items-center justify-center text-[#FDE047] mb-6 bg-[#123D2B] shadow-[0_0_20px_rgba(197,161,91,0.25)] transition-transform duration-300 group-hover:scale-110">
                   <span className="material-symbols-outlined text-[28px]">contract</span>
                 </div>
-                <h3 className="font-title-md text-title-md text-surface-bright mb-3 group-hover:text-[#FDE047] transition-colors">Export Documentation</h3>
-                <p className="font-body-sm text-body-sm text-surface-bright/75 leading-relaxed mb-4">
+                <h3 className="font-display text-xl font-bold text-white mb-3 group-hover:text-[#FDE047] transition-colors">Export Documentation</h3>
+                <p className="font-sans text-xs sm:text-sm text-[#E7EDE6]/75 leading-relaxed mb-4">
                   Flawless commercial documentation: Ocean Bill of Lading, Phytosanitary, Certificate of Origin, Form A, and Letter of Credit compliant files.
                 </p>
               </div>
-              <span className="font-data-mono text-data-mono text-[#FDE047] font-bold block mt-2 tracking-wide">
+              <span className="font-mono text-xs text-[#FDE047] font-bold block mt-2 tracking-wide">
                 DGFT &amp; Customs Cleared
               </span>
             </div>
@@ -722,39 +813,170 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6. B2B QUICK ENQUIRY SECTION */}
-      <section className="w-full py-24 bg-surface-container border-t border-outline-variant/30" id="quick-enquiry">
+      {/* G. TRADE INSIGHTS & REGULATORY ADVISORIES */}
+      <section className="w-full py-24 bg-[#ECE6D8] text-[#1A241F] border-b border-[#DDD4BF]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 rounded overflow-hidden shadow-sm border border-secondary/30">
-            {/* Left: Minimalist Form (7 Cols) */}
-            <div className="lg:col-span-7 bg-surface p-8 lg:p-14">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+            <div>
               <div className="inline-flex items-center gap-3 mb-3">
-                <span className="font-data-mono text-data-mono text-secondary font-semibold">05</span>
-                <span className="w-4 h-px bg-secondary/50" />
-                <span className="font-eyebrow-bold text-eyebrow-bold uppercase tracking-[0.2em] text-secondary">
-                  TRADE INQUIRY
+                <span className="font-mono text-[#C5A15B] font-bold text-base">05</span>
+                <span className="w-8 h-0.5 bg-[#C5A15B]" />
+                <span className="font-sans text-xs uppercase tracking-[0.24em] text-[#C5A15B] font-extrabold">
+                  EXPORT INTELLIGENCE
                 </span>
               </div>
-              <h2 className="font-headline-lg text-headline-lg text-on-surface mb-3">
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#1A241F]">
+                Maritime Trade Insights &amp; Market Updates
+              </h2>
+            </div>
+            <Link
+              className="inline-flex items-center gap-2 font-sans text-xs sm:text-sm font-bold text-[#123D2B] hover:text-[#C5A15B] transition-colors"
+              href="/blog"
+            >
+              <span>View all market articles</span>
+              <span className="material-symbols-outlined text-[17px]">arrow_forward</span>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Article 1 */}
+            <article className="bg-[#F7F4EB] rounded-2xl border-2 border-[#C5A15B]/30 hover:border-[#C5A15B] overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div className="relative aspect-[16/10] overflow-hidden bg-[#E8E4D7]">
+                  <img
+                    src="/images/banner_port_cranes.jpg"
+                    alt="Container ship at deepwater port"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <span className="absolute top-3 left-3 bg-[#123D2B] text-white text-[10px] font-mono uppercase px-2.5 py-1 rounded font-bold border border-[#C5A15B]/40">
+                    INCOTERMS 2020
+                  </span>
+                </div>
+                <div className="p-6">
+                  <span className="font-mono text-[11px] text-[#C5A15B] block mb-2 font-bold">08 OCT 2026 · 6 MIN READ</span>
+                  <h3 className="font-display text-lg font-bold text-[#1A241F] mb-3 group-hover:text-[#123D2B] transition-colors leading-snug">
+                    Understanding Incoterms: FOB vs CIF for Indian Port Dispatches
+                  </h3>
+                  <p className="font-sans text-xs text-[#3B4A40] leading-relaxed mb-4">
+                    What each term means for risk transfer, marine freight insurance, and buyer liability when shipping from Visakhapatnam.
+                  </p>
+                </div>
+              </div>
+              <div className="px-6 pb-6 pt-0">
+                <Link
+                  href="/blog/export-documentation-guide"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-[#123D2B] hover:text-[#C5A15B] transition-colors uppercase tracking-wider font-sans"
+                >
+                  <span>Read Full Article</span>
+                  <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </Link>
+              </div>
+            </article>
+
+            {/* Article 2 */}
+            <article className="bg-[#F7F4EB] rounded-2xl border-2 border-[#C5A15B]/30 hover:border-[#C5A15B] overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div className="relative aspect-[16/10] overflow-hidden bg-[#E8E4D7]">
+                  <img
+                    src="/images/products_banner_spices.jpg"
+                    alt="Indian spices in packaging"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <span className="absolute top-3 left-3 bg-[#123D2B] text-white text-[10px] font-mono uppercase px-2.5 py-1 rounded font-bold border border-[#C5A15B]/40">
+                    QUALITY &amp; MOISTURE
+                  </span>
+                </div>
+                <div className="p-6">
+                  <span className="font-mono text-[11px] text-[#C5A15B] block mb-2 font-bold">01 OCT 2026 · 5 MIN READ</span>
+                  <h3 className="font-display text-lg font-bold text-[#1A241F] mb-3 group-hover:text-[#123D2B] transition-colors leading-snug">
+                    Packaging Spices for Long Sea Voyages: Moisture Control
+                  </h3>
+                  <p className="font-sans text-xs text-[#3B4A40] leading-relaxed mb-4">
+                    Engineering hermetic liners, container desiccant poles, and automated nitrogen flushing for zero-caking transits.
+                  </p>
+                </div>
+              </div>
+              <div className="px-6 pb-6 pt-0">
+                <Link
+                  href="/blog"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-[#123D2B] hover:text-[#C5A15B] transition-colors uppercase tracking-wider font-sans"
+                >
+                  <span>Read Full Article</span>
+                  <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </Link>
+              </div>
+            </article>
+
+            {/* Article 3 */}
+            <article className="bg-[#F7F4EB] rounded-2xl border-2 border-[#C5A15B]/30 hover:border-[#C5A15B] overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group">
+              <div>
+                <div className="relative aspect-[16/10] overflow-hidden bg-[#E8E4D7]">
+                  <img
+                    src="/images/about_banner_pulses.jpg"
+                    alt="Agricultural grains and commodities"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <span className="absolute top-3 left-3 bg-[#123D2B] text-white text-[10px] font-mono uppercase px-2.5 py-1 rounded font-bold border border-[#C5A15B]/40">
+                    GLOBAL CORRIDORS
+                  </span>
+                </div>
+                <div className="p-6">
+                  <span className="font-mono text-[11px] text-[#C5A15B] block mb-2 font-bold">24 SEP 2026 · 7 MIN READ</span>
+                  <h3 className="font-display text-lg font-bold text-[#1A241F] mb-3 group-hover:text-[#123D2B] transition-colors leading-snug">
+                    Top Export Destinations for Basmati Rice &amp; EU Quotas
+                  </h3>
+                  <p className="font-sans text-xs text-[#3B4A40] leading-relaxed mb-4">
+                    Navigating pesticide residue limits, tricyclazole testing thresholds, and duty tariff exemptions across Western Europe.
+                  </p>
+                </div>
+              </div>
+              <div className="px-6 pb-6 pt-0">
+                <Link
+                  href="/blog"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-[#123D2B] hover:text-[#C5A15B] transition-colors uppercase tracking-wider font-sans"
+                >
+                  <span>Read Full Article</span>
+                  <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </Link>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* H. FINAL B2B TRADE INQUIRY EXPERIENCE */}
+      <section className="w-full py-24 bg-[#F7F4EB] border-b border-[#ECE6D8]" id="quick-enquiry">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 rounded-3xl overflow-hidden shadow-2xl border-2 border-[#C5A15B]/40">
+            {/* Left: Minimalist Form (7 Cols) */}
+            <div className="lg:col-span-7 bg-white p-8 lg:p-14">
+              <div className="inline-flex items-center gap-3 mb-3">
+                <span className="font-mono text-[#C5A15B] font-bold text-base">06</span>
+                <span className="w-8 h-0.5 bg-[#C5A15B]" />
+                <span className="font-sans text-xs uppercase tracking-[0.24em] text-[#C5A15B] font-extrabold">
+                  COMMERCIAL DESK
+                </span>
+              </div>
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-[#1A241F] mb-3">
                 Request an Official Export Quote
               </h2>
-              <p className="font-body-sm text-body-sm text-on-surface-variant mb-10">
-                Direct your procurement queries to our maritime desks for firm FOB / CIF quotation sheets.
+              <p className="font-sans text-sm text-[#3B4A40] mb-8 leading-relaxed">
+                Direct your procurement queries to our maritime desks for firm FOB / CIF quotation sheets and certified specifications.
               </p>
 
               {formSubmitted ? (
-                <div className="p-6 rounded bg-primary-fixed/20 border border-primary/30 text-on-primary-fixed flex flex-col gap-3">
-                  <div className="flex items-center gap-2 text-primary font-headline-sm">
-                    <span className="material-symbols-outlined text-[24px]">verified</span>
+                <div className="p-6 rounded-2xl bg-[#E7EDE6] border border-[#123D2B]/30 text-[#123D2B] flex flex-col gap-3">
+                  <div className="flex items-center gap-2 font-display text-xl font-bold">
+                    <span className="material-symbols-outlined text-[24px] text-[#123D2B]">verified</span>
                     <span>Inquiry Registered Successfully</span>
                   </div>
-                  <p className="font-body-md text-body-md text-on-surface">
-                    Thank you, <span className="font-bold">{inquiryData.fullName || "Partner"}</span>. Our Visakhapatnam export desk is reviewing your requirements for <span className="font-bold">{inquiryData.commodity || "agro commodities"}</span>. A formal proforma quotation will be dispatched to <span className="font-bold">{inquiryData.email}</span> within 24 hours.
+                  <p className="font-sans text-sm text-[#1A241F]">
+                    Thank you, <span className="font-bold">{inquiryData.fullName || "Partner"}</span>. Our Visakhapatnam export desk is reviewing your requirements for <span className="font-bold">{inquiryData.commodity || "commodities"}</span>. A formal proforma quotation will be dispatched to <span className="font-bold">{inquiryData.email}</span> within 24 hours.
                   </p>
                   <button
                     type="button"
                     onClick={() => setFormSubmitted(false)}
-                    className="self-start text-xs font-data-mono text-secondary hover:underline pt-2"
+                    className="self-start text-xs font-mono text-[#C5A15B] font-bold hover:underline pt-2"
                   >
                     ← Submit another inquiry
                   </button>
@@ -764,11 +986,11 @@ export default function HomePage() {
                   {/* Full Name & Corporate Email */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="flex flex-col">
-                      <label className="font-label-md text-label-md text-on-surface mb-2" htmlFor="home-full-name">
+                      <label className="font-sans text-xs font-bold uppercase tracking-wider text-[#1A241F] mb-2" htmlFor="home-full-name">
                         Full Name *
                       </label>
                       <input
-                        className="w-full bg-surface-container-low px-3.5 py-3 border border-secondary/30 rounded focus:border-primary focus:outline-none font-body-md text-body-md text-on-surface transition-colors"
+                        className="w-full bg-[#F7F4EB] px-4 py-3 border border-[#C5A15B]/30 rounded-xl focus:border-[#123D2B] focus:ring-2 focus:ring-[#123D2B]/20 focus:outline-none font-sans text-sm text-[#1A241F] transition-all"
                         id="home-full-name"
                         placeholder="e.g. David Vance"
                         required
@@ -778,11 +1000,11 @@ export default function HomePage() {
                       />
                     </div>
                     <div className="flex flex-col">
-                      <label className="font-label-md text-label-md text-on-surface mb-2" htmlFor="home-corp-email">
+                      <label className="font-sans text-xs font-bold uppercase tracking-wider text-[#1A241F] mb-2" htmlFor="home-corp-email">
                         Corporate Email *
                       </label>
                       <input
-                        className="w-full bg-surface-container-low px-3.5 py-3 border border-secondary/30 rounded focus:border-primary focus:outline-none font-body-md text-body-md text-on-surface transition-colors"
+                        className="w-full bg-[#F7F4EB] px-4 py-3 border border-[#C5A15B]/30 rounded-xl focus:border-[#123D2B] focus:ring-2 focus:ring-[#123D2B]/20 focus:outline-none font-sans text-sm text-[#1A241F] transition-all"
                         id="home-corp-email"
                         placeholder="name@company.com"
                         required
@@ -794,11 +1016,11 @@ export default function HomePage() {
                   </div>
                   {/* Commodity Requirement */}
                   <div className="flex flex-col">
-                    <label className="font-label-md text-label-md text-on-surface mb-2" htmlFor="home-commodity-select">
+                    <label className="font-sans text-xs font-bold uppercase tracking-wider text-[#1A241F] mb-2" htmlFor="home-commodity-select">
                       Sourcing Requirement / Commodity *
                     </label>
                     <select
-                      className="w-full bg-surface-container-low px-3.5 py-3 border border-secondary/30 rounded focus:border-primary focus:outline-none font-body-md text-body-md text-on-surface transition-colors"
+                      className="w-full bg-[#F7F4EB] px-4 py-3 border border-[#C5A15B]/30 rounded-xl focus:border-[#123D2B] focus:ring-2 focus:ring-[#123D2B]/20 focus:outline-none font-sans text-sm text-[#1A241F] transition-all"
                       id="home-commodity-select"
                       required
                       value={inquiryData.commodity}
@@ -810,17 +1032,18 @@ export default function HomePage() {
                       <option value="Malabar Black Pepper">Malabar Black Pepper (500 - 570 GL)</option>
                       <option value="Guntur Dry Red Chilli">Guntur Dry Red Chilli (S17 / Sanam / Byadgi)</option>
                       <option value="100% Combed Cotton Fabrics">100% Combed Cotton Fabrics &amp; Yarns</option>
+                      <option value="W180 - W320 Cashew Kernels">W180 - W320 Cashew Kernels</option>
                       <option value="Other Agro Bulk">Other Agro Bulk / Custom Specification</option>
                     </select>
                   </div>
                   {/* Destination Port & Volume */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="flex flex-col">
-                      <label className="font-label-md text-label-md text-on-surface mb-2" htmlFor="home-dest-port">
+                      <label className="font-sans text-xs font-bold uppercase tracking-wider text-[#1A241F] mb-2" htmlFor="home-dest-port">
                         Destination Port &amp; Country *
                       </label>
                       <input
-                        className="w-full bg-surface-container-low px-3.5 py-3 border border-secondary/30 rounded focus:border-primary focus:outline-none font-body-md text-body-md text-on-surface transition-colors"
+                        className="w-full bg-[#F7F4EB] px-4 py-3 border border-[#C5A15B]/30 rounded-xl focus:border-[#123D2B] focus:ring-2 focus:ring-[#123D2B]/20 focus:outline-none font-sans text-sm text-[#1A241F] transition-all"
                         id="home-dest-port"
                         placeholder="e.g. Jebel Ali, UAE or Rotterdam, NL"
                         required
@@ -830,11 +1053,11 @@ export default function HomePage() {
                       />
                     </div>
                     <div className="flex flex-col">
-                      <label className="font-label-md text-label-md text-on-surface mb-2" htmlFor="home-order-quantity">
+                      <label className="font-sans text-xs font-bold uppercase tracking-wider text-[#1A241F] mb-2" htmlFor="home-order-quantity">
                         Target Quantity (MT or TEU) *
                       </label>
                       <input
-                        className="w-full bg-surface-container-low px-3.5 py-3 border border-secondary/30 rounded focus:border-primary focus:outline-none font-body-md text-body-md text-on-surface transition-colors"
+                        className="w-full bg-[#F7F4EB] px-4 py-3 border border-[#C5A15B]/30 rounded-xl focus:border-[#123D2B] focus:ring-2 focus:ring-[#123D2B]/20 focus:outline-none font-sans text-sm text-[#1A241F] transition-all"
                         id="home-order-quantity"
                         placeholder="e.g. 50 Metric Tons (2 FCL)"
                         required
@@ -846,11 +1069,11 @@ export default function HomePage() {
                   </div>
                   <div className="pt-2">
                     <button
-                      className="inline-flex items-center gap-3 bg-secondary text-surface-bright font-label-md text-label-md px-8 py-3.5 rounded hover:bg-on-secondary-fixed-variant transition-colors shadow-sm w-full sm:w-auto justify-center"
+                      className="inline-flex items-center gap-3 bg-gradient-to-r from-[#FDE047] via-[#E5B80B] to-[#C5A15B] text-[#0B281D] font-sans text-sm font-bold uppercase tracking-wider px-8 py-3.5 rounded-xl hover:scale-105 transition-all duration-300 shadow-[0_4px_16px_rgba(229,184,11,0.35)] w-full sm:w-auto justify-center border border-[#FFF089]"
                       type="submit"
                     >
-                      <span>Send enquiry</span>
-                      <span className="material-symbols-outlined text-[17px]">arrow_forward</span>
+                      <span>Send Official Enquiry</span>
+                      <span className="material-symbols-outlined text-[17px] font-bold">arrow_forward</span>
                     </button>
                   </div>
                 </form>
@@ -858,23 +1081,23 @@ export default function HomePage() {
             </div>
 
             {/* Right: Forest Green Desk Assistance (5 Cols) */}
-            <div className="lg:col-span-5 bg-on-tertiary-fixed text-surface-bright p-8 lg:p-14 flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-secondary/30">
+            <div className="lg:col-span-5 bg-[#0B281D] text-white p-8 lg:p-14 flex flex-col justify-between border-t lg:border-t-0 lg:border-l border-[#C5A15B]/30">
               <div>
-                <div className="w-10 h-10 rounded bg-primary text-secondary-container flex items-center justify-center border border-secondary/40 mb-6">
-                  <span className="material-symbols-outlined text-[20px]">support_agent</span>
+                <div className="w-12 h-12 rounded-2xl bg-[#123D2B] text-[#FDE047] flex items-center justify-center border border-[#C5A15B]/40 mb-6 shadow-sm">
+                  <span className="material-symbols-outlined text-[24px]">support_agent</span>
                 </div>
-                <span className="font-eyebrow-bold text-eyebrow-bold uppercase tracking-[0.2em] text-secondary-container block mb-2">
+                <span className="font-sans text-xs font-bold uppercase tracking-[0.24em] text-[#C5A15B] block mb-2">
                   EXPRESS COMMERCE
                 </span>
-                <h3 className="font-headline-sm text-headline-sm text-surface-bright mb-4">
+                <h3 className="font-display text-2xl font-bold text-white mb-4">
                   Direct Port Desk Assistance
                 </h3>
-                <p className="font-body-md text-body-md text-surface-bright/80 mb-8 leading-relaxed">
-                  Require urgent spot container pricing, sample lot dispatch, or custom packing analysis? Our trade managers respond in real-time.
+                <p className="font-sans text-sm text-[#E7EDE6]/80 mb-8 leading-relaxed">
+                  Require urgent spot container pricing, sample lot dispatch, or custom packing analysis? Our maritime trade managers respond directly.
                 </p>
                 <div className="space-y-4 mb-8">
                   <a
-                    className="w-full inline-flex items-center justify-center gap-2 bg-secondary text-surface-bright font-label-md text-label-md py-3.5 px-6 rounded hover:bg-on-secondary-fixed-variant transition-colors"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-[#C5A15B] text-[#0B281D] font-sans text-xs font-bold uppercase tracking-wider py-3.5 px-6 rounded-xl hover:bg-[#E5B80B] transition-all shadow-md"
                     href="https://wa.me/919876543210"
                     rel="noopener noreferrer"
                     target="_blank"
@@ -883,20 +1106,20 @@ export default function HomePage() {
                     <span>Chat on WhatsApp</span>
                   </a>
                   <a
-                    className="w-full inline-flex items-center justify-center gap-2 border border-surface-bright/40 text-surface-bright font-label-md text-label-md py-3 px-6 rounded hover:bg-surface-bright/10 hover:border-surface-bright transition-colors"
-                    href="mailto:export@svmrexports.example"
+                    className="w-full inline-flex items-center justify-center gap-2 border border-[#C5A15B]/50 text-white font-sans text-xs font-semibold uppercase tracking-wider py-3.5 px-6 rounded-xl hover:bg-white/10 hover:border-[#FDE047] transition-all"
+                    href="mailto:export@bharatglobalexports.com"
                   >
-                    <span className="material-symbols-outlined text-[18px] text-secondary-container">mail</span>
+                    <span className="material-symbols-outlined text-[18px] text-[#FDE047]">mail</span>
                     <span>Email us directly</span>
                   </a>
                 </div>
               </div>
-              <div className="pt-6 border-t border-secondary/25">
-                <div className="flex items-center gap-2 font-data-mono text-data-mono text-secondary-container mb-1">
-                  <span className="w-2 h-2 rounded-full bg-primary-fixed inline-block" />
+              <div className="pt-6 border-t border-[#C5A15B]/25">
+                <div className="flex items-center gap-2 font-mono text-xs text-[#FDE047] mb-1">
+                  <span className="w-2 h-2 rounded-full bg-[#86D7A9] inline-block animate-pulse" />
                   <span>SLA GUARANTEE</span>
                 </div>
-                <p className="font-body-sm text-body-sm text-surface-bright/70">
+                <p className="font-sans text-xs text-[#E7EDE6]/70 leading-relaxed">
                   We reply with verified FOB (Visakhapatnam/Chennai) or CIF quotes within 24 hours of commercial inquiry.
                 </p>
               </div>

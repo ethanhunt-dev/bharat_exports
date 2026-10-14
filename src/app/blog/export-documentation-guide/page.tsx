@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useQuoteModal } from "@/context/QuoteModalContext";
+import PageBanner from "@/components/PageBanner";
 
 export default function BlogDetailPage() {
   const { openQuoteModal } = useQuoteModal();
@@ -24,50 +25,19 @@ export default function BlogDetailPage() {
 
   return (
     <div className="flex flex-col w-full">
-      {/* 1. Inner Page Banner (Dark Deep Forest Green Corridor) */}
-      <section className="relative w-full bg-on-tertiary-fixed text-surface-bright py-14 md:py-20 overflow-hidden shadow-md">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <svg className="w-full h-full text-secondary-fixed" fill="none" preserveAspectRatio="none" viewBox="0 0 1000 300">
-            <circle cx="200" cy="150" r="180" stroke="currentColor" strokeDasharray="4 6" strokeWidth="0.75" />
-            <circle cx="200" cy="150" r="320" stroke="currentColor" strokeWidth="0.5" />
-            <path d="M0,150 L1000,150 M200,0 L200,300 M750,0 L750,300" stroke="currentColor" strokeDasharray="2 8" strokeWidth="0.5" />
-          </svg>
-        </div>
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 flex flex-col items-start gap-4">
-          {/* Breadcrumb Bar */}
-          <nav className="flex items-center gap-2 font-data-mono text-data-mono uppercase tracking-widest text-secondary-fixed/90 text-xs">
-            <Link className="hover:text-surface-bright transition-colors" href="/">
-              Home
-            </Link>
-            <span className="text-secondary/60">/</span>
-            <Link className="hover:text-surface-bright transition-colors" href="/blog">
-              Blog
-            </Link>
-            <span className="text-secondary/60">/</span>
-            <span className="text-surface-bright/70 truncate max-w-[240px] sm:max-w-md">
-              Documentation &amp; Customs
-            </span>
-          </nav>
-          <div className="w-full flex flex-col md:flex-row md:items-end justify-between gap-6 pt-2">
-            <div className="space-y-2">
-              <span className="font-eyebrow-bold text-eyebrow-bold uppercase tracking-[0.25em] text-secondary-container">
-                SVMR Trade Advisory · Issue #48
-              </span>
-              <h2 className="font-headline-lg text-headline-lg md:text-[38px] text-surface-bright tracking-tight">
-                EXPORT DOCUMENTATION DOSSIER
-              </h2>
-            </div>
-            <div className="flex items-center gap-3 bg-tertiary/60 backdrop-blur px-4 py-2.5 rounded shadow-inner">
-              <span className="material-symbols-outlined text-secondary-fixed text-[20px]">verified</span>
-              <span className="font-data-mono text-data-mono text-surface-bright/90 text-xs">
-                Port Customs Standard · ICEGATE Ready
-              </span>
-            </div>
-          </div>
-          {/* Golden Separator Baseline */}
-          <div className="w-full h-px bg-secondary/30 mt-4" />
-        </div>
-      </section>
+      {/* 1. Cinematic Luxury Page Banner */}
+      <PageBanner
+        title="EXPORT DOCUMENTATION DOSSIER"
+        eyebrow="BHARAT GLOBAL EXPORTS · TRADE ADVISORY #48"
+        breadcrumbCurrent="Documentation & Customs"
+        parentBreadcrumb={{ label: "Blog", href: "/blog" }}
+        bgImage="/images/banner_port_cranes.jpg"
+        description="Comprehensive compliance guide for Indian port customs clearing, Bill of Lading execution, and phytosanitary verification."
+        metaBadge={{
+          label: "PORT CUSTOMS",
+          value: "ICEGATE & DGFT READY",
+        }}
+      />
 
       {/* 2. Centered Editorial Article Column */}
       <section className="w-full bg-surface py-12 md:py-20">
