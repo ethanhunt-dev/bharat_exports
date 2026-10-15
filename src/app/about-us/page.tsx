@@ -13,7 +13,7 @@ export default function AboutUsPage() {
       {/* 1. Cinematic Luxury Page Banner */}
       <PageBanner
         title="About Us"
-        eyebrow="BHARAT GLOBAL EXPORTS · COMPANY PROFILE"
+        eyebrow="SVMR EXPORTS · COMPANY PROFILE"
         breadcrumbCurrent="About Us"
         bgImage="/images/about_banner_pulses.jpg"
         description="Institutional scale, multi-generational agrarian knowledge, and coastal port readiness under a single trade authority."

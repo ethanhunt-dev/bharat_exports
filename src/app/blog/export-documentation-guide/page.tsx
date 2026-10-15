@@ -28,7 +28,7 @@ export default function BlogDetailPage() {
       {/* 1. Cinematic Luxury Page Banner */}
       <PageBanner
         title="Export Documentation Guide"
-        eyebrow="BHARAT GLOBAL EXPORTS · TRADE ADVISORY #48"
+        eyebrow="SVMR EXPORTS · TRADE ADVISORY #48"
         breadcrumbCurrent="Documentation Guide"
         parentBreadcrumb={{ label: "Blog", href: "/blog" }}
         bgImage="/images/banner_port_cranes.jpg"

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, DM_Sans } from "next/font/google";
+import { Kanit, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -10,9 +10,10 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { QuoteModalProvider } from "@/context/QuoteModalContext";
 import { DataProvider } from "@/context/DataContext";
 
-const playfair = Playfair_Display({
+const kanit = Kanit({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-kanit",
   display: "swap",
 });
 
@@ -23,11 +24,11 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Bharat Global Exports | Premier Indian B2B Export House",
+  title: "SVMR Exports | Premier Indian B2B Export House",
   description:
     "Government Recognized Three-Star Export House providing institutional grades, guaranteed phytosanitary compliance, and direct Visakhapatnam port transshipment.",
   keywords: [
-    "Bharat Global Exports",
+    "SVMR Exports",
     "Indian B2B Export House",
     "Basmati Rice Exporters",
     "Indian Spices Export",
@@ -37,9 +38,9 @@ export const metadata: Metadata = {
     "Organic Turmeric Exporter",
     "Indian Raw Cotton Textiles",
   ],
-  authors: [{ name: "Bharat Global Exports Corporate Portal" }],
+  authors: [{ name: "SVMR Exports Corporate Portal" }],
   openGraph: {
-    title: "Bharat Global Exports | Premier Indian B2B Export House",
+    title: "SVMR Exports | Premier Indian B2B Export House",
     description: "Generational Indian agro and textile export house operating through Visakhapatnam Port to 40+ countries.",
     type: "website",
   },
@@ -53,7 +54,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${dmSans.variable} scroll-smooth`}
+      className={`${kanit.variable} ${dmSans.variable} scroll-smooth`}
     >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />

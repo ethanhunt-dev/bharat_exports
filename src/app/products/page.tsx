@@ -231,7 +231,7 @@ export default function ProductsPage() {
       {/* 1. Cinematic Luxury Agricultural Page Banner */}
       <PageBanner
         title="Products"
-        eyebrow="BHARAT GLOBAL EXPORTS · INSTITUTIONAL CATALOGUE"
+        eyebrow="SVMR EXPORTS · INSTITUTIONAL CATALOGUE"
         breadcrumbCurrent="Products"
         bgImage="/images/products_banner_spices.jpg"
         description="Government Recognized Three-Star Export House providing institutional grades, guaranteed phytosanitary compliance, and direct Visakhapatnam port transshipment."

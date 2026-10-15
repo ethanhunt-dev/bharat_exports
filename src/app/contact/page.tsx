@@ -41,7 +41,7 @@ export default function ContactPage() {
       {/* 1. Cinematic Luxury Page Banner */}
       <PageBanner
         title="Contact Us"
-        eyebrow="BHARAT GLOBAL EXPORTS · GLOBAL TRADE DESK"
+        eyebrow="SVMR EXPORTS · GLOBAL TRADE DESK"
         breadcrumbCurrent="Contact Us"
         bgImage="/images/banner_port_cranes.jpg"
         description="Direct international procurement queries, charter reservations, and sample dispatch requests to our Visakhapatnam maritime desk."
@@ -385,8 +385,8 @@ export default function ContactPage() {
                       <span className="block font-eyebrow-bold text-eyebrow-bold uppercase tracking-wider text-on-surface-variant mb-1 text-xs">
                         Commercial Correspondence
                       </span>
-                      <a className="font-mono text-base text-primary hover:underline font-semibold" href="mailto:export@bharatglobalexports.com">
-                        export@bharatglobalexports.com
+                      <a className="font-mono text-base text-primary hover:underline font-semibold" href="mailto:export@svmrexports.com">
+                        export@svmrexports.com
                       </a>
                       <p className="font-body-sm text-body-sm text-on-surface-variant/80 mt-1">
                         RFQ attachments, certificates &amp; purchase orders.
@@ -427,7 +427,7 @@ export default function ContactPage() {
                   </a>
                   <a
                     className="flex-1 inline-flex items-center justify-center gap-2 border-2 border-[#123D2B] text-[#123D2B] font-sans text-xs font-bold uppercase tracking-wider px-5 py-3 rounded-xl hover:bg-[#123D2B] hover:text-white transition-all text-center"
-                    href="mailto:export@bharatglobalexports.com?subject=Trade%20Inquiry%20-%20Bharat%20Global%20Exports"
+                    href="mailto:export@svmrexports.com?subject=Trade%20Inquiry%20-%20SVMR%20Exports"
                   >
                     <span className="material-symbols-outlined text-[18px]">mail</span>
                     <span>Email Trade Desk</span>

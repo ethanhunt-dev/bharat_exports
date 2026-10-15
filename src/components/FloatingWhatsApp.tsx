@@ -12,7 +12,7 @@ export default function FloatingWhatsApp() {
         <div className="flex flex-col items-end gap-2.5 animate-fadeIn mb-1">
           {/* Email Button */}
           <a
-            href="mailto:export@bharatglobalexports.com?subject=Export%20Commodity%20Inquiry%20-%20Bharat%20Global%20Exports"
+            href="mailto:export@svmrexports.com?subject=Export%20Commodity%20Inquiry%20-%20SVMR%20Exports"
             className="flex items-center gap-3 bg-[#0B281D] text-white px-4 py-2.5 rounded-full shadow-2xl border border-[#C5A15B]/50 hover:bg-[#123D2B] hover:scale-105 transition-all text-xs font-semibold group"
             title="Email Trade Desk"
           >
@@ -26,7 +26,7 @@ export default function FloatingWhatsApp() {
 
           {/* WhatsApp Direct Chat */}
           <a
-            href="https://wa.me/919876543210?text=Hello%20Bharat%20Global%20Exports%20Team%2C%20I%20would%20like%20to%20inquire%20about%20your%20export%20commodities%20and%20shipping%20specs."
+            href="https://wa.me/919876543210?text=Hello%20SVMR%20Exports%20Team%2C%20I%20would%20like%20to%20inquire%20about%20your%20export%20commodities%20and%20shipping%20specs."
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 bg-[#25D366] text-white px-4 py-2.5 rounded-full shadow-2xl hover:brightness-110 hover:scale-105 transition-all text-xs font-semibold group"

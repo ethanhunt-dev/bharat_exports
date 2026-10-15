@@ -186,7 +186,7 @@ const INITIAL_BLOGS: BlogPost[] = [
     readTime: "6 MIN READ",
     summary: "What each term means for risk transfer, marine freight insurance, and buyer liability when shipping from Visakhapatnam Port.",
     imgUrl: "/images/banner_port_cranes.jpg",
-    author: "Bharat Trade Compliance Desk",
+    author: "SVMR Trade Compliance Desk",
   },
   {
     id: "b2",
@@ -343,16 +343,16 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (typeof window === "undefined") return;
     try {
-      const storedProducts = localStorage.getItem("bharat_products");
+      const storedProducts = localStorage.getItem("svmr_products");
       if (storedProducts) setProducts(JSON.parse(storedProducts));
 
-      const storedBlogs = localStorage.getItem("bharat_blogs");
+      const storedBlogs = localStorage.getItem("svmr_blogs");
       if (storedBlogs) setBlogs(JSON.parse(storedBlogs));
 
-      const storedGallery = localStorage.getItem("bharat_gallery");
+      const storedGallery = localStorage.getItem("svmr_gallery");
       if (storedGallery) setGallery(JSON.parse(storedGallery));
 
-      const storedEnquiries = localStorage.getItem("bharat_enquiries");
+      const storedEnquiries = localStorage.getItem("svmr_enquiries");
       if (storedEnquiries) setEnquiries(JSON.parse(storedEnquiries));
     } catch (e) {
       console.error("Failed to load stored data", e);
@@ -365,10 +365,10 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (!isLoaded || typeof window === "undefined") return;
     try {
-      localStorage.setItem("bharat_products", JSON.stringify(products));
-      localStorage.setItem("bharat_blogs", JSON.stringify(blogs));
-      localStorage.setItem("bharat_gallery", JSON.stringify(gallery));
-      localStorage.setItem("bharat_enquiries", JSON.stringify(enquiries));
+      localStorage.setItem("svmr_products", JSON.stringify(products));
+      localStorage.setItem("svmr_blogs", JSON.stringify(blogs));
+      localStorage.setItem("svmr_gallery", JSON.stringify(gallery));
+      localStorage.setItem("svmr_enquiries", JSON.stringify(enquiries));
     } catch (e) {
       console.error("Failed to persist data", e);
     }
@@ -445,10 +445,10 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
     setGallery(INITIAL_GALLERY);
     setEnquiries(INITIAL_ENQUIRIES);
     if (typeof window !== "undefined") {
-      localStorage.removeItem("bharat_products");
-      localStorage.removeItem("bharat_blogs");
-      localStorage.removeItem("bharat_gallery");
-      localStorage.removeItem("bharat_enquiries");
+      localStorage.removeItem("svmr_products");
+      localStorage.removeItem("svmr_blogs");
+      localStorage.removeItem("svmr_gallery");
+      localStorage.removeItem("svmr_enquiries");
     }
   };
 

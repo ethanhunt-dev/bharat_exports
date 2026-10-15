@@ -147,7 +147,7 @@ export default function BlogPage() {
       {/* 1. Cinematic Luxury Page Banner */}
       <PageBanner
         title="Blog & Insights"
-        eyebrow="BHARAT GLOBAL EXPORTS · KNOWLEDGE ARCHIVE"
+        eyebrow="SVMR EXPORTS · KNOWLEDGE ARCHIVE"
         breadcrumbCurrent="Blog"
         bgImage="/images/products_banner_spices.jpg"
         description="Authoritative regulatory analysis, ocean freight forecasts, and phytosanitary quality benchmarks for global food importers and procurement directors."

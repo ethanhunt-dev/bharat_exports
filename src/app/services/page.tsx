@@ -13,7 +13,7 @@ export default function ServicesPage() {
       {/* 1. Cinematic Luxury Page Banner */}
       <PageBanner
         title="Services"
-        eyebrow="BHARAT GLOBAL EXPORTS · INSTITUTIONAL CAPABILITIES"
+        eyebrow="SVMR EXPORTS · INSTITUTIONAL CAPABILITIES"
         breadcrumbCurrent="Services"
         bgImage="/images/banner_port_cranes.jpg"
         description="Integrated farm-to-berth export solutions compliant with US-FDA, EU phytosanitary norms, and Codex Alimentarius."

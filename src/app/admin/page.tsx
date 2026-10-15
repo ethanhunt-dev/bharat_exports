@@ -49,7 +49,7 @@ export default function AdminPage() {
     readTime: "5 MIN READ",
     summary: "",
     imgUrl: "/images/banner_port_cranes.jpg",
-    author: "Bharat Export Operations",
+    author: "SVMR Export Operations",
   });
 
   // Gallery Modal State
@@ -160,7 +160,7 @@ export default function AdminPage() {
               Content Management System
             </div>
             <h1 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-[#F7F4EB]">
-              Bharat Global Exports <span className="text-[#E5B80B]">Admin Console</span>
+              SVMR Exports <span className="text-[#E5B80B]">Admin Console</span>
             </h1>
             <p className="text-xs sm:text-sm text-[#DDD4BF] mt-1">
               Live B2B content manager: easily add, edit, or delete products, blogs, gallery assets, and inspect buyer quote inquiries.

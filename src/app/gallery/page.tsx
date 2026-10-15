@@ -169,7 +169,7 @@ export default function GalleryPage() {
       {/* 1. Cinematic Luxury Page Banner */}
       <PageBanner
         title="Operations Gallery"
-        eyebrow="BHARAT GLOBAL EXPORTS · OPERATIONAL ARCHIVE"
+        eyebrow="SVMR EXPORTS · OPERATIONAL ARCHIVE"
         breadcrumbCurrent="Gallery"
         bgImage="/images/banner_port_cranes.jpg"
         description="Documenting our farm-gate provenance, automated Sortex cleaning units, ISO/IEC analytical testing labs, and deep-water container vessel loadings at Visakhapatnam Port."

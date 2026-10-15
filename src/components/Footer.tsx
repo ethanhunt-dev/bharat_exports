@@ -16,21 +16,28 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full bg-[#0B281D] text-[#F7F4EB] border-t-2 border-[#C5A15B] shadow-[0_-4px_25px_rgba(197,161,91,0.15)]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-16 pb-12">
+    <footer className="relative w-full bg-[#071C14] text-[#F7F4EB] border-t-2 border-[#C5A15B] shadow-[0_-4px_25px_rgba(197,161,91,0.15)] overflow-hidden">
+      {/* Clear, Luminous Cargo Ship Background Image (Skanda Marine Style) */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-50 scale-105 transition-transform duration-1000"
+        style={{ backgroundImage: "url('/images/global_export_shipping.jpg')" }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-[#071C14]/80 to-[#04100B]/85 pointer-events-none" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-16 pb-12">
         {/* Main 4-column footer */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-12 border-b border-[#C5A15B]/25">
           {/* Col 1: Brand & Identity */}
           <div className="flex flex-col">
-            <div className="bg-[#FFFFFF] rounded-lg p-2.5 w-fit mb-5 shadow-sm border border-[#C5A15B]/30">
+            <Link href="/" className="inline-block mb-4 transition-transform duration-300 hover:scale-105">
               <img
-                src="/svmr_logo.png"
-                alt="Bharat Global Exports Official Emblem"
-                className="h-12 w-auto object-contain"
+                src="/svmr_logo_clean.png"
+                alt="SVMR Exports Emblem"
+                className="h-16 w-auto object-contain drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]"
               />
-            </div>
+            </Link>
             <span className="font-display font-bold text-lg text-white mb-2">
-              BHARAT GLOBAL EXPORTS
+              SVMR EXPORTS
             </span>
             <p className="font-sans text-sm text-[#E7EDE6]/80 leading-relaxed mb-6">
               Premier Indian Government Recognized Three-Star Export House connecting Andhra agricultural wealth and Indian textiles to 40+ global port destinations.
@@ -48,7 +55,7 @@ export default function Footer() {
               <a
                 aria-label="Email"
                 className="w-9 h-9 rounded-lg border border-[#C5A15B]/50 flex items-center justify-center text-[#FDE047] hover:bg-[#C5A15B]/20 hover:text-white transition-colors"
-                href="mailto:export@bharatglobalexports.com"
+                href="mailto:export@svmrexports.com"
               >
                 <span className="material-symbols-outlined text-[18px]">mail</span>
               </a>
@@ -160,78 +167,49 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 4: Port Office & Contact + Newsletter */}
+          {/* Col 4: Location & Google Maps (Skanda Image 3 Style) */}
           <div className="flex flex-col">
-            <span className="font-eyebrow-bold text-eyebrow-bold uppercase tracking-[0.2em] text-secondary-container mb-6">
-              Port Office &amp; Contact
-            </span>
-            <div className="flex flex-col gap-3.5 font-body-sm text-body-sm text-surface-bright/80 mb-6">
-              <p className="flex items-start gap-2">
-                <span className="material-symbols-outlined text-[18px] text-secondary-container shrink-0 mt-0.5">
-                  location_on
-                </span>
-                <span>12 Port Road, Visakhapatnam, Andhra Pradesh 530035, India</span>
-              </p>
-              <p className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-[18px] text-[#C5A15B] shrink-0">
-                  call
-                </span>
-                <span className="font-mono text-xs">+91 98765 43210</span>
-              </p>
-              <p className="flex items-center gap-2">
-                <span className="material-symbols-outlined text-[18px] text-[#C5A15B] shrink-0">
-                  mail
-                </span>
-                <span className="font-mono text-xs">export@bharatglobalexports.com</span>
-              </p>
-              <div className="pt-2 border-t border-[#C5A15B]/20">
-                <span className="font-sans text-[11px] font-bold text-[#C5A15B] uppercase block mb-1">
-                  Corridor Origin
-                </span>
-                <span className="font-mono text-xs text-[#E7EDE6]/70">
-                  INVTZ1 · Visakhapatnam Sea Port (VPA) · Berth 04
-                </span>
-              </div>
+            <div className="flex items-center gap-2 mb-4">
+              <span className="w-4 h-0.5 bg-[#C5A15B]" />
+              <span className="font-sans text-xs uppercase tracking-[0.2em] text-[#C5A15B] font-bold">
+                Location
+              </span>
+            </div>
+            
+            {/* Interactive Location Map Box */}
+            <div className="relative rounded-xl overflow-hidden border-2 border-[#C5A15B]/40 shadow-xl bg-black/40 mb-3 group">
+              <iframe
+                title="SVMR Exports Location Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121571.49129598859!2d83.21848154823485!3d17.686815899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39431389e6973f%3A0x92d9c20395498468!2sVisakhapatnam%20Port!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                className="w-full h-32 border-0 filter contrast-110 opacity-90 group-hover:opacity-100 transition-opacity"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <a
+                href="https://maps.google.com/?q=Visakhapatnam+Port"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute top-2 left-2 bg-white/95 text-[#2A2833] font-sans text-[10px] font-bold px-2 py-0.5 rounded shadow hover:bg-[#BB1515] hover:text-white transition-colors flex items-center gap-1"
+              >
+                <span>Open in Maps</span>
+                <span className="material-symbols-outlined text-[12px]">open_in_new</span>
+              </a>
             </div>
 
-            {/* DGFT Newsletter Subscribe */}
-            <div className="bg-white/5 p-3.5 rounded-lg border border-[#C5A15B]/30">
-              <span className="font-sans text-xs font-bold text-[#FDE047] uppercase block mb-1.5">
-                DGFT Market Intelligence
-              </span>
-              <p className="text-xs text-[#E7EDE6]/70 mb-2.5">
-                Bi-weekly crop forecasts, freight trends, and policy updates.
-              </p>
-              {newsletterSubscribed ? (
-                <div className="text-xs text-[#86D7A9] font-mono flex items-center gap-1">
-                  <span className="material-symbols-outlined text-[16px]">check_circle</span>
-                  <span>Subscribed to trade bulletins!</span>
-                </div>
-              ) : (
-                <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
-                  <input
-                    type="email"
-                    required
-                    value={newsletterEmail}
-                    onChange={(e) => setNewsletterEmail(e.target.value)}
-                    placeholder="name@importer.com"
-                    className="w-full bg-white/10 text-xs px-2.5 py-1.5 rounded border border-[#C5A15B]/40 text-white focus:outline-none focus:border-[#FDE047] placeholder:text-white/40"
-                  />
-                  <button
-                    type="submit"
-                    className="bg-[#C5A15B] text-[#0B281D] px-3 py-1.5 rounded text-xs font-bold hover:bg-[#E5B80B] transition-colors shrink-0"
-                  >
-                    Join
-                  </button>
-                </form>
-              )}
-            </div>
+            <p className="font-sans text-xs text-[#E7EDE6]/80 flex items-start gap-1.5 mb-1.5">
+              <span className="material-symbols-outlined text-[16px] text-[#F7C600] shrink-0 mt-0.5">location_on</span>
+              <span>12 Port Road, Visakhapatnam Port, Andhra Pradesh 530035, India</span>
+            </p>
+            <p className="font-mono text-xs text-[#F7C600] flex items-center gap-1.5">
+              <span className="material-symbols-outlined text-[15px] text-[#F7C600] shrink-0">anchor</span>
+              <span>Berth 04 · Quay Transit Station (INVTZ1)</span>
+            </p>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 font-sans text-xs text-[#E7EDE6]/60">
-          <p>© 2026 Bharat Global Exports Pvt. Ltd. All rights reserved.</p>
+          <p>© 2026 SVMR Exports Pvt. Ltd. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <span className="font-mono tracking-wider text-[#C5A15B]">
               IEC No. 0308012948 · APEDA &amp; Spices Board of India Registered

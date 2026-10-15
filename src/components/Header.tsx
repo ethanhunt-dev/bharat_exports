@@ -51,15 +51,13 @@ export default function Header() {
       }`}
     >
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 flex items-center justify-between">
-        {/* Logo / Brand Wordmark: Prominent, Enlarged Luxury Emblem Card */}
-        <Link href="/" className="flex items-center group shrink-0">
-          <div className="relative flex items-center justify-center bg-white rounded-xl px-3 py-1.5 shadow-lg border-2 border-[#C5A15B]/50 transition-all duration-300 group-hover:scale-105 group-hover:border-[#E5B80B] group-hover:shadow-[0_0_20px_rgba(229,184,11,0.35)]">
-            <img
-              src="/svmr_logo.png"
-              alt="Bharat Global Exports Emblem"
-              className="h-16 sm:h-20 lg:h-24 w-auto object-contain drop-shadow"
-            />
-          </div>
+        {/* Direct Transparent Brand Logo - No white background box */}
+        <Link href="/" className="flex items-center group shrink-0 transition-transform duration-300 hover:scale-105">
+          <img
+            src="/svmr_logo_clean.png"
+            alt="SVMR Exports Emblem"
+            className="h-16 sm:h-20 lg:h-24 w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
+          />
         </Link>
 
         {/* Desktop Nav: Clean text links without background boxes (Matching Skanda Demo) */}
@@ -87,22 +85,22 @@ export default function Header() {
 
         {/* Action Area & Signature Angled Enquiry Button firmly anchored to far right */}
         <div className="flex items-center gap-3 sm:gap-4 shrink-0">
-          {/* Skanda-Inspired Angled Geometric Enquiry Button with Yellow Accent */}
+          {/* Skanda-Inspired Angled Geometric Enquiry Button with Royal Gold Theme */}
           <div className="relative flex items-center">
-            {/* Background angled yellow accent triangle/bar */}
+            {/* Background angled gold accent triangle/bar */}
             <div
-              className="hidden sm:block absolute -right-2 top-0 bottom-0 w-6 bg-gradient-to-r from-[#E5B80B] to-[#FDE047] -skew-x-[16deg] transform origin-bottom pointer-events-none shadow-md"
+              className="hidden sm:block absolute -right-2 top-0 bottom-0 w-6 bg-gradient-to-r from-[#9A6B0A] to-[#C5A15B] -skew-x-[16deg] transform origin-bottom pointer-events-none shadow-md"
               aria-hidden="true"
             />
 
             <button
               type="button"
               onClick={() => openQuoteModal()}
-              className="gold-sheen-button relative z-10 px-5 sm:px-7 py-2.5 bg-gradient-to-r from-[#BA1A1A] via-[#A31616] to-[#860F0F] text-white font-sans text-xs sm:text-sm font-extrabold uppercase tracking-widest shadow-xl hover:brightness-110 active:scale-95 transition-all duration-300 border border-[#FDE047]/40 -skew-x-[16deg]"
+              className="gold-sheen-button relative z-10 px-5 sm:px-7 py-2.5 bg-gradient-to-r from-[#C5A15B] via-[#E5B80B] to-[#F7C600] text-[#0B281D] font-sans text-xs sm:text-sm font-black uppercase tracking-widest shadow-[0_4px_18px_rgba(229,184,11,0.45)] hover:shadow-[0_6px_25px_rgba(229,184,11,0.7)] hover:brightness-105 active:scale-95 transition-all duration-300 border border-[#FFF3B0]/80 -skew-x-[16deg]"
             >
               <span className="skew-x-[16deg] flex items-center gap-2">
                 <span>ENQUIRY</span>
-                <span className="material-symbols-outlined text-[17px] font-bold">arrow_forward</span>
+                <span className="material-symbols-outlined text-[17px] font-black">arrow_forward</span>
               </span>
             </button>
           </div>
@@ -149,9 +147,9 @@ export default function Header() {
               <span className="material-symbols-outlined text-[16px] text-[#E5B80B]">call</span>
               <span>+91 98765 43210</span>
             </a>
-            <a href="mailto:export@bharatglobalexports.com" className="flex items-center gap-2 py-1 hover:text-[#E5B80B]">
+            <a href="mailto:export@svmrexports.com" className="flex items-center gap-2 py-1 hover:text-[#E5B80B]">
               <span className="material-symbols-outlined text-[16px] text-[#E5B80B]">mail</span>
-              <span>export@bharatglobalexports.com</span>
+              <span>export@svmrexports.com</span>
             </a>
           </div>
         </div>
